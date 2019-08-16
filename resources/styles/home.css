@@ -1,0 +1,117 @@
+@font-face {
+    font-family: RockwellNovaBold;
+    src: url("../fonts/RockwellNova-Bold.ttf");
+}
+
+@font-face {
+    font-family: RockwellNova;
+    src: url("../fonts/RockwellNova.ttf");
+}
+
+body {
+    font-family: RockwellNovaBold !important;
+    text-align: center !important;
+    font-size: 60px !important;
+}
+
+.title {
+    font-size: 60px;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1;
+    text-align: center;
+    font-size: 60px;
+    font-family: RockwellNova !important;
+}
+
+.header .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.header .title {
+    padding: 10px;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    top: 0;
+    z-index: -1;
+    background-color: #daefec;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    font-family: RockwellNova !important;
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80%;
+    width: 100%;
+}
+
+.logo {
+    background-image: url("../images/background.png");
+}
+
+.facial2 {
+    background-image: url("../images/facial2.jpg");
+}
+
+.facial {
+    background-image: url("../images/facial.jpg");
+}
+
+.backfacial {
+    background-image: url("../images/backfacial.jpg");
+}
+
+.minime {
+    background-image: url("../images/minime.jpg");
+}
+
+.makeup {
+    background-image: url("../images/makeup.jpg");
+}
+
+.eventful {
+    background-image: url("../images/eventful.jpg");
+}
+
+.bride {
+    background-image: url("../images/bride.jpg");
+}
+
+.strip {
+    padding: 30px;
+}
+
+hr {
+    border: 1px solid black !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.auto {
+    margin: auto;
+}
+
+.section-title {
+    margin-top: 55px;
+}
