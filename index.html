@@ -1,22 +1,25 @@
-<html>
+<html ng-app="douse">
 
 <head>
     <title>Douse Skin Essentials</title>
     <link rel="stylesheet" href="resources/styles/home.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
+    <script src="controller/homeController.js"></script>
 </head>
 
-<body>
-    <div class="title">Douse Skin Essentials</div>
+<body ng-controller="homeController">
+    <div class="header-title">Douse Skin Essentials</div>
 
     <div class="header">
-        <div class="section logo"></div>
-        <div class="content">
-            <div class="title">Douse Skin Essentials</div>
-            <div>By</div>
-            <div>Veronica Arielle</div>
-            <div>Licensed Esthetician</div>
+        <div class="section">
+            <div class="background logo"></div>
+            <div class="logo-content">
+                <div class="title">Douse Skin Essentials</div>
+                <div>By</div>
+                <div>Veronica Arielle</div>
+                <div>Licensed Esthetician</div>
+            </div>
         </div>
     </div>
     <div class="strip">
@@ -24,10 +27,24 @@
         Monthly Special
         <hr />
     </div>
-    <div class="section">
-        <div class="background facial2"></div>
-        <div class="section-title">
-            1 Hour Custom Facial: $20
+    <div class="section" ng-repeat="section in specialServices" ng-click="toggleDescription(section)"
+        ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
+        <div class="background {{section.src}}"></div>
+        <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
+            <div class="full-screen-width">
+                <div class="section-footer">{{section.service}}</div>
+            </div>
+            <div class="full-screen-width">
+                <div class="modal"></div>
+                <div class="description">
+                    <div class="margin-bottom-small description-header">{{section.service}}</div>
+                    <div>{{section.description}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="swipe-dot">
+            <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
+            <div class="circle" ng-class="{'fill': section.swiped}"></div>
         </div>
     </div>
     <div class="strip">
@@ -35,58 +52,49 @@
         Essential Skincare Services
         <hr />
     </div>
-    <div class="section">
-        <div class="background facial2"></div>
-        <div class="section-title">
-            <div>Custom Facial</div>
-            <div>1 Hour - $52</div>
+    <div class="section" ng-repeat="section in skinCareServices" ng-click="toggleDescription(section)"
+        ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
+        <div class="background {{section.src}}"></div>
+        <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
+            <div class="full-screen-width">
+                <div class="section-footer">{{section.service}}</div>
+            </div>
+            <div class="full-screen-width">
+                <div class="modal"></div>
+                <div class="description">
+                    <div class="margin-bottom-small description-header">{{section.service}}</div>
+                    <div>{{section.description}}</div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="section">
-        <div class="background facial"></div>
-        <div class="section-title">
-            <div>Ultrasonic Facial</div>
-            <div>1 Hour - $59</div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="background backfacial"></div>
-        <div class="section-title">
-            <div>Back Facial</div>
-            <div>1 Hour - $66</div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="background minime"></div>
-        <div class="section-title">
-            <div>Mini Me Facial</div>
-            <div>30 Minutes - $30</div>
+        <div class="swipe-dot">
+            <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
+            <div class="circle" ng-class="{'fill': section.swiped}"></div>
         </div>
     </div>
     <div class="strip">
         <hr />
-        Essential Skincare Services
+        Essential Makeup Services
         <hr />
     </div>
-    <div class="section">
-        <div class="background makeup"></div>
-        <div class="section-title">
-            <div>Natural Full Face Makeover</div>
-            <div>1 Hour - $48</div>
+    <div class="section" ng-repeat="section in makeupServices" ng-click="toggleDescription(section)"
+        ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
+        <div class="background {{section.src}}"></div>
+        <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
+            <div class="full-screen-width">
+                <div class="section-footer">{{section.service}}</div>
+            </div>
+            <div class="full-screen-width">
+                <div class="modal"></div>
+                <div class="description">
+                    <div class="margin-bottom-small description-header">{{section.service}}</div>
+                    <div>{{section.description}}</div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="section">
-        <div class="background eventful"></div>
-        <div class="section-title">
-            <div>Full Face Eventful Makeover</div>
-            <div>1.5 Hour - $58</div>
-        </div>
-    </div>
-    <div class="section">
-        <div class="background bride"></div>
-        <div class="section-title">
-            <div>Bridal Makeover (Trial & Final)</div>
-            <div>1.5 Hour (each) - $89</div>
+        <div class="swipe-dot">
+            <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
+            <div class="circle" ng-class="{'fill': section.swiped}"></div>
         </div>
     </div>
 </body>

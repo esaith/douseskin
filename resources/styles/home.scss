@@ -1,0 +1,214 @@
+@font-face {
+    font-family: RockwellNovaBold;
+    src: url("../fonts/RockwellNova-Bold.ttf");
+}
+
+@font-face {
+    font-family: RockwellNova;
+    src: url("../fonts/RockwellNova.ttf");
+}
+
+body {
+    text-align: center !important;
+}
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-content: center;
+}
+
+.header-title {
+    font-size: 3em;
+    padding: 100px 50px;
+    text-align: center;
+    font-family: RockwellNovaBold !important;
+}
+
+.swipe {
+    transform: translateX(-100vw);
+    transition: all 0.2s linear;
+}
+
+.no-swipe {
+    transition: all 0.2s linear;
+}
+
+.margin-bottom-small {
+    margin-bottom: 30px;
+}
+
+.full-screen-width {
+    width: 100vw;
+    position: relative;
+    flex: 1 0 auto;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1;
+    text-align: center;
+    font-size: 60px;
+    font-family: RockwellNova !important;
+
+    &.title {
+        padding: 10px;
+    }
+}
+
+.circle {
+    border: 7px solid white;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+
+    &.fill {
+        background-color: white;
+    }
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.swipe-dot {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    top: 0;
+    margin-bottom: 50px;
+    font-family: RockwellNova !important;
+    overflow: hidden;
+
+    .logo-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .section-footer {
+        height: 13%;
+        font-size: 3em;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        font-weight: bold;
+        left: 0;
+        text-align: left;
+        width: 75vw;
+        padding: 50px 20px;
+    }
+
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #444;
+        opacity: 0.8;
+    }
+
+    .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        font-size: 2.5em;
+        color: white;
+        padding: 20px 60px;
+
+        .description-header {
+            width: 75%;
+            font-size: 1.15em;
+        }
+    }
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    &.logo {
+        background-image: url("../images/background.png");
+    }
+
+    &.facial2 {
+        background-image: url("../images/facial2.jpg");
+    }
+
+    &.facial {
+        background-image: url("../images/facial.jpg");
+    }
+
+    &.backfacial {
+        background-image: url("../images/backfacial.jpg");
+    }
+
+    &.minime {
+        background-image: url("../images/minime.jpg");
+    }
+
+    &.makeup {
+        background-image: url("../images/makeup.jpg");
+    }
+
+    &.eventful {
+        background-image: url("../images/eventful.jpg");
+    }
+
+    &.bride {
+        background-image: url("../images/bride.jpg");
+    }
+}
+
+.strip {
+    padding: 30px;
+    font-size: 3em;
+    background-color: #daefec;
+}
+
+hr {
+    border: 1px solid black !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.auto {
+    margin: auto;
+}
