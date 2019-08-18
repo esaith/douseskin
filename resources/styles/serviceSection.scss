@@ -3,7 +3,7 @@
     width: 100%;
     height: 60vh;
     top: 0;
-    margin-bottom: 50px;
+    margin: 50px 0;
     font-family: RockwellNova !important;
     overflow: hidden;
 
@@ -15,16 +15,14 @@
     }
 
     .section-footer {
-        height: 13%;
-        font-size: 3em;
+        font-size: 2.5em;
         position: absolute;
-        bottom: 0;
+        bottom: 50px;
         color: white;
         font-weight: bold;
         left: 0;
         text-align: left;
-        width: 75vw;
-        padding: 50px 20px;
+        padding: 0 20px;
     }
 
     .section-content {
@@ -73,7 +71,7 @@
             position: absolute;
             bottom: 50px;
             left: 30px;
-            font-size: 0.5em;
+            font-size: 0.6em;
             font-style: italic;
         }
     }
@@ -111,6 +109,11 @@
 
     &.makeup {
         background-image: url("../images/makeup.jpg");
+    }
+
+    &.special {
+        transform: scale(-1);
+        background-image: url("../images/special.jpg");
     }
 
     &.eventful {

@@ -9,7 +9,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
 
         $scope.specialServices = [
             {
-                src: "facial2",
+                src: "special",
                 service: $sce.trustAsHtml("1 Hour Custom Facial: <span class='strike'>$52</span> $20"),
                 description: ["Take advantage of this opening special to pamper yourself!"]
             }
@@ -20,7 +20,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 src: "facial2",
                 service: "1 Hour Custom Facial: $52",
                 description: [
-                    "This facial is treats all skin types to reveal a brighter & clearer complexion.",
+                    "This facial treats all skin types to reveal a brighter & clearer complexion.",
                     "Includes",
                     "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
                 ]
@@ -28,7 +28,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 src: "facial",
                 service: "1 Hour Ultrasonic Facial: $59",
                 description: [
-                    "High frequency sonic waves loosen dead skin cells. This allows for cell turnover & deep penetration of serums for best skincare effectiveness.",
+                    "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for cell turnover and best skincare effectiveness.",
                     "Includes",
                     "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | ultrasonic cleanser"
                 ]
@@ -36,7 +36,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 src: "backfacial",
                 service: "1 Hour Back Facial: $66",
                 description: [
-                    "This facial targets those hard to reach areas on your back revealing a smoother & more hydrated backside.",
+                    "This facial targets those hard to reach areas revealing a smoother & more hydrated back.",
                     "Includes",
                     "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
                 ]
@@ -45,7 +45,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 src: "minime",
                 service: "30 Min Mini Me Facial: $30",
                 description: [
-                    "A hydrating facial tailored to the little ones 12 years & younger.*    ",
+                    "A hydrating facial tailored to the little ones 12 years & younger.*",
                     "Includes ",
                     "cleanse | exfoliation | massage | masque | hydration | spf | steam | hot towels | cucumber slices"
                 ],
@@ -78,7 +78,8 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 description: [
                     "A perfect makeover for every bride on her special day, includes both trial & final looks each 1.5 hours long for a total of $89.*",
                     "Includes ",
-                    "correct & conceal | foundation | brows | soft glam eye | contour | blush & bronze | falsies | lip (x2)"
+                    "correct & conceal | foundation | brows | soft glam eye | contour | blush & bronze | falsies | lip",
+                    "(x2)"
                 ],
                 footer: "*For makeover at different location additional costs may apply."
 
