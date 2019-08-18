@@ -7,7 +7,7 @@
         {
             "label": "Sass Compile",
             "type": "shell",
-            "command": "node-sass resources/styles/home.scss resources/styles/home.css",
+            "command": "node-sass --watch --recursive resources/styles/ -o resources/styles/",
             "group": "build"
         }
     ]

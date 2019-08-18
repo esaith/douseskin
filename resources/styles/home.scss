@@ -10,6 +10,7 @@
 
 body {
     text-align: center !important;
+    font-family: RockwellNova !important;    
 }
 
 .flex {
@@ -20,11 +21,20 @@ body {
     align-content: center;
 }
 
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
 .header-title {
     font-size: 3em;
-    padding: 100px 50px;
+    padding: 50px;
     text-align: center;
     font-family: RockwellNovaBold !important;
+    position: sticky;
 }
 
 .swipe {
@@ -80,14 +90,6 @@ body {
     text-decoration: line-through;
 }
 
-.content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
 .swipe-dot {
     position: absolute;
     bottom: 10px;
@@ -98,125 +100,11 @@ body {
     align-content: center;
 }
 
-.section {
-    position: relative;
-    width: 100%;
-    height: 60vh;
-    top: 0;
-    margin-bottom: 50px;
-    font-family: RockwellNova !important;
-    overflow: hidden;
-
-    .logo-content {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .section-footer {
-        height: 13%;
-        font-size: 3em;
-        position: absolute;
-        bottom: 0;
-        color: white;
-        font-weight: bold;
-        left: 0;
-        text-align: left;
-        width: 75vw;
-        padding: 50px 20px;
-    }
-
-    .modal {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: #444;
-        opacity: 0.8;
-    }
-
-    .description {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        font-size: 2.5em;
-        color: white;
-        padding: 20px 40px;
-
-        .description-header {
-            width: 75%;
-            font-size: 1.15em;
-        }
-
-        .single-description {
-            margin: 10px 0;
-        }
-
-        .description-footer {
-            position: absolute;
-            bottom: 50px;
-            left: 30px;
-            font-size: 0.5em;
-            font-style: italic;
-        }
-    }
-}
-
-.background {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-
-    &.logo {
-        background-image: url("../images/background.png");
-    }
-
-    &.facial2 {
-        background-image: url("../images/facial2.jpg");
-    }
-
-    &.facial {
-        background-image: url("../images/facial.jpg");
-    }
-
-    &.backfacial {
-        background-image: url("../images/backfacial.jpg");
-    }
-
-    &.minime {
-        background-image: url("../images/minime.jpg");
-        background-position: 50% 80%;
-        background-size: 150%;
-    }
-
-    &.makeup {
-        background-image: url("../images/makeup.jpg");
-    }
-
-    &.eventful {
-        background-image: url("../images/eventful.jpg");
-    }
-
-    &.bride {
-        background-image: url("../images/bride.jpg");
-    }
-}
-
 .strip {
     padding: 30px;
     font-size: 3em;
     background-color: #daefec;
+    margin-top: 30px;
 }
 
 hr {
@@ -229,4 +117,106 @@ hr {
 
 .auto {
     margin: auto;
+}
+
+.menu-button {
+    display: flex;
+    align-content: center;
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-in;
+
+    &.margin-top {
+        margin-top: 10px;
+        transition: all 0.2s ease-in;
+    }
+
+    .stack {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .line {
+        border-bottom: 4px solid black;
+        width: 100%;
+        transition: all 0.2s ease-in;
+
+        &.forward-slash {
+            transform: translateY(-8px) rotate(45deg);
+            transition: all 0.2s ease-in;
+        }
+
+        &.back-slash {
+            transform: translateY(10px) rotate(-45deg);
+            transition: all 0.2s ease-in;
+        }
+    }
+}
+
+.body-content {
+    transition: opacity 0.1s ease-in;
+}
+
+
+.menu {
+    font-size: 2em;
+    width: 100%;
+    height: 100%;
+
+    .menu-header {
+        font-size: 60px;
+        margin-top: 50px;
+    }
+
+    .md-detail {
+        font-size: 1.5em;
+    }
+
+    .small-detail {
+        font-size: 1em;
+    }
+
+    img {
+        height: 50px;
+        width: 50px;
+        margin-right: 20px;
+    }
+}
+
+a {
+    display: block;
+
+    &.no-style {
+        color: black;
+        &:link {
+            text-decoration: none;
+        }
+
+        &:visited {
+            text-decoration: none;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+        &:active {
+            text-decoration: none;
+        }
+    }
+}
+
+.hidden {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease-in;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
 }

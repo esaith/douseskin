@@ -1,0 +1,123 @@
+.section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    top: 0;
+    margin-bottom: 50px;
+    font-family: RockwellNova !important;
+    overflow: hidden;
+
+    .logo-content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .section-footer {
+        height: 13%;
+        font-size: 3em;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        font-weight: bold;
+        left: 0;
+        text-align: left;
+        width: 75vw;
+        padding: 50px 20px;
+    }
+
+    .section-content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: #444;
+        opacity: 0.8;
+    }
+
+    .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        font-size: 2.5em;
+        color: white;
+        padding: 20px 40px;
+
+        .description-header {
+            width: 75%;
+            font-size: 1.15em;
+        }
+
+        .single-description {
+            margin: 10px 0;
+        }
+
+        .description-footer {
+            position: absolute;
+            bottom: 50px;
+            left: 30px;
+            font-size: 0.5em;
+            font-style: italic;
+        }
+    }
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    &.logo {
+        background-image: url("../images/background.png");
+    }
+
+    &.facial2 {
+        background-image: url("../images/facial2.jpg");
+    }
+
+    &.facial {
+        background-image: url("../images/facial.jpg");
+    }
+
+    &.backfacial {
+        background-image: url("../images/backfacial.jpg");
+    }
+
+    &.minime {
+        background-image: url("../images/minime.jpg");
+        background-size: 150%;
+        background-color: #d5d5d5;
+        background-position: top;
+    }
+
+    &.makeup {
+        background-image: url("../images/makeup.jpg");
+    }
+
+    &.eventful {
+        background-image: url("../images/eventful.jpg");
+    }
+
+    &.bride {
+        background-image: url("../images/bride.jpg");
+    }
+}

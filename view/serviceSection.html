@@ -1,0 +1,20 @@
+<div class="section" ng-repeat="section in service" ng-click="toggleDescription(section)"
+    ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
+    <div class="background {{section.src}}"></div>
+    <div class="section-content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
+        <div class="full-screen-width">
+            <div class="section-footer" ng-bind-html="section.service"></div>
+        </div>
+        <div class="full-screen-width">
+            <div class="modal"></div>
+            <div class="description">
+                <div class="margin-bottom-small description-header" ng-bind-html="section.service"></div>
+                <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
+            </div>
+        </div>
+    </div>
+    <div class="swipe-dot">
+        <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
+        <div class="circle" ng-class="{'fill': section.swiped}"></div>
+    </div>
+</div>

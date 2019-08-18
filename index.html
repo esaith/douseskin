@@ -3,102 +3,76 @@
 <head>
     <title>Douse Skin Essentials</title>
     <link rel="stylesheet" href="resources/styles/home.css">
+    <link rel="stylesheet" href="resources/styles/serviceSection.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
     <script src="controller/homeController.js"></script>
+    <script src="directive/sectionDirective.js"></script>
+    <link rel="shortcut icon" href="resources/images/icon.jpg" />
 </head>
 
 <body ng-controller="homeController">
-    <div class="header-title">Douse Skin Essentials</div>
-
-    <div class="header">
-        <div class="section">
-            <div class="background logo"></div>
-            <div class="logo-content">
-                <div class="title">Douse Skin Essentials</div>
-                <div>By</div>
-                <div>Veronica Arielle</div>
-                <div>Licensed Esthetician</div>
+    <div class="header-title">
+        <div>Douse Skin Essentials</div>
+        <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
+            <div class="stack">
+                <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
+                <div class="line" ng-class="{'forward-slash': isMenuOpen}"></div>
+                <div class="line" ng-class="{'hidden': isMenuOpen}"></div>
             </div>
         </div>
     </div>
-    <div class="strip">
-        <hr />
-        Monthly Special
-        <hr />
-    </div>
-    <div class="section" ng-repeat="section in specialServices" ng-click="toggleDescription(section)"
-        ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
-        <div class="background {{section.src}}"></div>
-        <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
-            <div class="full-screen-width">
-                <div class="section-footer" ng-bind-html="section.service"></div>
+    <div class="body-content menu" ng-class="{'hidden': !isMenuOpen}">
+        <div class="menu-header">Services</div>
+        <a class="no-style" href="#specials" ng-click="toggleMenu()">Specials</a>
+        <a class="no-style" href="#skin" ng-click="toggleMenu()">Skincare</a>
+        <a class="no-style" href="#makeup" ng-click="toggleMenu()">Makeup</a>
+        <div class="menu-header">Associates</div>
+        <div class="md-detail">Valerie LoCicero L.E.</div>
+        <div class="small-detail"><a href="https://www.boldheartbeautyfl.com/">Bold Heart Beauty</a></div>
+        <div class="small-detail flex align-center justify-center">
+            <img src="resources/images/instagram.png" />
+            <a href="https://www.instagram.com/bold.heart.beauty/">bold.heart.beauty</a>
+        </div>
+        <div class="menu-header">Contact Me</div>
+        <div class="md-detail">Sessions by appointment only</div>
+        <div class="small-detail">Text 863-899-4799</div>
+        <div class="small-detail flex align-center justify-center">
+                <img src="resources/images/instagram.png" />
+                <a href="https://www.instagram.com/douse.skin.essentials/">douse.skin.essentials</a>
             </div>
-            <div class="full-screen-width">
-                <div class="modal"></div>
-                <div class="description">
-                    <div class="margin-bottom-small description-header" ng-bind-html="section.service"></div>
-                    <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
+    </div>
+    <div class="body-content" ng-class="{'hidden': isMenuOpen}">
+        <div class="header">
+            <div class="section">
+                <div class="background logo"></div>
+                <div class="logo-content">
+                    <div class="title">Douse Skin Essentials</div>
+                    <div>By</div>
+                    <div>Veronica Arielle</div>
+                    <div>Licensed Esthetician</div>
                 </div>
             </div>
         </div>
-        <div class="swipe-dot">
-            <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
-            <div class="circle" ng-class="{'fill': section.swiped}"></div>
+        <div class="strip" id="specials">
+            <hr />
+            Monthly Special
+            <hr />
         </div>
-    </div>
-    <div class="strip">
-        <hr />
-        Essential Skincare Services
-        <hr />
-    </div>
-    <div class="section" ng-repeat="section in skinCareServices" ng-click="toggleDescription(section)"
-        ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
-        <div class="background {{section.src}}"></div>
-        <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
-            <div class="full-screen-width">
-                <div class="section-footer">{{section.service}}</div>
-            </div>
-            <div class="full-screen-width">
-                <div class="modal"></div>
-                <div class="description">
-                    <div class="margin-bottom-small description-header">{{section.service}}</div>
-                    <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
-                    <div class="description-footer">{{section.footer}}</div>
-                </div>
-            </div>
+        <service-section service="specialServices"></service-section>
+        <div class="strip" id="skin">
+            <hr />
+            Essential Skincare Services
+            <hr />
         </div>
-        <div class="swipe-dot">
-            <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
-            <div class="circle" ng-class="{'fill': section.swiped}"></div>
+        <service-section service="skinCareServices"></service-section>
+        <div class="strip" id="makeup">
+            <hr />
+            Essential Makeup Services
+            <hr />
         </div>
-    </div>
-    <div class="strip">
-        <hr />
-        Essential Makeup Services
-        <hr />
-    </div>
-    <div class="section" ng-repeat="section in makeupServices" ng-click="toggleDescription(section)"
-        ng-swipe-left="toggleDescription(section)" ng-swipe-right="toggleDescription(section)">
-        <div class="background {{section.src}}"></div>
-        <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
-            <div class="full-screen-width">
-                <div class="section-footer">{{section.service}}</div>
-            </div>
-            <div class="full-screen-width">
-                <div class="modal"></div>
-                <div class="description">
-                    <div class="margin-bottom-small description-header">{{section.service}}</div>
-                    <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
-                    <div class="description-footer">{{section.footer}}</div>
-                </div>
-            </div>
-        </div>
-        <div class="swipe-dot">
-            <div class="circle" ng-class="{'fill': !section.swiped}"> </div>
-            <div class="circle" ng-class="{'fill': section.swiped}"></div>
-        </div>
+        <service-section service="makeupServices"></service-section>
     </div>
 </body>
 
