@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="resources/styles/home.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
     <script src="controller/homeController.js"></script>
 </head>
 
@@ -32,13 +33,13 @@
         <div class="background {{section.src}}"></div>
         <div class="content flex align-center no-swipe" ng-class="{'swipe': section.swiped}">
             <div class="full-screen-width">
-                <div class="section-footer">{{section.service}}</div>
+                <div class="section-footer" ng-bind-html="section.service"></div>
             </div>
             <div class="full-screen-width">
                 <div class="modal"></div>
                 <div class="description">
-                    <div class="margin-bottom-small description-header">{{section.service}}</div>
-                    <div>{{section.description}}</div>
+                    <div class="margin-bottom-small description-header" ng-bind-html="section.service"></div>
+                    <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
                 </div>
             </div>
         </div>
@@ -63,7 +64,8 @@
                 <div class="modal"></div>
                 <div class="description">
                     <div class="margin-bottom-small description-header">{{section.service}}</div>
-                    <div>{{section.description}}</div>
+                    <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
+                    <div class="description-footer">{{section.footer}}</div>
                 </div>
             </div>
         </div>
@@ -88,7 +90,8 @@
                 <div class="modal"></div>
                 <div class="description">
                     <div class="margin-bottom-small description-header">{{section.service}}</div>
-                    <div>{{section.description}}</div>
+                    <div class="single-description" ng-repeat="desc in section.description" ng-bind-html="desc"></div>
+                    <div class="description-footer">{{section.footer}}</div>
                 </div>
             </div>
         </div>

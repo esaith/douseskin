@@ -76,6 +76,10 @@ body {
     }
 }
 
+.strike {
+    text-decoration: line-through;
+}
+
 .content {
     position: absolute;
     top: 0;
@@ -146,11 +150,23 @@ body {
         align-content: center;
         font-size: 2.5em;
         color: white;
-        padding: 20px 60px;
+        padding: 20px 40px;
 
         .description-header {
             width: 75%;
             font-size: 1.15em;
+        }
+
+        .single-description {
+            margin: 10px 0;
+        }
+
+        .description-footer {
+            position: absolute;
+            bottom: 50px;
+            left: 30px;
+            font-size: 0.5em;
+            font-style: italic;
         }
     }
 }
@@ -180,6 +196,8 @@ body {
 
     &.minime {
         background-image: url("../images/minime.jpg");
+        background-position: 50% 80%;
+        background-size: 150%;
     }
 
     &.makeup {
