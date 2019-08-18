@@ -34,7 +34,7 @@ body {
     padding: 50px;
     text-align: center;
     font-family: RockwellNovaBold !important;
-    position: sticky;
+    position: relative;
 }
 
 .swipe {
@@ -128,11 +128,11 @@ hr {
     top: 50%;
     right: 30px;
     transform: translateY(-50%);
-    transition: all 0.2s ease-in;
+    transition: all 0.3s ease-in;
 
     &.margin-top {
         margin-top: 10px;
-        transition: all 0.2s ease-in;
+        transition: all 0.3s ease-in;
     }
 
     .stack {
@@ -147,16 +147,16 @@ hr {
     .line {
         border-bottom: 4px solid black;
         width: 100%;
-        transition: all 0.2s ease-in;
+        transition: all 0.3 s ease-in;
 
         &.forward-slash {
             transform: translateY(-8px) rotate(45deg);
-            transition: all 0.2s ease-in;
+            transition: all 0.3s ease-in;
         }
 
         &.back-slash {
             transform: translateY(10px) rotate(-45deg);
-            transition: all 0.2s ease-in;
+            transition: all 0.3s ease-in;
         }
     }
 }
@@ -189,10 +189,26 @@ hr {
         width: 50px;
         margin-right: 20px;
     }
+
+    .associate {
+        height: 400px;
+        width: 275px;
+        margin: 0;
+
+        &.veronica {
+            width: 400px;
+        }
+    }
+
+    .food-dude {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 a {
     display: block;
+    color: blue;
 
     &.no-style {
         color: black;
