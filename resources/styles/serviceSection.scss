@@ -14,15 +14,15 @@
         transform: translate(-50%, -50%);
     }
 
-    .section-footer {
+    .section-footer { 
         font-size: 2.5em;
         position: absolute;
         bottom: 50px;
         color: white;
         font-weight: bold;
-        left: 0;
+        left: 0;   
         text-align: left;
-        padding: 0 20px;
+        padding: 0px 20px;
     }
 
     .section-content {
@@ -57,6 +57,10 @@
         font-size: 2.5em;
         color: white;
         padding: 20px 40px;
+
+        @media (min-width: 720px) {  
+            font-size: 1.6em;
+        }
 
         .description-header {
             width: 75%;
@@ -93,6 +97,7 @@
     }
 
     &.facial {
+        background-position: 50% 29%;
         background-image: url("../images/facial.jpg");
     }
 
@@ -105,6 +110,11 @@
         background-size: 150%;
         background-color: #d5d5d5;
         background-position: top;
+
+        @media (min-width: 950px) { 
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     &.makeup {
