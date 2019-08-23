@@ -11,14 +11,6 @@ body {
   font-family: RockwellNova !important;
   margin: 0; }
 
-.tab {
-  flex: 1 0;
-  padding: 10px;
-  border: 1px solid black; }
-
-.tab.selected {
-  background-color: #dedbdb; }
-
 .border {
   position: absolute;
   top: 10px;
@@ -45,6 +37,10 @@ body {
   text-align: center;
   font-family: RockwellNovaBold !important;
   position: relative; }
+
+@media (min-width: 600px) {
+  .header-title {
+    font-size: 2em; } }
 
 .swipe {
   transform: translateX(-100vw);
@@ -73,6 +69,10 @@ body {
   text-align: center;
   font-size: 1.5em;
   font-family: RockwellNova !important; }
+
+@media (min-width: 600px) {
+  .header {
+    font-size: 2em; } }
 
 .header.title {
   padding: 10px; }
@@ -108,9 +108,13 @@ hr {
   height: 25px;
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 40px;
   transform: translateY(-50%);
   transition: all 0.3s ease-in; }
+
+@media (max-width: 410px) {
+  .menu-button {
+    right: 10px; } }
 
 .menu-button.margin-top {
   margin-top: 10px;
@@ -125,7 +129,7 @@ hr {
   justify-content: space-between; }
 
 .menu-button .line {
-  border-bottom: 3px solid black;
+  border-bottom: 4px solid black;
   width: 100%;
   transition: all 0.3s ease-in; }
 
@@ -146,6 +150,20 @@ hr {
   background-image: url("../images/menu-background.jpg");
   background-repeat: no-repeat;
   background-size: cover; }
+
+.menu .tab {
+  flex: 1 0;
+  padding: 10px;
+  border: 1px solid black; }
+
+.menu .tab.selected {
+  background-color: #dedbdb; }
+
+@media (min-width: 600px) {
+  .menu {
+    font-size: 1.4em; }
+  .menu .tab {
+    padding: 20px; } }
 
 .menu .menu-header {
   font-size: 2em;
@@ -169,9 +187,6 @@ hr {
   height: 400px;
   width: inherit;
   margin: 0; }
-
-.menu .associate.veronica {
-  width: 400px; }
 
 .menu .food-dude {
   height: 200px;

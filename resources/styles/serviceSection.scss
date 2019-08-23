@@ -23,6 +23,10 @@
         left: 0;
         text-align: left;
         padding: 0px 20px;
+
+        @media (min-width: 600px) {
+            font-size: 2em;
+        }
     }
 
     .section-content {
@@ -59,9 +63,17 @@
         padding: 15px;
         box-sizing: border-box;
 
+        @media (min-width: 600px) {
+            font-size: 1.1em;
+        }
+
         .description-header {
             width: 75%;
             font-size: 1.5em;
+
+            @media (min-width: 600px) {
+                font-size: 2em;
+            }
         }
 
         .single-description {
@@ -72,14 +84,8 @@
             position: absolute;
             bottom: 25px;
             left: 30px;
-            font-size: 0.6em;
+            font-size: 0.8em;
             font-style: italic;
-        }
-    }
-
-    @media screen and (min-width: 720px) {
-        .description {
-            font-size: 1.6em;
         }
     }
 
@@ -150,6 +156,10 @@
 
         &.bride {
             background-image: url("../images/bride.jpg?n=2");
+        }
+
+        &.packages {
+            background-image: url("../images/packages.jpg?n=2");
         }
     }
 }

@@ -36,7 +36,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 description: [
                     "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for cell turnover and best skincare effectiveness.",
                     "Includes",
-                    "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | ultrasonic cleanser"
+                    "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush | ultrasonic cleanser"
                 ]
             }, {
                 src: "backfacial",
@@ -75,7 +75,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 description: [
                     "Soft glam makeover perfect for any event!",
                     "Includes ",
-                    "correct & conceal | foundation | brows | smokey eye | contour | blush & bronze | falsies | lip"
+                    "correct & conceal | foundation | brows | smokey eye | contour & sculpting | blush & bronze | falsies | lip"
                 ]
             },
             {
@@ -84,11 +84,25 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
                 description: [
                     "A perfect makeover for every bride on her special day, includes both trial & final looks each 1.5 hours long for a total of $89.*",
                     "Includes ",
-                    "correct & conceal | foundation | brows | soft glam eye | contour | blush & bronze | falsies | lip",
+                    "correct & conceal | foundation | brows | soft glam eye | contour &      | blush & bronze | falsies | lip",
                     "(x2)"
                 ],
                 footer: "*For makeover at different location additional costs may apply."
 
+            }
+        ];
+
+        $scope.packageServices = [
+            {
+                src: "packages",
+                service: "Essential Packages",
+                description: [
+                    "Beautify Me I",
+                    $sce.trustAsHtml("35 Min Custom Facial + 1 Hour Natural Makeover = <span class='strike'>$92</span> $82 *"),
+                    "Beautify Me II",
+                    $sce.trustAsHtml("35 Min Custom Facial + 1.5 Hour Glam natural Makeover = <span class='strike'>$102</span> $92 *"),
+                ],
+                footer: "* All appointments are scheduled same day in consecutive order. They cannot be divided into different days"
             }
         ];
 
