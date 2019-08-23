@@ -108,29 +108,29 @@
     .background {
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
+        background-size: co`;
         height: 100%;
         width: 100%;
 
         &.logo {
-            background-image: url("../images/background.png?n=2");
+            background-image: url("../images/background.png?n=3");
         }
 
         &.facial2 {
-            background-image: url("../images/facial2.jpg?n=2");
+            background-image: url("../images/facial2.jpg?n=3");
         }
 
         &.facial {
             background-position: 50% 29%;
-            background-image: url("../images/facial.jpg?n=2");
+            background-image: url("../images/facial.jpg?n=3");
         }
 
         &.backfacial {
-            background-image: url("../images/backfacial.jpg?n=2");
+            background-image: url("../images/backfacial.jpg?n=3");
         }
 
         &.minime {
-            background-image: url("../images/minime.jpg?n=2");
+            background-image: url("../images/minime.jpg?n=3");
             background-size: 150%;
             background-color: #d5d5d5;
             background-position: top;
@@ -142,24 +142,24 @@
         }
 
         &.makeup {
-            background-image: url("../images/makeup.jpg?n=2");
+            background-image: url("../images/makeup.jpg?n=3");
         }
 
         &.special {
             transform: scale(-1);
-            background-image: url("../images/special.jpg?n=2");
+            background-image: url("../images/special.jpg?n=3");
         }
 
         &.eventful {
-            background-image: url("../images/eventful.jpg?n=2");
+            background-image: url("../images/eventful.jpg?n=3");
         }
 
         &.bride {
-            background-image: url("../images/bride.jpg?n=2");
+            background-image: url("../images/bride.jpg?n=3");
         }
 
         &.packages {
-            background-image: url("../images/packages.jpg?n=2");
+            background-image: url("../images/packages.jpg?n=3");
         }
     }
 }

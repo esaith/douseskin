@@ -99,9 +99,9 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                 service: "Essential Packages",
                 description: [
                     "Beautify Me I",
-                    $sce.trustAsHtml("35 Min Custom Facial + 1 Hour Natural Makeover = <span class='strike'>$92</span> $82 *"),
+                    $sce.trustAsHtml("35 Min Custom Facial + 1 Hour Natural Makeover = <span class='strike'>$92</span> $82*"),
                     "Beautify Me II",
-                    $sce.trustAsHtml("35 Min Custom Facial + 1.5 Hour Glam natural Makeover = <span class='strike'>$102</span> $92 *"),
+                    $sce.trustAsHtml("35 Min Custom Facial + 1.5 Hour Glam natural Makeover = <span class='strike'>$102</span> $92*"),
                 ],
                 footer: "* All appointments are scheduled same day in consecutive order. They cannot be divided into different days"
             }

@@ -6,17 +6,17 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>Douse Skin Essentials</title>
-    <link rel="stylesheet" href="resources/styles/home.css?n=2">
-    <link rel="stylesheet" href="resources/styles/serviceSection.css?n=2">
+    <link rel="stylesheet" href="resources/styles/home.css?n=3">
+    <link rel="stylesheet" href="resources/styles/serviceSection.css?n=3">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
-    <script src="controller/homeController.js?n=2"></script>
-    <script src="directive/sectionDirective.js?n=2"></script>
+    <script src="controller/homeController.js?n=3"></script>
+    <script src="directive/sectionDirective.js?n=3"></script>
     <link rel="shortcut icon" href="resources/images/icon.jpg" />
 </head>
 
-<body ng-controller="homeController">
+<body ng-controller="homeController" ng-cloak>
     <div class="header-title">
         <div>Douse Skin Essentials</div>
         <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
@@ -46,9 +46,10 @@
             <hr />
             <div class="block">
                 <div class="menu-header">Contact Me</div>
-                <img src="resources/images/veronica.jpg" class="associate veronica" />
-                <div class="md-detail">Bold Heart Beauty Studio</div>
-                <div class="sm-detail">1843 Collier Pkwy Lutz, FL. 33549</div>
+                <img src="resources/images/veronica.jpg?n=3" class="associate veronica" />
+                <div class="md-detail">Veronica Arielle L.E.</div>
+                <div class="sm-detail">Bold Heart Beauty Studio</div>
+                <div class="sm-detail">1843 Collier Pkwy Lutz, FL 33549</div>
                 <div class="sm-detail">Sessions by Appointment Only</div>
                 <div class="sm-detail">Text 863.899.4799</div>
                 <div class="sm-detail flex align-center justify-center">
@@ -59,7 +60,7 @@
             <hr />
             <div class="block">
                 <div class="menu-header">Associates</div>
-                <img src="resources/images/valerie.jpg" class="associate" />
+                <img src="resources/images/valerie.jpg?n=3" class="associate" />
                 <div class="md-detail">Valerie LoCicero L.E.</div>
                 <div class="sm-detail"><a href="https://www.boldheartbeautyfl.com/">Bold Heart Beauty</a></div>
                 <div class="sm-detail flex align-center justify-center">
