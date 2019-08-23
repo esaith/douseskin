@@ -1,15 +1,16 @@
 angular.module("douse", ['ngTouch', 'ngSanitize']);
 
-angular.module("douse").controller("homeController", ['$scope', '$sce',
-    function ($scope, $sce) {
+angular.module("douse").controller("homeController", ['$scope', '$sce', '$document',
+    function ($scope, $sce, $document) {
         $scope.isMenuOpen = false;
-        
-        $scope.toggleMenu = function() {
+        $scope.showBackToTopButton = false;
+
+        $scope.toggleMenu = function () {
             $scope.isMenuOpen = !$scope.isMenuOpen;
             $scope.selectedTab = "about";
         };
 
-        $scope.selectTab = function(tab) {
+        $scope.selectTab = function (tab) {
             $scope.selectedTab = tab;
         };
 
@@ -110,5 +111,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce',
             service.swiped = !service.swiped;
         };
 
+        $scope.backToTop = function() {
+            document.body.scrollTop = 0;            
+        };
+
+        $document.bind("scroll", function () {
+            $scope.$evalAsync(function () {
+                $scope.showBackToTopButton = document.body.scrollTop > 200;
+            });
+        });
 
     }]);

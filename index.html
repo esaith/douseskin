@@ -30,7 +30,8 @@
     <div class="body-content menu" ng-class="{'hidden': !isMenuOpen}">
         <div class="flex align-center">
             <div class="tab" ng-class="{'selected': selectedTab === 'about'}" ng-click="selectTab('about')">About</div>
-            <div class="tab" ng-class="{'selected': selectedTab === 'booking'}" ng-click="selectTab('booking')">Booking</div>
+            <div class="tab" ng-class="{'selected': selectedTab === 'booking'}" ng-click="selectTab('booking')">Booking
+            </div>
         </div>
         <div ng-show="selectedTab === 'booking'">
             <script src="https://square.site/appointments/buyer/widget/q2a5qjuxwn5eha/Q4W3RC4A64DCN.js"></script>
@@ -154,10 +155,13 @@
         <service-section service="makeupServices"></service-section>
         <div class="strip" id="makeup">
             <hr />
-            Packages
+            Essential Packages
             <hr />
         </div>
         <service-section service="packageServices"></service-section>
+    </div>
+    <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
+        <div class="triangle-up"></div>
     </div>
 </body>
 
