@@ -3,7 +3,7 @@
     width: 100%;
     height: 60vh;
     top: 0;
-    margin: 50px 0;
+    margin: 25px 0;
     font-family: RockwellNova !important;
     overflow: hidden;
 
@@ -14,13 +14,13 @@
         transform: translate(-50%, -50%);
     }
 
-    .section-footer { 
-        font-size: 2.5em;
+    .section-footer {
+        font-size: 1.3em;
         position: absolute;
         bottom: 50px;
         color: white;
         font-weight: bold;
-        left: 0;   
+        left: 0;
         text-align: left;
         padding: 0px 20px;
     }
@@ -54,17 +54,14 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        font-size: 2.5em;
+        font-size: .8em;
         color: white;
-        padding: 20px 40px;
-
-        @media (min-width: 720px) {  
-            font-size: 1.6em;
-        }
+        padding: 15px;
+        box-sizing: border-box;
 
         .description-header {
             width: 75%;
-            font-size: 1.15em;
+            font-size: 1.5em;
         }
 
         .single-description {
@@ -73,64 +70,86 @@
 
         .description-footer {
             position: absolute;
-            bottom: 50px;
+            bottom: 25px;
             left: 30px;
             font-size: 0.6em;
             font-style: italic;
         }
     }
-}
 
-.background {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-
-    &.logo {
-        background-image: url("../images/background.png");
-    }
-
-    &.facial2 {
-        background-image: url("../images/facial2.jpg");
-    }
-
-    &.facial {
-        background-position: 50% 29%;
-        background-image: url("../images/facial.jpg");
-    }
-
-    &.backfacial {
-        background-image: url("../images/backfacial.jpg");
-    }
-
-    &.minime {
-        background-image: url("../images/minime.jpg");
-        background-size: 150%;
-        background-color: #d5d5d5;
-        background-position: top;
-
-        @media (min-width: 950px) { 
-            background-size: cover;
-            background-position: center;
+    @media screen and (min-width: 720px) {
+        .description {
+            font-size: 1.6em;
         }
     }
 
-    &.makeup {
-        background-image: url("../images/makeup.jpg");
+    .circle {
+        border: 3px solid white;
+        border-radius: 50%;
+        height: 5px;
+        width: 5px;
+        margin: 0 5px;
+
+        &.fill {
+            background-color: white;
+        }
     }
 
-    &.special {
-        transform: scale(-1);
-        background-image: url("../images/special.jpg");
+    .strike {
+        text-decoration: line-through;
     }
 
-    &.eventful {
-        background-image: url("../images/eventful.jpg");
-    }
+    .background {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
 
-    &.bride {
-        background-image: url("../images/bride.jpg");
+        &.logo {
+            background-image: url("../images/background.png?n=2");
+        }
+
+        &.facial2 {
+            background-image: url("../images/facial2.jpg?n=2");
+        }
+
+        &.facial {
+            background-position: 50% 29%;
+            background-image: url("../images/facial.jpg?n=2");
+        }
+
+        &.backfacial {
+            background-image: url("../images/backfacial.jpg?n=2");
+        }
+
+        &.minime {
+            background-image: url("../images/minime.jpg?n=2");
+            background-size: 150%;
+            background-color: #d5d5d5;
+            background-position: top;
+
+            @media (min-width: 950px) {
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
+        &.makeup {
+            background-image: url("../images/makeup.jpg?n=2");
+        }
+
+        &.special {
+            transform: scale(-1);
+            background-image: url("../images/special.jpg?n=2");
+        }
+
+        &.eventful {
+            background-image: url("../images/eventful.jpg?n=2");
+        }
+
+        &.bride {
+            background-image: url("../images/bride.jpg?n=2");
+        }
     }
 }

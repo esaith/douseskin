@@ -3,8 +3,14 @@ angular.module("douse", ['ngTouch', 'ngSanitize']);
 angular.module("douse").controller("homeController", ['$scope', '$sce',
     function ($scope, $sce) {
         $scope.isMenuOpen = false;
+        
         $scope.toggleMenu = function() {
             $scope.isMenuOpen = !$scope.isMenuOpen;
+            $scope.selectedTab = "about";
+        };
+
+        $scope.selectTab = function(tab) {
+            $scope.selectedTab = tab;
         };
 
         $scope.specialServices = [

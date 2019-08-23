@@ -10,16 +10,27 @@
 
 body {
     text-align: center !important;
-    font-family: RockwellNova !important;    
+    font-family: RockwellNova !important; 
+    margin: 0;   
+}
+
+.tab {
+    flex: 1 0;
+    padding: 10px;
+    border: 1px solid black;
+
+    &.selected {
+        background-color: #dedbdb
+    }
 }
 
 .border {
     position: absolute;
-    top: 20px;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    border: 8px solid black;
+    top: 10px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    border: 3px solid black;
 }
 
 .flex {
@@ -39,8 +50,8 @@ body {
 }
 
 .header-title {
-    font-size: 3em;
-    padding: 50px;
+    font-size: 1.4em;
+    padding: 20px;
     text-align: center;
     font-family: RockwellNovaBold !important;
     position: relative;
@@ -74,29 +85,13 @@ body {
     transform: translateX(-50%);
     white-space: nowrap;
     z-index: 1;
-    text-align: center;
-    font-size: 60px;
+    text-align: center;    
+    font-size: 1.5em;
     font-family: RockwellNova !important;
 
     &.title {
         padding: 10px;
     }
-}
-
-.circle {
-    border: 7px solid white;
-    border-radius: 50%;
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-
-    &.fill {
-        background-color: white;
-    }
-}
-
-.strike {
-    text-decoration: line-through;
 }
 
 .swipe-dot {
@@ -110,14 +105,14 @@ body {
 }
 
 .strip {
-    padding: 30px;
-    font-size: 3em;
+    padding: 10px;
+    font-size: 1.5em;
     background-color: #daefec;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 hr {
-    border: 1px solid black !important;
+    border: 1.2px solid black !important;
 }
 
 .relative {
@@ -131,11 +126,11 @@ hr {
 .menu-button {
     display: flex;
     align-content: center;
-    width: 50px;
-    height: 40px;
+    width: 30px;
+    height: 25px;
     position: absolute;
     top: 50%;
-    right: 30px;
+    right: 10px;
     transform: translateY(-50%);
     transition: all 0.3s ease-in;
 
@@ -154,9 +149,9 @@ hr {
     }
 
     .line {
-        border-bottom: 4px solid black;
+        border-bottom: 3px solid black;
         width: 100%;
-        transition: all 0.3 s ease-in;
+        transition: all 0.3s ease-in;
 
         &.forward-slash {
             transform: translateY(-8px) rotate(45deg);
@@ -164,7 +159,7 @@ hr {
         }
 
         &.back-slash {
-            transform: translateY(10px) rotate(-45deg);
+            transform: translateY(3px) rotate(-45deg);
             transition: all 0.3s ease-in;
         }
     }
@@ -176,19 +171,23 @@ hr {
 
 
 .menu {
-    font-size: 2em;
+    font-size: 1em;
     width: 100%;
     background-image: url("../images/menu-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
     .menu-header {
-        font-size: 60px;
-        margin-top: 50px;
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    .block {
+        margin-bottom: 20px;
     }
 
     .md-detail {
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     .small-detail {
@@ -196,14 +195,14 @@ hr {
     }
 
     img {
-        height: 50px;
-        width: 50px;
-        margin-right: 20px;
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
     }
 
     .associate {
         height: 400px;
-        width: 275px;
+        width: inherit;
         margin: 0;
 
         &.veronica {
