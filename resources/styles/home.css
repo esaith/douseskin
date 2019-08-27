@@ -92,6 +92,9 @@ body {
   position: relative;
   flex: 1 0 auto; }
 
+.padding {
+  padding: 10px; }
+
 .margin-bottom {
   display: flex;
   align-content: center;

@@ -54,7 +54,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Express facial for those on the go.",
-                                "Includes",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
                             ]
                         }
@@ -68,7 +68,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "This facial treats all skin types to reveal a brighter & clearer complexion.",
-                                "Includes",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
                             ]
                         }
@@ -82,7 +82,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Extended facial intended for deep relaxation & of course rejuvinated skin!",
-                                "Includes",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "expended deep cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | oscillating brush"
                             ]
                         }
@@ -96,7 +96,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for cell turnover and best skincare effectiveness.",
-                                "Includes",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush | ultrasonic cleanser"
                             ]
                         }
@@ -110,7 +110,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "A hydrating facial tailored to the little ones 12 years & younger.*",
-                                "Includes ",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "cleanse | exfoliation | express massage | masque | hydration | spf | steam | hot towels | cucumber slices"
                             ],
                             footer: "* Must be accompanied by an adult."
@@ -128,7 +128,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Enhance your natural beauty with this makeover!",
-                                "Includes ",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "correct & conceal | foundation | brows | soft natural eye | blush & bronze | lip"
                             ]
                         }
@@ -142,7 +142,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Soft glam makeover perfect for any event!",
-                                "Includes ",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "correct & conceal | foundation | brows | smokey eye | contour & sculpting | blush & bronze | falsies | lip"
                             ]
                         }
@@ -156,7 +156,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "A perfect makeover for every bride on her special day, includes both trial & final looks each 1.5 hours long for a total of $89.*",
-                                "Includes ",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "correct & conceal | foundation | brows | soft glam eye | contour & sculpting | blush & bronze | falsies | lip",
                                 "(x2)"
                             ],
@@ -265,7 +265,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "This facial targets those hard to reach areas revealing a smoother & more hydrated back.",
-                                "Includes",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
                             ]
                         }
@@ -282,8 +282,8 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Full Set 2 Hours $86",
-                                "Each healthy individual lash has a lash extension adhered to it creating more defined eyes",
-                                "Fill Set 1 Hours $86",
+                                $sce.trustAsHtml("<div class='margin-bottom'>Each healthy individual lash has a lash extension adhered to it creating more defined eyes</div>"),
+                                "1 Hour Fill $86",
                                 "Includes removal of grown out extensions & maintaining full look (every 2 - 3 weeks)",
                             ]
                         }

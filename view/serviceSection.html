@@ -13,7 +13,7 @@
                     <div ng-repeat="description in descr.description" class="single-description"
                         ng-bind-html="description"></div>
                     <div class="description-footer">
-                        <div ng-repeat="footer in descr.footer" ng-bind-html="footer"></div>
+                        <div ng-repeat="footer in descr.footer track by $index" ng-bind-html="footer"></div>
                     </div>
                 </div>
             </div>
