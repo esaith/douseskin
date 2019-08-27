@@ -77,7 +77,9 @@
         }
 
         .single-description {
-            margin: 10px 0;
+            display: flex;
+            align-content: center;
+            align-items: center;            
         }
 
         .description-footer {
@@ -86,6 +88,7 @@
             left: 30px;
             font-size: 0.8em;
             font-style: italic;
+            text-align: left;
         }
     }
 
@@ -103,12 +106,13 @@
 
     .strike {
         text-decoration: line-through;
+        padding-right: 8px;
     }
 
     .background {
         background-repeat: no-repeat;
         background-position: center;
-        background-size: co`;
+        background-size: cover;
         height: 100%;
         width: 100%;
 
@@ -142,7 +146,7 @@
         }
 
         &.makeup {
-            background-image: url("../images/makeup.jpg?n=3");
+            background-image: url("../images/makeup.jpeg?n=3");
         }
 
         &.special {
@@ -160,6 +164,22 @@
 
         &.packages {
             background-image: url("../images/packages.jpg?n=3");
+        }
+
+        &.cucumber {
+            background-image: url("../images/cucumber.jpg?n=3");
+        }
+        
+        &.expressfacial {
+            background-image: url("../images/expressfacial.jpg?n=3");
+        }
+        
+        &.lashes {
+            background-image: url("../images/lashes.jpg?n=3");
+        }
+        
+        &.lashremoval {
+            background-image: url("../images/lashremoval.jpg?n=3");
         }
     }
 }

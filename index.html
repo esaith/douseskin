@@ -1,6 +1,16 @@
 <html ng-app="douse">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PHH6JX8');</script>
+    <!-- End Google Tag Manager -->
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
@@ -17,6 +27,10 @@
 </head>
 
 <body ng-controller="homeController" ng-cloak>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="header-title">
         <div>Douse Skin Essentials</div>
         <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
@@ -39,9 +53,12 @@
         <div ng-show="selectedTab === 'about'">
             <div class="block">
                 <div class="menu-header">Essential Services</div>
-                <a class="no-style md-detail" href="#specials" ng-click="toggleMenu()">Specials</a>
-                <a class="no-style md-detail" href="#skin" ng-click="toggleMenu()">Skincare</a>
-                <a class="no-style md-detail" href="#makeup" ng-click="toggleMenu()">Makeup</a>
+                <a class="no-style md-detail" href="#specials" ng-click="closeMenu()">Specials</a>
+                <a class="no-style md-detail" href="#skin" ng-click="closeMenu()">Skincare</a>
+                <a class="no-style md-detail" href="#body" ng-click="closeMenu()">Body</a>
+                <a class="no-style md-detail" href="#lashes" ng-click="closeMenu()">Lashes</a>
+                <a class="no-style md-detail" href="#makeup" ng-click="closeMenu()">Makeup</a>
+                <a class="no-style md-detail" href="#packages" ng-click="closeMenu()">Packages</a>
             </div>
             <hr />
             <div class="block">
@@ -59,7 +76,7 @@
             </div>
             <hr />
             <div class="block">
-                <div class="menu-header">Associates</div>
+                <div class="menu-hea`r">Associates</div>
                 <img src="resources/images/valerie.jpg?n=3" class="associate" />
                 <div class="md-detail">Valerie LoCicero L.E.</div>
                 <div class="sm-detail"><a href="https://www.boldheartbeautyfl.com/">Bold Heart Beauty</a></div>
@@ -136,6 +153,14 @@
                 </div>
             </div>
         </div>
+        <div class="flex align-center justify-center services-link">
+            <a class="no-style md-detail" href="#specials" ng-click="closeMenu()">Specials</a> |
+            <a class="no-style md-detail" href="#skin" ng-click="closeMenu()">Skincare</a> |
+            <a class="no-style md-detail" href="#body" ng-click="closeMenu()">Body</a> |
+            <a class="no-style md-detail" href="#lashes" ng-click="closeMenu()">Lashes</a> |
+            <a class="no-style md-detail" href="#makeup" ng-click="closeMenu()">Makeup</a> |
+            <a class="no-style md-detail" href="#packages" ng-click="closeMenu()">Packages</a>
+        </div>
         <div class="strip" id="specials">
             <hr />
             Monthly Special
@@ -148,6 +173,18 @@
             <hr />
         </div>
         <service-section service="skinCareServices"></service-section>
+        <div class="strip" id="body">
+            <hr />
+            Body Services
+            <hr />
+        </div>
+        <service-section service="bodyServices"></service-section>
+        <div class="strip" id="lashes">
+            <hr />
+            Essential Lashes
+            <hr />
+        </div>
+        <service-section service="lashServices"></service-section>
         <div class="strip" id="makeup">
             <hr />
             Essential Makeup Services

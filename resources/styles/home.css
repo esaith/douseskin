@@ -42,6 +42,40 @@ body {
   .header-title {
     font-size: 2em; } }
 
+@media (max-width: 320px) {
+  .header-title {
+    font-size: 1.3em; } }
+
+.services-link {
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin: 25px 0;
+  font-size: 24px; }
+
+.swipe-1 {
+  transform: translateX(-100%); }
+
+.swipe-2 {
+  transform: translateX(-200%); }
+
+.swipe-3 {
+  transform: translateX(-300%); }
+
+.swipe-4 {
+  transform: translateX(-400%); }
+
+.swipe-5 {
+  transform: translateX(-500%); }
+
+.swipe-6 {
+  transform: translateX(-600%); }
+
+.swipe-7 {
+  transform: translateX(-700%); }
+
+.swipe-8 {
+  transform: translateX(-800%); }
+
 .swipe {
   transform: translateX(-100vw);
   transition: all 0.2s linear; }
@@ -54,8 +88,15 @@ body {
 
 .full-screen-width {
   width: 100vw;
+  height: 100%;
   position: relative;
   flex: 1 0 auto; }
+
+.margin-bottom {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  margin-bottom: 20px; }
 
 .header {
   position: relative;
@@ -112,10 +153,6 @@ hr {
   transform: translateY(-50%);
   transition: all 0.3s ease-in; }
 
-@media (max-width: 410px) {
-  .menu-button {
-    right: 10px; } }
-
 .menu-button.margin-top {
   margin-top: 10px;
   transition: all 0.3s ease-in; }
@@ -140,6 +177,15 @@ hr {
 .menu-button .line.back-slash {
   transform: translateY(3px) rotate(-45deg);
   transition: all 0.3s ease-in; }
+
+@media (max-width: 410px) {
+  .menu-button {
+    right: 10px;
+    width: 25px;
+    height: 20px; }
+  .menu-button .line.back-slash {
+    transform: translateY(0px) rotate(-45deg);
+    transition: all 0.3s ease-in; } }
 
 .body-content {
   transition: opacity 0.1s ease-in; }
@@ -184,17 +230,21 @@ hr {
   margin-right: 10px; }
 
 .menu .associate {
-  height: 400px;
+  height: 200px;
   width: inherit;
   margin: 0; }
 
+.menu .associate.veronica {
+  height: 400px; }
+
 .menu .food-dude {
-  height: 200px;
-  width: 200px; }
+  height: 100px;
+  width: 100px; }
 
 a {
   display: block;
-  color: blue; }
+  color: black;
+  padding: 0 10px; }
 
 a.no-style {
   color: black; }
