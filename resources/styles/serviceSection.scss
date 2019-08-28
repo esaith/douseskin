@@ -40,7 +40,7 @@
     .modal {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 0; 
         bottom: 0;
         right: 0;
         background-color: #444;
@@ -68,9 +68,8 @@
         }
 
         .description-header {
-            width: 75%;
             font-size: 1.5em;
-
+            width: 100%;
             @media (min-width: 600px) {
                 font-size: 2em;
             }
@@ -85,7 +84,7 @@
         .description-footer {
             position: absolute;
             bottom: 25px;
-            left: 30px;
+            left: 10px;
             font-size: 0.8em;
             font-style: italic;
             text-align: left;
@@ -106,7 +105,7 @@
 
     .strike {
         text-decoration: line-through;
-        padding-right: 8px;
+        padding: 0 8px;
     }
 
     .background {
@@ -117,24 +116,24 @@
         width: 100%;
 
         &.logo {
-            background-image: url("../images/background.png?n=4");
+            background-image: url("../images/background.png?n=5");
         }
 
         &.facial2 {
-            background-image: url("../images/facial2.jpg?n=4");
+            background-image: url("../images/facial2.jpg?n=5");
         }
 
         &.facial {
             background-position: 50% 29%;
-            background-image: url("../images/facial.jpg?n=4");
+            background-image: url("../images/facial.jpg?n=5");
         }
 
         &.backfacial {
-            background-image: url("../images/backfacial.jpg?n=4");
+            background-image: url("../images/backfacial.jpg?n=5");
         }
 
         &.minime {
-            background-image: url("../images/minime.jpg?n=4");
+            background-image: url("../images/minime.jpg?n=5");
             background-size: 150%;
             background-color: #d5d5d5;
             background-position: top;
@@ -146,40 +145,40 @@
         }
 
         &.makeup {
-            background-image: url("../images/makeup.jpeg?n=4");
+            background-image: url("../images/makeup.jpeg?n=5");
         }
 
-        &.special {
+        &.special { 
             transform: scale(-1);
-            background-image: url("../images/special.jpg?n=4");
+            background-image: url("../images/special.jpg?n=5");
         }
 
         &.eventful {
-            background-image: url("../images/eventful.jpg?n=4");
+            background-image: url("../images/eventful.jpg?n=5");
         }
 
         &.bride {
-            background-image: url("../images/bride.jpg?n=4");
+            background-image: url("../images/bride.jpg?n=5");
         }
 
         &.packages {
-            background-image: url("../images/packages.jpg?n=4");
+            background-image: url("../images/packages.jpg?n=5");
         }
 
         &.cucumber {
-            background-image: url("../images/cucumber.jpg?n=4");
+            background-image: url("../images/cucumber.jpg?n=5");
         }
         
         &.expressfacial {
-            background-image: url("../images/expressfacial.jpg?n=4");
+            background-image: url("../images/expressfacial.jpg?n=5");
         }
         
         &.lashes {
-            background-image: url("../images/lashes.jpg?n=4");
+            background-image: url("../images/lashes.jpg?n=5");
         }
         
         &.lashremoval {
-            background-image: url("../images/lashremoval.jpg?n=4");
+            background-image: url("../images/lashremoval.jpg?n=5");
         }
     }
 }
