@@ -35,7 +35,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
         $scope.specialServices = [
             {
                 src: "special",
-                service: $sce.trustAsHtml("1 Hour Ultrasonic Facial: <div class='strike'>$59</div> $25"),
+                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>1 Hour Ultrasonic Facial </div><div class='strike'> $59</div> $25</div>"),
                 descriptions:
                     [
                         {
@@ -45,7 +45,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "special",
-                service: $sce.trustAsHtml("Classic Lashes Full Set 2 Hours: <div class='strike'>$86</div> $50"),
+                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>Classic Lashes Full Set 2 Hours </div><div class='strike'> $86</div> $50</div>"),
                 descriptions:
                     [
                         {
@@ -55,7 +55,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "special",
-                service: $sce.trustAsHtml("Classic Lashes 1 Hour Fill: <div class='strike'>$45</div> $39"),
+                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>Classic Lashes 1 Hour Fill </div><div class='strike'> $45</div> $39</div>"),
                 descriptions:
                     [
                         {

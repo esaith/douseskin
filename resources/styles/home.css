@@ -22,6 +22,9 @@ body {
 .flex {
   display: flex; }
 
+.wrap {
+  flex-wrap: wrap; }
+
 .align-center {
   align-content: center; }
 

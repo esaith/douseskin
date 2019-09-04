@@ -17,7 +17,7 @@
     .previous-btn,
     .next-btn {
         position: absolute;
-        top: 0;
+        top: 0; 
         bottom: 0;
         left: 0;
         width: 50%;   
@@ -30,6 +30,10 @@
         left: auto;
     }
 
+    .no-wrap {
+        white-space: nowrap;
+    }
+
     .section-footer {
         font-size: 1.3em;
         position: absolute;
@@ -38,7 +42,7 @@
         font-weight: bold;
         left: 0;
         text-align: left;
-        padding: 0px 20px;
+        padding: 0px 15px;
 
         @media (min-width: 600px) {
             font-size: 2em;
@@ -121,7 +125,7 @@
 
     .strike {
         text-decoration: line-through;
-        padding: 0 8px;
+        padding: 0 5px;        
     }
 
     .background {
