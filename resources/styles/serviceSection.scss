@@ -13,11 +13,27 @@
         top: 50%;
         transform: translate(-50%, -50%);
     }
+    
+    .previous-btn,
+    .next-btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 50%;   
+        z-index: 2;
+        opacity: .2;
+    }
+
+    .next-btn {
+        right: 0;
+        left: auto;
+    }
 
     .section-footer {
         font-size: 1.3em;
         position: absolute;
-        bottom: 50px;
+        bottom: 50px; 
         color: white;
         font-weight: bold;
         left: 0;

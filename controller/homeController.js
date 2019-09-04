@@ -35,7 +35,27 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
         $scope.specialServices = [
             {
                 src: "special",
-                service: $sce.trustAsHtml("1 Hour Custom Facial: <div class='strike'>$52</div> $20"),
+                service: $sce.trustAsHtml("1 Hour Ultrasonic Facial: <div class='strike'>$59</div> $25"),
+                descriptions:
+                    [
+                        {
+                            description: ["Take advantage of this opening special to pamper yourself!"]
+                        }
+                    ]
+            },
+            {
+                src: "special",
+                service: $sce.trustAsHtml("Classic Lashes Full Set 2 Hours: <div class='strike'>$86</div> $50"),
+                descriptions:
+                    [
+                        {
+                            description: ["Take advantage of this opening special to pamper yourself!"]
+                        }
+                    ]
+            },
+            {
+                src: "special",
+                service: $sce.trustAsHtml("Classic Lashes 1 Hour Fill: <div class='strike'>$45</div> $39"),
                 descriptions:
                     [
                         {

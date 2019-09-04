@@ -1,5 +1,6 @@
-<div class="section" ng-repeat="section in service" ng-click="nextPage(section)" ng-swipe-left="nextPage(section)"
-    ng-swipe-right="previousPage(section)">
+<div class="section" ng-repeat="section in service" ng-swipe-left="nextPage(section)" ng-swipe-right="previousPage(section)">
+    <div class="previous-btn" ng-click="previousPage(section)"></div>
+    <div class="next-btn" ng-click="nextPage(section)"></div>
     <div class="background {{section.src}}"></div>
     <div class="section-content flex align-center no-swipe swipe-{{section.page}}">
         <div class="full-screen-width">
