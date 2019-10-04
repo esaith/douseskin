@@ -25,13 +25,13 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>Douse Skin Essentials</title>
-    <link rel="stylesheet" href="resources/styles/home.css?n=6">
-    <link rel="stylesheet" href="resources/styles/serviceSection.css?n=6">
+    <link rel="stylesheet" href="resources/styles/home.css?n=7">
+    <link rel="stylesheet" href="resources/styles/serviceSection.css?n=7">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
-    <script src="controller/homeController.js?n=6"></script>
-    <script src="directive/sectionDirective.js?n=6"></script>
+    <script src="controller/homeController.js?n=7"></script>
+    <script src="directive/sectionDirective.js?n=7"></script>
     <link rel="shortcut icon" href="resources/images/icon.jpg" />
 </head>
 
@@ -51,51 +51,36 @@
         </div>
     </div>
     <div class="body-content menu" ng-class="{'hidden': !isMenuOpen}">
-        <div class="flex align-center">
-            <div class="tab" ng-class="{'selected': selectedTab === 'about'}" ng-click="selectTab('about')">About</div>
-            <div class="tab" ng-class="{'selected': selectedTab === 'booking'}" ng-click="selectTab('booking')">Booking
-            </div>
-        </div>
-        <div ng-show="selectedTab === 'booking'">
-            <script src="https://square.site/appointments/buyer/widget/q2a5qjuxwn5eha/Q4W3RC4A64DCN.js"></script>
-        </div>
-        <div ng-show="selectedTab === 'about'">
+        <div class="tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">Contact Me</div>
+        <div ng-show="selectedTab.about" class="tab-content">
             <div class="block">
-                <div class="menu-header">Essential Services</div>
-                <a class="no-style md-detail" href="#specials" ng-click="closeMenu()">Specials</a>
-                <a class="no-style md-detail" href="#skin" ng-click="closeMenu()">Skincare</a>
-                <a class="no-style md-detail" href="#body" ng-click="closeMenu()">Body</a>
-                <a class="no-style md-detail" href="#lashes" ng-click="closeMenu()">Lashes</a>
-                <a class="no-style md-detail" href="#makeup" ng-click="closeMenu()">Makeup</a>
-                <a class="no-style md-detail" href="#packages" ng-click="closeMenu()">Packages</a>
-            </div>
-            <hr />
-            <div class="block">
-                <div class="menu-header">Contact Me</div>
-                <img src="resources/images/veronica.jpg?n=6" class="associate veronica" />
-                <div class="md-detail">Veronica Arielle L.E.</div>
-                <div class="sm-detail">Bold Heart Beauty Studio</div>
-                <div class="sm-detail">1843 Collier Pkwy Lutz, FL 33549</div>
+                <div class="md-detail">Veronica Arielle</div>
+                <div class="sm-detail padding-bottom">Licensed Esthetician</div>
+                <img src="resources/images/veronica.jpg?n=7" class="associate veronica padding-bottom" />
+                <div class="sm-detail underline" ng-click="openAddress()">Suite 250 Amberly Dr.</div>
+                <div class="sm-detail underline" ng-click="openAddress()">Tampa, FL. 33647</div>
+                <div class="xsm-detail padding-bottom" ng-click="openAddress()">(On 2nd Floor, Suite 250, Room 29)</div>
                 <div class="sm-detail">Sessions by Appointment Only</div>
                 <div class="sm-detail">Text 863.899.4799</div>
                 <div class="sm-detail flex align-center justify-center">
                     <img src="resources/images/instagram.png" />
                     <a href="https://www.instagram.com/douse.skin.essentials/">douse.skin.essentials</a>
                 </div>
-            </div>
-            <hr />
-            <div class="block">
-                <div class="menu-header">Associates</div>
-                <img src="resources/images/valerie.jpg?n=6" class="associate" />
-                <div class="md-detail">Valerie LoCicero L.E.</div>
-                <div class="sm-detail"><a href="https://www.boldheartbeautyfl.com/">Bold Heart Beauty</a></div>
-                <div class="sm-detail flex align-center justify-center">
-                    <img src="resources/images/instagram.png" />
-                    <a href="https://www.instagram.com/bold.heart.beauty/">bold.heart.beauty</a>
-                </div>
-            </div>
-            <hr />
-            <div class="block">
+            </div>          
+        </div>
+        <div class="tab" ng-click="openTab('booking')">Booking</div>
+        <div ng-show="selectedTab.booking" class="tab-content">
+                <div class="xsm-detail">Anyone under the age of 18 must have a parent or guardian present to sign consent form.</div>
+                <div class="xsm-detail padding-bottom">Anyone 13 years or younger must have a parent or guardian present to sign consent form and in the room during the service.</div>
+            <script src="https://square.site/appointments/buyer/widget/q2a5qjuxwn5eha/Q4W3RC4A64DCN.js"></script>
+        </div>
+        <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}" ng-click="openTab('giftcard')">eGift Cards</div>
+        <div ng-show="selectedTab.giftcard" class="tab-content">
+            <div class="button" ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase eGift Card</div>
+        </div>
+        <div class="tab" ng-click="openTab('community')">Community</div>
+        <div ng-show="selectedTab.community" class="tab-content">
+             <div class="block">
                 <div class="menu-header">Hosted By</div>
                 <svg class="food-dude" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152.496 119.844">
                     <defs>
@@ -148,18 +133,12 @@
                 </div>
             </div>
         </div>
+        
     </div>
     <div class="body-content" ng-class="{'hidden': isMenuOpen}">
         <div class="header">
             <div class="section">
-                <div class="background logo"></div>
-                <div class="border"></div>
-                <div class="logo-content">
-                    <div class="title">Douse Skin Essentials</div>
-                    <div>By</div>
-                    <div>Veronica Arielle</div>
-                    <div>Licensed Esthetician</div>
-                </div>
+                <div class="background logo"></div>                
             </div>
         </div>
         <div class="flex align-center justify-center services-link">

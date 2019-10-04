@@ -11,12 +11,16 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
 
         $scope.toggleMenu = function () {
             $scope.isMenuOpen = !$scope.isMenuOpen;
-            $scope.selectedTab = "about";
+            $scope.selectedTab = {};
         };
 
-        $scope.selectTab = function (tab) {
-            $scope.selectedTab = tab;
+        $scope.openTab = function (tab) {
+            $scope.selectedTab[tab] = !$scope.selectedTab[tab];
         };
+
+        $scope.goToLink = function(link) {
+            window.location.href = link;
+        }
 
         $scope.toggleDescription = function (service) {
             service.swiped = !service.swiped;
@@ -32,82 +36,69 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             });
         });
 
+        $scope.openAddress = function () {
+            if /* if we're on iOS, open in Apple Maps */
+                ((navigator.platform.indexOf("iPhone") != -1) ||
+                (navigator.platform.indexOf("iPad") != -1) ||
+                (navigator.platform.indexOf("iPod") != -1))
+                window.open("maps://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
+            else /* else use Google */
+                window.open("https://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
+        };
+
         $scope.specialServices = [
             {
                 src: "special",
-                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>1 Hour Ultrasonic Facial </div><div class='strike'> $59</div> $25</div>"),
+                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>October Specials</div>"),
                 descriptions:
                     [
                         {
-                            description: ["Take advantage of this opening special to pamper yourself!"]
-                        }
-                    ]
-            },
-            {
-                src: "special",
-                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>Classic Lashes Full Set 2 Hours </div><div class='strike'> $86</div> $50</div>"),
-                descriptions:
-                    [
-                        {
-                            description: ["Take advantage of this opening special to pamper yourself!"]
-                        }
-                    ]
-            },
-            {
-                src: "special",
-                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>Classic Lashes 1 Hour Fill </div><div class='strike'> $45</div> $39</div>"),
-                descriptions:
-                    [
-                        {
-                            description: ["Take advantage of this opening special to pamper yourself!"]
+                            description: [
+                                "Classic Lashes",
+                                "Full Set - $50",
+                                "Fill - $39",
+                                $sce.trustAsHtml("<div class='padding'></div>"),
+                                "Volume Lashes",
+                                "Full Set - $60",
+                                "Fill Set - $49",
+                            ]
                         }
                     ]
             }
         ];
 
-        $scope.skinCareServices = [
-            {
-                src: "cucumber",
-                service: "35 Min Custom Facial: $44",
-                descriptions:
-                    [
-                        {
-                            description: [
-                                "Express facial for those on the go.",
-                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                                "double cleanse | exfoliation | express massage | masque | hydration | spf | steam | hot towels | oscillating brush"
-                            ]
-                        }
-                    ]
-            },
+        $scope.skinCareServices = [            
             {
                 src: "facial2",
-                service: "1 Hour Custom Facial: $52",
+                service: "Custom Facials",
                 descriptions:
                     [
                         {
                             description: [
+                                "35 Min Express Facial",
+                                "Express facial for those on the go.",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+                                "double cleanse | exfoliation | express massage | masque | hydration | spf | steam | hot towels | LED light therapy"
+                            ]
+                        },
+                        {
+                            description: [
+                                "1 Hour Custom Facial",
                                 "This facial treats all skin types to reveal a brighter & clearer complexion.",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                                "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
+                                "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
-                        }
-                    ]
-            },
-            {
-                src: "expressfacial",
-                service: "1.5 Hour Custom Facial: $62",
-                descriptions:
-                    [
+                        },
                         {
                             description: [
+                                "1.5 Hour Extended Facial",
                                 "Extended facial intended for deep relaxation & of course rejuvinated skin!",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                                "expended deep cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | oscillating brush"
+                                "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
                         }
                     ]
-            },
+            },            
             {
                 src: "facial",
                 service: "1 Hour Ultrasonic Facial: $59",
@@ -117,7 +108,21 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                             description: [
                                 "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for cell turnover and best skincare effectiveness.",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                                "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush | ultrasonic cleanser"
+                                "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy | ultrasonic cleanser"
+                            ]
+                        }
+                    ]
+            },
+            {
+                src: "microderm",
+                service: "45 Min Microdermabrasion: $69",
+                descriptions:
+                    [
+                        {
+                            description: [
+                                "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+                                "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | LED light therapy"
                             ]
                         }
                     ]
@@ -288,11 +293,25 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                             description: [
                                 "This facial targets those hard to reach areas revealing a smoother & more hydrated back.",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                                "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | oscillating brush"
+                                "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
                         }
                     ]
-            }
+            },
+            {
+                src: "microderm",
+                service: "1 Hour Back Microdermabrasion: $86",
+                descriptions:
+                    [
+                        {
+                            description: [
+                                "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
+                                $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+                                "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | LED light therapy"
+                            ]
+                        }
+                    ]
+            },
         ];
 
         $scope.lashServices = [
@@ -306,6 +325,21 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "Full Set 2 Hours $86",
                                 $sce.trustAsHtml("<div class='margin-bottom'>Each healthy individual lash has a lash extension adhered to it creating more defined eyes</div>"),
                                 "1 Hour Fill $45",
+                                "Includes removal of grown out extensions & adding lashes to maintain a full set (every 2 - 3 weeks)",
+                            ]
+                        }
+                    ]
+            },
+            {
+                src: "volumelashes",
+                service: "Volume Lashes",
+                descriptions:
+                    [
+                        {
+                            description: [
+                                "Full Set 2 Hours $96",
+                                $sce.trustAsHtml("<div class='margin-bottom'>Each healthy individual lash has three lash extensions adhered to it creating more striking eyes</div>"),
+                                "1 Hour Fill $55",
                                 "Includes removal of grown out extensions & adding lashes to maintain a full set (every 2 - 3 weeks)",
                             ]
                         }

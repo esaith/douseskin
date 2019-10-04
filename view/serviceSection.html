@@ -6,8 +6,7 @@
         <div class="full-screen-width">
             <div class="section-footer flex align-center" ng-bind-html="section.service"></div>
         </div>
-        <div ng-repeat="descr in section.descriptions">
-            <div class="full-screen-width">
+        <div ng-repeat="descr in section.descriptions" class="full-screen-width">
                 <div class="modal"></div>
                 <div class="description">
                     <div class="margin-bottom-small description-header flex align-center justify-center" ng-bind-html="section.service"></div>
@@ -16,7 +15,7 @@
                     <div class="description-footer">
                         <div ng-repeat="footer in descr.footer track by $index" ng-bind-html="footer"></div>
                     </div>
-                </div>
+
             </div>
         </div>
     </div>

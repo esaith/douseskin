@@ -1,7 +1,7 @@
 angular.module("douse").directive("serviceSection", function () {
     return {
         restrict: 'E',
-        templateUrl: "view/serviceSection.html?n=6",
+        templateUrl: "view/serviceSection.html?n=7",
         scope: {
             service: "="
         },
@@ -17,6 +17,8 @@ angular.module("douse").directive("serviceSection", function () {
                     service.page = 0;
                 } else if (service.page < service.descriptions.length) {
                     ++service.page;
+                } else {
+                    service.page = 0;
                 }
             };
 
