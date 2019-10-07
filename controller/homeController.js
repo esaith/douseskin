@@ -18,7 +18,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             $scope.selectedTab[tab] = !$scope.selectedTab[tab];
         };
 
-        $scope.goToLink = function(link) {
+        $scope.goToLink = function (link) {
             window.location.href = link;
         }
 
@@ -38,8 +38,8 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
 
         $scope.openAddress = function () {
             if /* if we're on iOS, open in Apple Maps */
-                ((navigator.platform.indexOf("iPhone") != -1) ||
-                (navigator.platform.indexOf("iPad") != -1) ||
+            ((navigator.platform.indexOf("iPhone") != -1) ||
+            (navigator.platform.indexOf("iPad") != -1) ||
                 (navigator.platform.indexOf("iPod") != -1))
                 window.open("maps://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
             else /* else use Google */
@@ -60,14 +60,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 $sce.trustAsHtml("<div class='padding'></div>"),
                                 "Volume Lashes",
                                 "Full Set - $60",
-                                "Fill Set - $49",
+                                "Fill - $49",
                             ]
                         }
                     ]
             }
         ];
 
-        $scope.skinCareServices = [            
+        $scope.skinCareServices = [
             {
                 src: "facial2",
                 service: "Custom Facials",
@@ -75,8 +75,9 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                     [
                         {
                             description: [
-                                "35 Min Express Facial",
+                                "35 Minutes Express Facial",
                                 "Express facial for those on the go.",
+                                "$44",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | express massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
@@ -85,6 +86,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                             description: [
                                 "1 Hour Custom Facial",
                                 "This facial treats all skin types to reveal a brighter & clearer complexion.",
+                                "$52",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
@@ -93,20 +95,23 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                             description: [
                                 "1.5 Hour Extended Facial",
                                 "Extended facial intended for deep relaxation & of course rejuvinated skin!",
+                                "$62",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
                         }
                     ]
-            },            
+            },
             {
                 src: "facial",
-                service: "1 Hour Ultrasonic Facial: $59",
+                service: "Ultrasonic Facial",
                 descriptions:
                     [
                         {
                             description: [
+                                "1 Hour",
                                 "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for cell turnover and best skincare effectiveness.",
+                                "$59",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy | ultrasonic cleanser"
                             ]
@@ -115,12 +120,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "microderm",
-                service: "45 Min Microdermabrasion: $69",
+                service: "Microdermabrasion",
                 descriptions:
                     [
                         {
                             description: [
+                                "45 Minutes",
                                 "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
+                                "$69",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | LED light therapy"
                             ]
@@ -129,14 +136,16 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "minime",
-                service: "30 Min Mini Me Facial: $30",
+                service: "Mini Me Facial",
                 descriptions:
                     [
                         {
                             description: [
+                                "30 Minutes",
                                 "A hydrating facial tailored to the little ones 12 years & younger.*",
+                                "$30",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                                "cleanse | exfoliation | express massage | masque | hydration | spf | steam | hot towels | cucumber slices"
+                                "cleanse | exfoliation | express massage | masque | hydration | spf | steam | warm towels | cucumber slices"
                             ],
                             footer: ["* Must be accompanied by an adult."]
                         }
@@ -147,12 +156,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
         $scope.makeupServices = [
             {
                 src: "makeup",
-                service: "1 Hour Natural Full Face Makeover: $48",
+                service: "Natural Full Face Makeover",
                 descriptions:
                     [
                         {
                             description: [
+                                "1 Hour ",
                                 "Enhance your natural beauty with this makeover!",
+                                "$48",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "correct & conceal | foundation | brows | soft natural eye | blush & bronze | lip"
                             ],
@@ -162,12 +173,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "eventful",
-                service: "1.5 Hour Glam Full Face Makeover: $58",
+                service: "Glam Full Face Makeover",
                 descriptions:
                     [
                         {
                             description: [
+                                "1.5 Hour",
                                 "Soft glam makeover perfect for any event!",
+                                "$58",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "correct & conceal | foundation | brows | smokey eye | contour & sculpting | blush & bronze | falsies | lip"
                             ],
@@ -177,12 +190,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "bride",
-                service: "1.5 Hour Bridal Makeover (Trial & Final): $89",
+                service: "Bridal Makeover (Trial & Final)",
                 descriptions:
                     [
                         {
                             description: [
+                                "1.5 Hour",
                                 "A perfect makeover for every bride on her special day, includes both trial & final looks each 1.5 hours long for a total of $89.",
+                                "$89",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "correct & conceal | foundation | brows | soft glam eye | contour & sculpting | blush & bronze | falsies | lip",
                                 "(x2)"
@@ -202,10 +217,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Beautify Me I*",
-                                "35 Min Custom Facial + 1 Hour Natural Makeover",
+                                "35 Minutes Custom Facial + 1 Hour Natural Makeover",
                                 $sce.trustAsHtml("<div class='margin-bottom'><div class='strike'>$92</div> $82</div>"),
                                 "Beautify Me II*",
-                                "35 Min Custom Facial + 1.5 Hour Glam Makeover",
+                                "35 Minutes Custom Facial + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$102</div> $92")
                             ],
                             footer: [
@@ -216,10 +231,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "New Me I*",
-                                "35 Min Custom Facial + 2 Hour Classic Full Set",
+                                "35 Minutes Custom Facial + 2 Hour Classic Full Set",
                                 $sce.trustAsHtml("<div class='margin-bottom'><div class='strike'>$130</div> $116</div>"),
                                 "New Me II*",
-                                "35 Min Custom Facial + 2 Hour Volume/Hybrid Full Set",
+                                "35 Minutes Custom Facial + 2 Hour Volume/Hybrid Full Set",
                                 $sce.trustAsHtml("<div class='strike'>$140</div> $126")
                             ],
                             footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
@@ -227,10 +242,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Freshen Up I*",
-                                "35 Min Custom Facial + 1 Hour Classic Fill",
+                                "35 Minutes Custom Facial + 1 Hour Classic Fill",
                                 $sce.trustAsHtml("<div class='margin-bottom'><div class='strike'>$89</div> $79</div>"),
                                 "New Me II*",
-                                "35 Min Custom Facial + 1 Hour Volume/Hybrid Fill",
+                                "35 Minutes Custom Facial + 1 Hour Volume/Hybrid Fill",
                                 $sce.trustAsHtml("<div class='strike'>$99</div> $89")
                             ],
                             footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
@@ -260,10 +275,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "The Works I*",
-                                "35 Min Custom Facial + 2 Hour Classic Full + 1 Hour Natural Makeover",
+                                "35 Minutes Custom Facial + 2 Hour Classic Full + 1 Hour Natural Makeover",
                                 $sce.trustAsHtml("<div class='margin-bottom'><div class='strike'>$178</div> $160</div>"),
                                 "The Works II*",
-                                "35 Min Custom Facial + 2 Hour Volume/Hybrid Full Set + 1.5 Hour Glam Makeover",
+                                "35 Minutes Custom Facial + 2 Hour Volume/Hybrid Full Set + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$198</div> $180")
                             ],
                             footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
@@ -271,10 +286,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Pamper Me I*",
-                                "35 Min Custom Facial + 1 Hour Classic Fill + 1 Hour Natural Makeover",
+                                "35 Minutes Custom Facial + 1 Hour Classic Fill + 1 Hour Natural Makeover",
                                 $sce.trustAsHtml("<div class='margin-bottom'><div class='strike'>$137</div> $122</div>"),
                                 "Pamper Me II*",
-                                "35 Min Custom Facial + 1 Hour Volume/Hybrid Full Set + 1.5 Hour Glam Makeover",
+                                "35 Minutes Custom Facial + 1 Hour Volume/Hybrid Full Set + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$157</div> $142")
                             ],
                             footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
@@ -286,12 +301,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
         $scope.bodyServices = [
             {
                 src: "backfacial",
-                service: "1 Hour Back Facial: $66",
+                service: "Back Facial",
                 descriptions:
                     [
                         {
                             description: [
+                                "1 Hour",
                                 "This facial targets those hard to reach areas revealing a smoother & more hydrated back.",
+                                "$66",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy"
                             ]
@@ -300,12 +317,14 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
             },
             {
                 src: "microderm",
-                service: "1 Hour Back Microdermabrasion: $86",
+                service: "Back Microdermabrasion",
                 descriptions:
                     [
                         {
                             description: [
+                                "1 Hour",
                                 "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
+                                "$86",
                                 $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                                 "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | LED light therapy"
                             ]
@@ -353,7 +372,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                         {
                             description: [
                                 "Need a clean slate or wanting to take a break from lashes.",
-                                "Removal 20 Min $12"
+                                "Removal 20 Minutes $12"
                             ]
                         }
                     ]
