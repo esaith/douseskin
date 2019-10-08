@@ -1,214 +1,214 @@
 .section {
-    position: relative;
-    width: 100%;
-    height: 60vh;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  top: 0;
+  margin: 25px 0;
+  font-family: RockwellNova !important;
+  overflow: hidden;
+
+  .logo-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .previous-btn,
+  .next-btn {
+    position: absolute;
     top: 0;
-    margin: 25px 0;
-    font-family: RockwellNova !important;
-    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    z-index: 2;
+    opacity: 0.2;
+  }
 
-    .logo-content {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+  .next-btn {
+    right: 0;
+    left: auto;
+  }
+
+  .no-wrap {
+    white-space: nowrap;
+  }
+
+  .section-footer {
+    font-size: 1.3em;
+    position: absolute;
+    bottom: 50px;
+    color: white;
+    left: 0;
+    text-align: left;
+    padding: 0px 15px;
+    background-color: #2a4d48;
+
+    @media (max-width: 500px) {
+      font-size: 0.85em;
     }
-    
-    .previous-btn,
-    .next-btn {
-        position: absolute; 
-        top: 0; 
-        bottom: 0;
-        left: 0;
-        width: 50%;   
-        z-index: 2;
-        opacity: .2;
-    }
+  }
 
-    .next-btn {
-        right: 0;
-        left: auto;
-    }
+  .section-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
-    .no-wrap {
-        white-space: nowrap;
-    }
+  .modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #444;
+    opacity: 0.8;
+  }
 
-    .section-footer {
-        font-size: 1.3em;
-        position: absolute;
-        bottom: 50px; 
-        color: white;
-        left: 0;
-        text-align: left;
-        padding: 0px 15px;
-        background-color: #2a4d48;
+  .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-size: 0.8em;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
 
-        @media (max-width: 500px) {
-            font-size: .85em;
-        }
-    }
-
-    .section-content {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
-    .modal {
-        position: absolute;
-        top: 0;
-        left: 0; 
-        bottom: 0;
-        right: 0;
-        background-color: #444;
-        opacity: 0.8;
-    } 
-
-    .description {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        font-size: .8em;
-        color: white;
-        padding: 15px;
-        box-sizing: border-box;
-
-        @media (min-width: 600px) {
-            font-size: 1.1em;
-        }
-
-        .description-header {
-            font-size: 1.5em;
-            width: 100%;
-            @media (min-width: 600px) {
-                font-size: 2em;
-            }
-        }
-
-        .single-description {
-            display: flex;
-            align-content: center;
-            align-items: center;            
-        }
-
-        .description-footer {
-            position: absolute;
-            bottom: 25px;
-            left: 10px;
-            font-size: 0.8em;
-            font-style: italic;
-            text-align: left;
-        }
+    @media (min-width: 600px) {
+      font-size: 1.1em;
     }
 
-    .circle {
-        border: 3px solid white;
-        border-radius: 50%;
-        height: 5px;
-        width: 5px;
-        margin: 0 5px;
-
-        &.fill {
-            background-color: white;
-        }
+    .description-header {
+      font-size: 1.5em;
+      width: 100%;
+      @media (min-width: 600px) {
+        font-size: 2em;
+      }
     }
 
-    .strike {
-        text-decoration: line-through;
-        padding: 0 5px;        
+    .single-description {
+      display: flex;
+      align-content: center;
+      align-items: center;
     }
 
-    .background {
-        background-repeat: no-repeat;
-        background-position: center;
+    .description-footer {
+      position: absolute;
+      bottom: 25px;
+      left: 10px;
+      font-size: 0.8em;
+      font-style: italic;
+      text-align: left;
+    }
+  }
+
+  .circle {
+    border: 3px solid white;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    margin: 0 5px;
+
+    &.fill {
+      background-color: white;
+    }
+  }
+
+  .strike {
+    text-decoration: line-through;
+    padding: 0 5px;
+  }
+
+  .background {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    &.logo {
+      background-image: url("../images/background.jpg?n=5");
+      background-size: contain;
+    }
+
+    &.facial2 {
+      background-image: url("../images/facial2.jpg?n=5");
+    }
+
+    &.facial {
+      background-position: 50% 29%;
+      background-image: url("../images/facial.jpg?n=5");
+    }
+
+    &.backfacial {
+      background-image: url("../images/backfacial.jpg?n=5");
+    }
+
+    &.volumelashes {
+      background-image: url("../images/volumelashes.jpg?n=5");
+      background-position: 50% 22%;
+    }
+
+    &.minime {
+      background-image: url("../images/minime.jpg?n=5");
+      background-size: 150%;
+      background-color: #d5d5d5;
+      background-position: top;
+
+      @media (min-width: 950px) {
         background-size: cover;
-        height: 100%;
-        width: 100%;
-
-        &.logo {
-            background-image: url("../images/background.png?n=5");
-            background-size: contain;
-        }
-
-        &.facial2 {
-            background-image: url("../images/facial2.jpg?n=5");
-        }
-
-        &.facial {
-            background-position: 50% 29%;
-            background-image: url("../images/facial.jpg?n=5");
-        }
-
-        &.backfacial {
-            background-image: url("../images/backfacial.jpg?n=5");
-        }
-
-        &.volumelashes {
-            background-image: url("../images/volumelashes.jpg?n=5");
-            background-position: 50% 22%;
-        }
-
-        &.minime {
-            background-image: url("../images/minime.jpg?n=5");
-            background-size: 150%;
-            background-color: #d5d5d5;
-            background-position: top;
-
-            @media (min-width: 950px) {
-                background-size: cover;
-                background-position: center;
-            }
-        }
-
-        &.makeup {
-            background-image: url("../images/makeup.jpeg?n=5");
-        }
-
-        &.microderm {
-            background-image: url("../images/microderm.jpg?n=5");
-        }
-
-        &.special { 
-            transform: scale(-1);
-            background-image: url("../images/special.jpg?n=5");
-        }
-
-        &.eventful {
-            background-image: url("../images/eventful.jpg?n=5");
-        }
-
-        &.bride {
-            background-image: url("../images/bride.jpg?n=5");
-        }
-
-        &.packages {
-            background-image: url("../images/packages.jpg?n=5");
-        }
-
-        &.cucumber {
-            background-image: url("../images/cucumber.jpg?n=5");
-        }
-        
-        &.expressfacial {
-            background-image: url("../images/expressfacial.jpg?n=5");
-        }
-        
-        &.lashes {
-            background-image: url("../images/lashes.jpg?n=5");
-        }
-        
-        &.lashremoval {
-            background-image: url("../images/lashremoval.jpg?n=5");
-        }
+        background-position: center;
+      }
     }
+
+    &.makeup {
+      background-image: url("../images/makeup.jpeg?n=5");
+    }
+
+    &.microderm {
+      background-image: url("../images/microderm.jpg?n=5");
+    }
+
+    &.special {
+      transform: scale(-1);
+      background-image: url("../images/special.jpg?n=5");
+    }
+
+    &.eventful {
+      background-image: url("../images/eventful.jpg?n=5");
+    }
+
+    &.bride {
+      background-image: url("../images/bride.jpg?n=5");
+    }
+
+    &.packages {
+      background-image: url("../images/packages.jpg?n=5");
+    }
+
+    &.cucumber {
+      background-image: url("../images/cucumber.jpg?n=5");
+    }
+
+    &.expressfacial {
+      background-image: url("../images/expressfacial.jpg?n=5");
+    }
+
+    &.lashes {
+      background-image: url("../images/lashes.jpg?n=5");
+    }
+
+    &.lashremoval {
+      background-image: url("../images/lashremoval.jpg?n=5");
+    }
+  }
 }
