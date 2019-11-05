@@ -10,11 +10,11 @@
 
 body {
   text-align: center !important;
-  font-family: RockwellNova !important;
+  font-family: "RockwellNova", sans-serif !important;
   margin: 0;
   background-color: #fafafa;
 
-  &.paper-background {
+  &.paper-background { 
     background-image: url("../images/menu-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -376,5 +376,17 @@ a {
 
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
+  }
+}
+
+.events {
+  .event-header {
+    font-size: 17px;
+    text-decoration: underline;
+  }
+
+  td {
+    border-bottom: 1px solid #070606;
+    padding: 10px 0;
   }
 }

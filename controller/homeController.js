@@ -1,7 +1,21 @@
-angular.module("douse", ['ngTouch', 'ngSanitize']);
+angular.module("douse", ['ngTouch', 'ngSanitize', 'ngRoute']);
+angular.module('douse').config(function ($routeProvider) {
+    $routeProvider
+        .when('/holidaynetworkingevent', {
+            templateUrl: 'view/networkingEvent.html',
+            controller: 'networkingEventController'
+        })
+        .when('/', {
+            templateUrl: 'view/homeController.html',
+            controller: 'homeController'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+});
 
 angular.module("douse").controller("homeController", ['$scope', '$sce', '$document',
-    function ($scope, $sce, $document) {
+    function homeController($scope, $sce, $document) {
         $scope.isMenuOpen = false;
         $scope.showBackToTopButton = false;
 
@@ -38,8 +52,8 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
 
         $scope.openAddress = function () {
             if /* if we're on iOS, open in Apple Maps */
-            ((navigator.platform.indexOf("iPhone") != -1) ||
-            (navigator.platform.indexOf("iPad") != -1) ||
+                ((navigator.platform.indexOf("iPhone") != -1) ||
+                (navigator.platform.indexOf("iPad") != -1) ||
                 (navigator.platform.indexOf("iPod") != -1))
                 window.open("maps://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
             else /* else use Google */
@@ -49,18 +63,13 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
         $scope.specialServices = [
             {
                 src: "special",
-                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>October Specials</div>"),
+                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>November Special</div>"),
                 descriptions:
                     [
                         {
                             description: [
-                                "Classic Lashes",
-                                "Full Set - $50",
-                                "Fill - $39",
-                                $sce.trustAsHtml("<div class='padding'></div>"),
-                                "Volume Lashes",
-                                "Full Set - $60",
-                                "Fill - $49",
+                                "Microdermabrasion",
+                                "45 min - $45"
                             ]
                         }
                     ]
@@ -223,10 +232,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "35 Minutes Custom Facial + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$102</div> $92")
                             ],
-                            footer: [
-                                "* All appointments are scheduled same day in consecutive order.",
-                                "They cannot be divided into different days."
-                            ]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         },
                         {
                             description: [
@@ -237,7 +243,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "35 Minutes Custom Facial + 2 Hour Volume/Hybrid Full Set",
                                 $sce.trustAsHtml("<div class='strike'>$140</div> $126")
                             ],
-                            footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         },
                         {
                             description: [
@@ -248,7 +254,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "35 Minutes Custom Facial + 1 Hour Volume/Hybrid Fill",
                                 $sce.trustAsHtml("<div class='strike'>$99</div> $89")
                             ],
-                            footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         },
                         {
                             description: [
@@ -259,7 +265,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "2 Hour Classic Fill + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$154</div> $140")
                             ],
-                            footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         },
                         {
                             description: [
@@ -270,7 +276,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "1 Hour Classic Fill + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$113</div> $103")
                             ],
-                            footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         },
                         {
                             description: [
@@ -281,7 +287,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "35 Minutes Custom Facial + 2 Hour Volume/Hybrid Full Set + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$198</div> $180")
                             ],
-                            footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         },
                         {
                             description: [
@@ -292,7 +298,7 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 "35 Minutes Custom Facial + 1 Hour Volume/Hybrid Full Set + 1.5 Hour Glam Makeover",
                                 $sce.trustAsHtml("<div class='strike'>$157</div> $142")
                             ],
-                            footer: ["* All appointments are scheduled same day in consecutive order.", "They cannot be divided into different days."]
+                            footer: ["* May be divided into separate days (within a 10 day period).", "Paid in-full during first service."]
                         }
                     ]
             }
@@ -345,7 +351,8 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 $sce.trustAsHtml("<div class='margin-bottom'>Each healthy individual lash has a lash extension adhered to it creating more defined eyes</div>"),
                                 "1 Hour Fill $45",
                                 "Includes removal of grown out extensions & adding lashes to maintain a full set (every 2 - 3 weeks)",
-                            ]
+                            ],
+                            footer: ["* Schedule a free lash patch test - ideal for 1st time clients scheduled day before full set to ensure smooth application process (20 min)."]
                         }
                     ]
             },
@@ -360,9 +367,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
                                 $sce.trustAsHtml("<div class='margin-bottom'>Each healthy individual lash has three lash extensions adhered to it creating more striking eyes</div>"),
                                 "1 Hour Fill $55",
                                 "Includes removal of grown out extensions & adding lashes to maintain a full set (every 2 - 3 weeks)",
-                            ]
+                            ],
+                            footer: ["* Schedule a free lash patch test - ideal for 1st time clients scheduled day before full set to ensure smooth application process (20 min)."]
                         }
-                    ]
+                    ],
             },
             {
                 src: "lashremoval",
