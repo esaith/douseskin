@@ -63,15 +63,10 @@ angular.module("douse").controller("homeController", ['$scope', '$sce', '$docume
         $scope.specialServices = [
             {
                 src: "special",
-                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>November Special</div>"),
+                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>January Special</div>"),
                 descriptions:
                     [
-                        {
-                            description: [
-                                "Microdermabrasion",
-                                "45 min - $45"
-                            ]
-                        }
+                       
                     ]
             }
         ];

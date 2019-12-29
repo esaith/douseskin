@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div class="swipe-dot">
+    <div class="swipe-dot" ng-if="section.descriptions.length > 0">
         <div class="circle" ng-class="{'fill': section.page === 0}"> </div>
         <div class="circle" ng-repeat="descr in section.descriptions" ng-class="{'fill': section.page === $index + 1}">
         </div>

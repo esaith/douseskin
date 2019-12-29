@@ -8,7 +8,7 @@
 
 body {
   text-align: center !important;
-  font-family: RockwellNova !important;
+  font-family: "RockwellNova", sans-serif !important;
   margin: 0;
   background-color: #fafafa; }
 
@@ -334,3 +334,11 @@ a.no-style:active {
   padding: 3px;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg); }
+
+.events .event-header {
+  font-size: 17px;
+  text-decoration: underline; }
+
+.events td {
+  border-bottom: 1px solid #070606;
+  padding: 10px 0; }
