@@ -1,14 +1,20 @@
 <div class="section" ng-repeat="section in service" ng-swipe-left="nextPage(section)" ng-swipe-right="previousPage(section)">
-    <div class="previous-btn" ng-click="previousPage(section)"></div>
-    <div class="next-btn" ng-click="nextPage(section)"></div>
+    <div class="previous-btn" ng-click="previousPage(section, true)"></div>
+    <div class="next-btn" ng-click="nextPage(section, true)"></div>
     <div class="background {{section.src}}"></div>
     <div class="section-content flex align-center no-swipe swipe-{{section.page}}">
         <div class="full-screen-width">
             <div class="section-footer flex align-center" ng-bind-html="section.service"></div>
         </div>
-        <div ng-repeat="descr in section.descriptions" class="full-screen-width">
-                <div class="modal"></div>
-                <div class="description">
+        <div ng-repeat="descr in section.descriptions track by $index" class="full-screen-width">
+                <div class="background" ng-if="descr.src && descr.src.indexOf('.mp4') > -1 && $index + 1 === section.page">
+                    <video autoplay="true" loop>
+                        <source ng-src="{{descr.src}}" type="video/mp4">
+                    </video>
+                </div>
+                <div class="background" ng-style="{'background-image': 'url({{descr.src}})'}"></div>
+                <div class="modal" ng-if="descr.description"></div>
+                <div class="description" ng-if="descr.description">
                     <div class="margin-bottom-small description-header flex align-center justify-center" ng-bind-html="section.service"></div>
                     <div ng-repeat="description in descr.description" class="single-description"
                         ng-bind-html="description"></div>
