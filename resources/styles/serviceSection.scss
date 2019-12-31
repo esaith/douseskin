@@ -135,7 +135,14 @@
     height: 100%;
     width: 100%;
     filter: grayscale(1);
-    background-color: white;
+
+    &.descr {
+      background-color: white;
+    }
+
+    @media (min-width: 600px) {
+      background-size: contain;
+    }
 
     &.logo {
       background-image: url("../images/background.jpg?n=11");
@@ -167,8 +174,8 @@
       background-color: #d5d5d5;
       background-position: top;
 
-      @media (min-width: 950px) {
-        background-size: cover;
+      @media (min-width: 600px) {
+        background-size: contain;
         background-position: center;
       }
     }
@@ -212,6 +219,18 @@
 
     &.lashremoval {
       background-image: url("../images/lashremoval.jpg?n=11");
+    }
+
+    &.salts {
+      background-image: url("../images/salts.jpg?n=11");
+    }
+
+    &.backmicroderm {
+      background-image: url("../images/backmicroderm.jpg?n=11");
+    }
+
+    &.magazine01 {
+      background-image: url("../images/magazine01.jpg?n=11");
     }
 
     video {

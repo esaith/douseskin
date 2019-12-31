@@ -4,8 +4,9 @@
                 style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
         <div class="header-title bounceInDown animated">
-            <div>
-                Closed from Jan. 9th to 15th
+            <div>Closed from Jan. 9th to 15th</div>
+            <div class="flex align-center justify-center">Schedule an appointment 
+                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21"> <defs> <style> .cls-1 { fill: none; } </style> </defs> <g id="Group_1" data-name="Group 1" transform="translate(-214 -238)"> <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="21" height="21" transform="translate(214 238)"/> <g id="back" transform="translate(214.494 165.504)"> <path id="Path_1" data-name="Path 1" d="M18.964,81.871H3.286l4.289-4.287a.965.965,0,0,0-1.36-1.36L.287,82.153a.965.965,0,0,0,0,1.36l5.928,5.928a.965.965,0,0,0,1.36-1.36L3.286,83.795H18.964a.965.965,0,1,0,0-1.924Z" transform="translate(0)"/> </g> </g> </svg>
             </div>
             <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
                 <div class="stack">
@@ -24,12 +25,17 @@
                 <img src="resources/images/veronica.jpg?n=9" class="associate veronica margin-bottom" />
                 <div class="sm-detail underline" ng-click="openAddress()">15310 Amberly Dr. Suite 250</div>
                 <div class="sm-detail underline" ng-click="openAddress()">Tampa, FL. 33647</div>
-                <div class="xsm-detail padding-bottom" ng-click="openAddress()">(On 2nd Floor, Suite 250)</div>
+                <div class="xsm-detail" ng-click="openAddress()">On 2nd Floor, Suite 250</div>
+                <div class="xsm-detail padding-bottom" ng-click="openAddress()">Stop at receptionist to check-in</div>
                 <div class="sm-detail">Sessions by Appointment Only</div>
                 <div class="sm-detail">Text 863.899.4799</div>
                 <div class="sm-detail flex align-center justify-center">
                     <img src="resources/images/instagram.png" />
-                    <a href="https://www.instagram.com/douse.skin.essentials/">douse.skin.essentials</a>
+                    <a href="https://www.instagram.com/douseskinessentials/">douse.skin.essentials</a>
+                </div>
+                <div class="sm-detail flex align-center justify-center">
+                    <img src="resources/images/facebook-icon.jpg" />
+                    <a href="https://www.facebook.com/douse.skin.essentials/">douse skin essentials</a>
                 </div>
             </div>
             <div class="tab" ng-click="openTab('booking')">Booking</div>
@@ -42,15 +48,19 @@
                     present
                     to
                     sign consent form and be in the room during the service.</div>
-                <!--<script src="https://square.site/appointments/buyer/widget/q2a5qjuxwn5eha/Q4W3RC4A64DCN.js"></script>-->
                 <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="button">Book an Appointment</a>
+            </div>
+            <div class="tab" ng-click="openTab('magazine')">Magazine</div>
+            <div ng-show="selectedTab.magazine" class="tab-content">
+                <service-section service="magazine"></service-section>
             </div>
             <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}"
                 ng-click="openTab('giftcard')">
                 eGift
                 Cards</div>
             <div ng-show="selectedTab.giftcard" class="tab-content">
-                <div class="sm-detail">Send a gift card that is worth giving!</div>
+                <div class="sm-detail">The gift that keeps on giving!</div>
+                <div class="sm-detail">Physical gift cards available in studio</div>
                 <div class="sm-detail margin-bottom">&#x2764;</div>
                 <div class="button" ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
                     eGift
@@ -59,9 +69,11 @@
             <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
                 ng-click="openTab('bathsalt')">Bath Salt Order</div>      
             <div ng-show="selectedTab.bathsalt" class="tab-content">
-                <div class="sm-detail">Order now and pick up in 2 days at the studio. Add in the appointment notes how many you would like in your order. ($10 each)</div>
+                <div class="sm-detail">Select a date & time to pick up & pay for your handmade bath salts! It's free to pick up, each jar of bath salts is $10.
+                    When booking pick up, add the number of bath salts you'd like to purchase. Please note: allow at least 2 days to make.
+                </div>
                 <div class="sm-detail margin-bottom">&#x2764;</div>
-                <div class="button" ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath Salt Pickup</div>
+                <div class="button" ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath Salt Pick Up</div>
             </div>           
         </div>
         <div class="body-content" ng-class="{'hidden': isMenuOpen}">
@@ -104,6 +116,12 @@
                 <hr />
             </div>
             <service-section service="makeupServices"></service-section>
+            <div class="strip" id="salts">
+                <hr />
+                Bath Salts
+                <hr />
+            </div>
+            <service-section service="bathSalts"></service-section>
             <div class="strip" id="packages">
                 <hr />
                 Essential Packages

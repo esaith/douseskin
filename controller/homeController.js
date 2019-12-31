@@ -2,11 +2,11 @@ angular.module("douse", ["ngTouch", "ngSanitize", "ngRoute"]);
 angular.module("douse").config(function($routeProvider) {
   $routeProvider
     .when("/holidaynetworkingevent", {
-      templateUrl: "view/networkingEvent.html",
+      templateUrl: "view/networkingEvent.html?n=15",
       controller: "networkingEventController"
     })
     .when("/", {
-      templateUrl: "view/homeController.html",
+      templateUrl: "view/homeController.html?n=15",
       controller: "homeController"
     })
     .otherwise({
@@ -69,6 +69,22 @@ angular.module("douse").controller("homeController", [
         );
     };
 
+    $scope.magazine = [
+      {
+        src: "magazine01",
+        service: "",
+        descriptions: [
+          { src: "../resources/images/magazine02.jpg" },
+          { src: "../resources/images/magazine03.jpg" },
+          { src: "../resources/images/magazine04.jpg" },
+          { src: "../resources/images/magazine05.jpg" },
+          { src: "../resources/images/magazine06.jpg" },
+          { src: "../resources/images/magazine07.jpg" },
+          { src: "../resources/images/magazine08.jpg" }
+        ]
+      }
+    ];
+
     $scope.homelogo = [
       {
         src: "logo",
@@ -82,6 +98,7 @@ angular.module("douse").controller("homeController", [
           { src: "../resources/images/img06.jpg" },
           { src: "../resources/images/img07.jpg" },
           { src: "../resources/images/img08.jpg" },
+          { src: "../resources/images/img09.jpg" },
           { src: "../resources/images/viewmore.mp4" }
         ]
       }
@@ -91,7 +108,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "special",
         service: $sce.trustAsHtml(
-          "<div class='flex wrap'><div class='no-wrap'>January Special</div>"
+          "<div class='flex wrap'><div class='no-wrap'>January Specials</div>"
         ),
         descriptions: []
       }
@@ -375,7 +392,7 @@ angular.module("douse").controller("homeController", [
         ]
       },
       {
-        src: "microderm",
+        src: "backmicroderm",
         service: "Back Microdermabrasion",
         descriptions: [
           {
@@ -389,6 +406,22 @@ angular.module("douse").controller("homeController", [
           }
         ]
       }
+    ];
+
+    $scope.bathSalts = [
+      {
+        src: "salts",
+        service: "Preorder Bath Salt",
+        descriptions: [
+          {
+            description: [
+              "Lemon rosemary",
+              "Real dehydrated lemon slices with real stocks of rosemary.",
+              "Infused with essential oils, lemon black tea & alstroemeria petals."
+            ]
+          }
+        ]
+      }      
     ];
 
     $scope.lashServices = [
