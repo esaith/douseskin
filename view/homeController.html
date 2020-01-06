@@ -19,7 +19,7 @@
         <div class="body-content menu" ng-class="{'hidden': !isMenuOpen}">
             <div class="tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">Contact Me
             </div>
-            <div ng-show="selectedTab.about" class="tab-content">
+            <div ng-show="selectedTab.about" id="about" class="tab-content">
                 <div class="md-detail">Veronica Arielle</div>
                 <div class="sm-detail padding-bottom">Licensed Esthetician</div>
                 <img src="resources/images/veronica.jpg?n=9" class="associate veronica margin-bottom" />
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="tab" ng-click="openTab('booking')">Booking</div>
-            <div ng-show="selectedTab.booking" class="tab-content">
+            <div ng-show="selectedTab.booking" class="tab-content" id="booking">
                 <div class="sm-detail padding-bottom">Anyone under the age of 18 must have a parent or guardian
                     present
                     to
@@ -50,15 +50,14 @@
                     sign consent form and be in the room during the service.</div>
                 <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="button">Book an Appointment</a>
             </div>
-            <div class="tab" ng-click="openTab('magazine')">Magazine</div>
-            <div ng-show="selectedTab.magazine" class="tab-content">
+            <div class="tab" ng-click="openTab('magazine')"> Magazine</div>
+            <div ng-show="selectedTab.magazine" class="tab-content" id="magazine">
                 <service-section service="magazine"></service-section>
             </div>
-            <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}"
-                ng-click="openTab('giftcard')">
+            <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}" ng-click="openTab('giftcard')">
                 eGift
-                Cards</div>
-            <div ng-show="selectedTab.giftcard" class="tab-content">
+                Cards</div> 
+            <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
                 <div class="sm-detail">The gift that keeps on giving!</div>
                 <div class="sm-detail">Physical gift cards available in studio</div>
                 <div class="sm-detail margin-bottom">&#x2764;</div>
@@ -67,13 +66,13 @@
                     Card</div>
             </div>     
             <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
-                ng-click="openTab('bathsalt')">Bath Salt Order</div>      
-            <div ng-show="selectedTab.bathsalt" class="tab-content">
+                ng-click="openTab('bathsalt')">Bath Salt Preorder</div>      
+            <div ng-show="selectedTab.bathsalt" class="tab-content" id="bathsalt">
                 <div class="sm-detail">Select a date & time to pick up & pay for your handmade bath salts! It's free to pick up, each jar of bath salts is $10.
                     When booking pick up, add the number of bath salts you'd like to purchase. Please note: allow at least 2 days to make.
                 </div>
                 <div class="sm-detail margin-bottom">&#x2764;</div>
-                <div class="button" ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath Salt Pick Up</div>
+                <div class="button" ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath Salt Preorder</div>
             </div>           
         </div>
         <div class="body-content" ng-class="{'hidden': isMenuOpen}">
@@ -84,6 +83,7 @@
                 <a class="no-style md-detail" href="#body" ng-click="closeMenu()">Body</a> |
                 <a class="no-style md-detail" href="#lashes" ng-click="closeMenu()">Lashes</a> |
                 <a class="no-style md-detail" href="#makeup" ng-click="closeMenu()">Makeup</a> |
+                <a class="no-style md-detail" href="#salts" ng-click="closeMenu()">Bath Salts</a> |
                 <a class="no-style md-detail" href="#packages" ng-click="closeMenu()">Packages</a>
             </div>
             <div class="strip" id="specials">

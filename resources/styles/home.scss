@@ -219,6 +219,7 @@ hr {
   background-image: url("../images/menu-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+
   .tab {
     flex: 1 0;
     padding: 40px;
@@ -288,6 +289,7 @@ hr {
   img {
     height: 25px;
     width: 25px;
+    filter: grayscale(1);
   }
 
   .associate {

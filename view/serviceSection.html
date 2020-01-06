@@ -12,7 +12,7 @@
                         <source ng-src="{{descr.src}}" type="video/mp4">
                     </video>
                 </div>
-                <div class="background descr" ng-if="descr.src" ng-style="{'background-image': 'url({{descr.src}})'}"></div>
+                <div class="background descr" ng-if="descr.src" ng-class="{'contain': descr.src.indexOf('magazine') > -1}" ng-style="{'background-image': 'url({{descr.src}})'}"></div>
                 <div class="modal" ng-if="descr.description"></div>
                 <div class="description" ng-if="descr.description">
                     <div class="margin-bottom-small description-header flex align-center justify-center" ng-bind-html="section.service"></div>

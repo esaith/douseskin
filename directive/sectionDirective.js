@@ -18,7 +18,7 @@ angular.module("douse").directive("serviceSection", function() {
           scope.$evalAsync(() => {
             scope.nextPage(scope.service[0]);
           });
-        }, 2000);
+        }, 3000);
       }
 
       scope.nextPage = function(service, cancelInterval) {

@@ -137,7 +137,11 @@
     filter: grayscale(1);
 
     &.descr {
-      background-color: white;
+      background-color: #efefef;
+    }
+    
+    &.contain {
+      background-size: contain;
     }
 
     @media (min-width: 600px) {

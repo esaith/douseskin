@@ -411,17 +411,18 @@ angular.module("douse").controller("homeController", [
     $scope.bathSalts = [
       {
         src: "salts",
-        service: "Preorder Bath Salt",
+        service: "Bath Salts",
         descriptions: [
           {
             description: [
-              "Lemon rosemary",
-              "Real dehydrated lemon slices with real stocks of rosemary.",
-              "Infused with essential oils, lemon black tea & alstroemeria petals."
+              "Lemon Rosemary",
+              "Real dehydrated lemon slices with real stalks of rosemary.",
+              "Infused with essential oils, lemon black tea & alstroemeria petals.",
+              "$10 each"
             ]
           }
         ]
-      }      
+      }
     ];
 
     $scope.lashServices = [
