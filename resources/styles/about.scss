@@ -1,0 +1,43 @@
+.about {
+    @font-face {
+        font-family: RockwellNovaBold;
+        src: url("../fonts/RockwellNova-Bold.ttf");
+    }
+
+    @font-face {
+        font-family: RockwellNova;
+        src: url("../fonts/RockwellNova.ttf");
+    }
+
+    padding: 10px;
+
+    .associate {
+        filter: grayscale(1);
+        width: 100%;
+        height: auto;
+        border: 2px solid black;
+        margin: auto;
+    }
+
+    img {
+        height: 25px;
+        width: 25px;
+        filter: grayscale(1);
+    }
+
+    .close {
+        font-family: sans-serif;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-weight: bold;
+        padding: 2px 6px;
+        font-size: 14px;
+        z-index: 10;
+        color: #51c565;
+        border-radius: 50%;
+        border: 1px solid #51c565;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+}

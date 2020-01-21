@@ -247,12 +247,15 @@ body {
   bottom: 0;
   width: 80%;
   transform: translate(-100vw);
-  bo .block {
+  overflow: auto;
+
+  .block {
     display: block;
   }
 
   .tab {
     padding: 10px;
+    border-top: 1px solid $backgroundColor;
 
     &.thin-top {
       border-top-width: 1px;
@@ -268,7 +271,7 @@ body {
   }
 
   .tab-content {
-    padding: 50px 15px;
+    padding: 10px 15px;
   }
 
   .button {
@@ -318,23 +321,6 @@ body {
     height: 25px;
     width: 25px;
     filter: grayscale(1);
-  }
-
-  .associate {
-    height: 200px;
-    width: inherit;
-    margin: auto;
-    filter: grayscale(1);
-
-    &.veronica {
-      height: 400px;
-      border: 2px solid black;
-    }
-  }
-
-  .food-dude {
-    height: 100px;
-    width: 100px;
   }
 }
 

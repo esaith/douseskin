@@ -78,31 +78,8 @@
         <a class="tab no-style" href="#lashes" ng-click="goToSection()">Lashes</a>
         <a class="tab no-style" href="#makeup" ng-click="goToSection()">Makeup</a>
         <a class="tab no-style" href="#salts" ng-click="goToSection()">Bath Salts</a>
-        <a class="tab no-style" href="#packages" ng-click="goToSection()">Packages</a>
-        <hr />
-        <div class="tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
-            Contact Me
-        </div>
-        <div ng-show="selectedTab.about" id="about" class="tab-content">
-            <div class="md-detail">Veronica Arielle</div>
-            <div class="sm-detail padding-bottom">Licensed Esthetician</div>
-            <img src="resources/images/veronica.jpg?n=9" class="associate veronica margin-bottom" />
-            <div class="sm-detail underline" ng-click="openAddress()">15310 Amberly Dr. Suite 250</div>
-            <div class="sm-detail underline" ng-click="openAddress()">Tampa, FL. 33647</div>
-            <div class="xsm-detail" ng-click="openAddress()">On 2nd Floor, Suite 250</div>
-            <div class="xsm-detail padding-bottom" ng-click="openAddress()">Stop at receptionist to check-in</div>
-            <div class="sm-detail">Sessions by Appointment Only</div>
-            <div class="sm-detail">Text 863.899.4799</div>
-            <div class="sm-detail flex align-center justify-center">
-                <img src="resources/images/instagram.png" />
-                <a href="https://www.instagram.com/douseskinessentials/">douse.skin.essentials</a>
-            </div>
-            <div class="sm-detail flex align-center justify-center">
-                <img src="resources/images/facebook-icon.jpg" />
-                <a href="https://www.facebook.com/douse.skin.essentials/">douse skin essentials</a>
-            </div>
-        </div>
-        <div class="tab" ng-click="openTab('booking')">Booking</div>
+        <a class="tab no-style" href="#packages" ng-click="goToSection()">Packages</a>            
+        <div class="tab" id="booking-tab" ng-click="openTab('booking')">Booking</div>
         <div ng-show="selectedTab.booking" class="tab-content" id="booking">
             <div class="sm-detail padding-bottom">
                 Anyone under the age of 18 must have a parent or guardian present to sign consent form.</div>
@@ -114,11 +91,12 @@
                 Book an Appointment
             </a>
         </div>
-        <div class="tab" ng-click="openTab('magazine')"> Magazine</div>
+        <div class="tab" id="magazine-tab" ng-click="openTab('magazine')"> Magazine</div>
         <div ng-show="selectedTab.magazine" class="tab-content" id="magazine">
-            <service-section service="magazine"></service-section>
+           
         </div>
-        <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}" ng-click="openTab('giftcard')">
+        <div class="tab" id="giftcard-tab" ng-class="{'thin-bottom': !selectedTab.giftcard}"
+            ng-click="openTab('giftcard')">
             eGift Cards
         </div>
         <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
@@ -129,7 +107,8 @@
                 eGift
                 Card</div>
         </div>
-        <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.bathsalt}" ng-click="openTab('bathsalt')">Bath
+        <div class="tab" id="bathsalt-tab" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
+            ng-click="openTab('bathsalt')">Bath
             Salt Preorder
         </div>
         <div ng-show="selectedTab.bathsalt" class="tab-content" id="bathsalt">
@@ -143,6 +122,9 @@
                 ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath
                 Salt Preorder</div>
         </div>
+        <div class="tab" id="about-tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
+            Contact Me
+        </div>    
     </div>
     <div class="body-content">
         <service-section service="homelogo" auto-scroll></service-section>
