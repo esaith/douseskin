@@ -3,7 +3,6 @@
   width: 100%;
   height: 60vh;
   top: 0;
-  margin: 25px 0;
   font-family: RockwellNova !important;
   overflow: hidden;
 
@@ -41,8 +40,9 @@
     color: white;
     left: 0;
     text-align: left;
-    padding: 0px 15px;
-    background-color: #2a4d48;
+    padding: 3px 15px;
+    background-color: #444;
+    border-radius: 3px;
 
     @media (max-width: 500px) {
       font-size: 0.85em;
@@ -193,7 +193,7 @@
     }
 
     &.special {
-      background-size: contain;
+      background-size: cover;
       background-image: url("../images/special.jpg?n=11");
     }
 
@@ -240,6 +240,7 @@
     video {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 }

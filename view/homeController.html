@@ -1,135 +1,195 @@
 <div ng-cloak ng-class="{'paper-background': isMenuOpen}">
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
-                style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-        <div class="header-title bounceInDown animated">
-            <div>Closed from Jan. 9th to 15th</div>
-            <div class="flex align-center justify-center">Schedule an appointment 
-                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21"> <defs> <style> .cls-1 { fill: none; } </style> </defs> <g id="Group_1" data-name="Group 1" transform="translate(-214 -238)"> <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="21" height="21" transform="translate(214 238)"/> <g id="back" transform="translate(214.494 165.504)"> <path id="Path_1" data-name="Path 1" d="M18.964,81.871H3.286l4.289-4.287a.965.965,0,0,0-1.36-1.36L.287,82.153a.965.965,0,0,0,0,1.36l5.928,5.928a.965.965,0,0,0,1.36-1.36L3.286,83.795H18.964a.965.965,0,1,0,0-1.924Z" transform="translate(0)"/> </g> </g> </svg>
-            </div>
-            <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
-                <div class="stack">
-                    <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
-                    <div class="line" ng-class="{'forward-slash': isMenuOpen}"></div>
-                    <div class="line" ng-class="{'hidden': isMenuOpen}"></div>
-                </div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="header-title bounceInDown animated ng-cloak">
+        <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
+            <div class="stack">
+                <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
+                <div class="line" ng-class="{'forward-slash': isMenuOpen}"></div>
+                <div class="line" ng-class="{'hidden': isMenuOpen}"></div>
             </div>
         </div>
-        <div class="body-content menu" ng-class="{'hidden': !isMenuOpen}">
-            <div class="tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">Contact Me
-            </div>
-            <div ng-show="selectedTab.about" id="about" class="tab-content">
-                <div class="md-detail">Veronica Arielle</div>
-                <div class="sm-detail padding-bottom">Licensed Esthetician</div>
-                <img src="resources/images/veronica.jpg?n=9" class="associate veronica margin-bottom" />
-                <div class="sm-detail underline" ng-click="openAddress()">15310 Amberly Dr. Suite 250</div>
-                <div class="sm-detail underline" ng-click="openAddress()">Tampa, FL. 33647</div>
-                <div class="xsm-detail" ng-click="openAddress()">On 2nd Floor, Suite 250</div>
-                <div class="xsm-detail padding-bottom" ng-click="openAddress()">Stop at receptionist to check-in</div>
-                <div class="sm-detail">Sessions by Appointment Only</div>
-                <div class="sm-detail">Text 863.899.4799</div>
-                <div class="sm-detail flex align-center justify-center">
-                    <img src="resources/images/instagram.png" />
-                    <a href="https://www.instagram.com/douseskinessentials/">douse.skin.essentials</a>
-                </div>
-                <div class="sm-detail flex align-center justify-center">
-                    <img src="resources/images/facebook-icon.jpg" />
-                    <a href="https://www.facebook.com/douse.skin.essentials/">douse skin essentials</a>
-                </div>
-            </div>
-            <div class="tab" ng-click="openTab('booking')">Booking</div>
-            <div ng-show="selectedTab.booking" class="tab-content" id="booking">
-                <div class="sm-detail padding-bottom">Anyone under the age of 18 must have a parent or guardian
-                    present
-                    to
-                    sign consent form.</div>
-                <div class="sm-detail margin-bottom">Anyone 13 years or younger must have a parent or guardian
-                    present
-                    to
-                    sign consent form and be in the room during the service.</div>
-                <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="button">Book an Appointment</a>
-            </div>
-            <div class="tab" ng-click="openTab('magazine')"> Magazine</div>
-            <div ng-show="selectedTab.magazine" class="tab-content" id="magazine">
-                <service-section service="magazine"></service-section>
-            </div>
-            <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}" ng-click="openTab('giftcard')">
-                eGift
-                Cards</div> 
-            <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
-                <div class="sm-detail">The gift that keeps on giving!</div>
-                <div class="sm-detail">Physical gift cards available in studio</div>
-                <div class="sm-detail margin-bottom">&#x2764;</div>
-                <div class="button" ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
-                    eGift
-                    Card</div>
-            </div>     
-            <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
-                ng-click="openTab('bathsalt')">Bath Salt Preorder</div>      
-            <div ng-show="selectedTab.bathsalt" class="tab-content" id="bathsalt">
-                <div class="sm-detail">Select a date & time to pick up & pay for your handmade bath salts! It's free to pick up, each jar of bath salts is $10.
-                    When booking pick up, add the number of bath salts you'd like to purchase. Please note: allow at least 2 days to make.
-                </div>
-                <div class="sm-detail margin-bottom">&#x2764;</div>
-                <div class="button" ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath Salt Preorder</div>
-            </div>           
+        <div>
+            <div class="top-title">Douse Skin</div>
+            <div class="bottom-title">Essentials</div>
         </div>
-        <div class="body-content" ng-class="{'hidden': isMenuOpen}">
-            <service-section service="homelogo" auto-scroll></service-section>
-            <div class="flex align-center justify-center services-link">
-                <a class="no-style md-detail" href="#specials" ng-click="closeMenu()">Specials</a> |
-                <a class="no-style md-detail" href="#skin" ng-click="closeMenu()">Skincare</a> |
-                <a class="no-style md-detail" href="#body" ng-click="closeMenu()">Body</a> |
-                <a class="no-style md-detail" href="#lashes" ng-click="closeMenu()">Lashes</a> |
-                <a class="no-style md-detail" href="#makeup" ng-click="closeMenu()">Makeup</a> |
-                <a class="no-style md-detail" href="#salts" ng-click="closeMenu()">Bath Salts</a> |
-                <a class="no-style md-detail" href="#packages" ng-click="closeMenu()">Packages</a>
-            </div>
-            <div class="strip" id="specials">
-                <hr />
-                Monthly Special
-                <hr />
-            </div>
-            <service-section service="specialServices"></service-section>
-            <div class="strip" id="skin">
-                <hr />
-                Essential Skincare Services
-                <hr />
-            </div>
-            <service-section service="skinCareServices"></service-section>
-            <div class="strip" id="body">
-                <hr />
-                Essential Body Services
-                <hr />
-            </div>
-            <service-section service="bodyServices"></service-section>
-            <div class="strip" id="lashes">
-                <hr />
-                Essential Lashes
-                <hr />
-            </div>
-            <service-section service="lashServices"></service-section>
-            <div class="strip" id="makeup">
-                <hr />
-                Essential Makeup Services
-                <hr />
-            </div>
-            <service-section service="makeupServices"></service-section>
-            <div class="strip" id="salts">
-                <hr />
-                Bath Salts
-                <hr />
-            </div>
-            <service-section service="bathSalts"></service-section>
-            <div class="strip" id="packages">
-                <hr />
-                Essential Packages
-                <hr />
-            </div>
-            <service-section service="packageServices"></service-section>
-        </div>
-        <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
-            <div class="triangle-up"></div>
+        <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="book-now">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;"
+                xml:space="preserve">
+                <polygon style="fill:#174461;"
+                    points="426.826,111.203 262.609,284.959 353.303,458.715 500.416,458.715 " />
+                <polygon style="fill:#FF4181;"
+                    points="85.174,111.203 65.55,203.873 236.409,227.041 407.269,203.873 426.893,111.203 " />
+                <polygon style="fill:#FFC0D5;" points="11.584,458.715 353.303,458.715 407.269,203.873 65.55,203.873 " />
+                <path style="fill:#01121C;"
+                    d="M511.747,449.964l-73.59-346.923c-0.012-0.053-0.03-0.104-0.042-0.158  c-0.038-0.168-0.087-0.332-0.132-0.498c-0.065-0.239-0.133-0.476-0.212-0.708c-0.05-0.145-0.107-0.287-0.162-0.431  c-0.096-0.249-0.199-0.495-0.312-0.734c-0.059-0.126-0.122-0.25-0.185-0.374c-0.129-0.25-0.266-0.493-0.411-0.732  c-0.068-0.112-0.137-0.224-0.21-0.334c-0.161-0.244-0.334-0.481-0.512-0.71c-0.053-0.068-0.096-0.142-0.152-0.211  c-0.023-0.029-0.051-0.053-0.074-0.081c-0.204-0.246-0.419-0.48-0.641-0.707c-0.066-0.067-0.127-0.14-0.195-0.206  c-0.286-0.279-0.585-0.543-0.898-0.79c-0.105-0.083-0.219-0.155-0.327-0.235c-0.212-0.156-0.425-0.312-0.648-0.453  c-0.149-0.095-0.305-0.18-0.459-0.268c-0.193-0.111-0.387-0.221-0.587-0.321c-0.163-0.081-0.329-0.155-0.496-0.229  c-0.204-0.09-0.41-0.176-0.619-0.254c-0.164-0.061-0.33-0.12-0.498-0.175c-0.226-0.073-0.454-0.137-0.685-0.196  c-0.158-0.041-0.315-0.082-0.475-0.116c-0.257-0.054-0.518-0.095-0.781-0.132c-0.14-0.02-0.278-0.045-0.419-0.06  c-0.322-0.034-0.649-0.049-0.976-0.054c-0.075-0.001-0.149-0.013-0.226-0.013h-0.068c-0.002,0-0.003,0-0.006,0H302.467  c4.759-13.19,17.4-22.647,32.21-22.647c8.182,0,16.1,2.932,22.296,8.256c4.855,4.174,12.168,3.618,16.335-1.235  c4.17-4.851,3.616-12.165-1.235-16.335c-10.395-8.933-23.676-13.853-37.396-13.853c-27.682,0-50.85,19.699-56.223,45.815H145.196  c4.759-13.19,17.399-22.647,32.21-22.647c8.183,0,16.1,2.932,22.295,8.256c4.851,4.17,12.165,3.618,16.335-1.235  c4.17-4.851,3.616-12.165-1.235-16.335c-10.394-8.933-23.675-13.853-37.395-13.853c-27.683,0-50.85,19.699-56.223,45.815h-36.01  c-5.472,0-10.196,3.828-11.331,9.18l-19.642,92.6c-0.007,0.036-0.015,0.071-0.022,0.107L0.252,449.964  c-0.725,3.418,0.131,6.98,2.331,9.696c2.2,2.715,5.507,4.292,9.002,4.292h341.651c5.472,0,10.196-3.828,11.331-9.18l62.259-293.503  l59.292,279.516h-98.131c-6.397,0-11.584,5.187-11.584,11.584c0,6.397,5.187,11.584,11.584,11.584h112.429  c3.495,0,6.801-1.577,9.002-4.292C511.616,456.946,512.472,453.383,511.747,449.964z M94.559,117.029h26.622  c5.373,26.115,28.541,45.815,56.223,45.815c6.397,0,11.584-5.187,11.584-11.584s-5.187-11.584-11.584-11.584  c-14.81,0-27.451-9.457-32.21-22.647h133.259c5.373,26.115,28.541,45.815,56.223,45.815c6.397,0,11.584-5.187,11.584-11.584  s-5.187-11.584-11.584-11.584c-14.81,0-27.451-9.457-32.21-22.647h110.06L397.8,186.454H79.832L94.559,117.029z M343.851,440.786  H25.882l49.036-231.165h317.968L343.851,440.786z" />
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+            </svg>
+        </a>
+        <div class="poi" ng-click="openAddress()">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+                x="0px" y="0px" width="42.348px" height="42.348px" viewBox="0 0 42.348 42.348"
+                style="enable-background:new 0 0 42.348 42.348;" xml:space="preserve">
+                <g>
+                    <path
+                        d="M2.491,18.684c0,10.17,17.569,23.005,18.317,23.546c0.107,0.076,0.234,0.117,0.366,0.117s0.259-0.041,0.366-0.118   c0.748-0.541,18.317-13.375,18.317-23.546C39.857,8.381,31.475,0,21.174,0C10.873,0.002,2.491,8.383,2.491,18.684z M38.608,18.684   c0,8.824-15.319,20.669-17.433,22.261C19.061,39.354,3.741,27.512,3.741,18.684c0-9.612,7.821-17.433,17.434-17.433   S38.608,9.072,38.608,18.684z" />
+                    <path
+                        d="M10.692,18.684c0,5.781,4.703,10.484,10.483,10.484c5.781,0,10.484-4.703,10.484-10.484c0-5.78-4.703-10.483-10.484-10.483   C15.395,8.201,10.692,12.904,10.692,18.684z M30.409,18.684c0,5.091-4.143,9.234-9.234,9.234c-5.091,0-9.233-4.143-9.233-9.234   c0-5.091,4.142-9.233,9.233-9.233C26.266,9.451,30.409,13.593,30.409,18.684z" />
+                </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+                <g> </g>
+            </svg>
         </div>
     </div>
+    <div class="body-content menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen}">
+        <a class="tab no-style" href="#specials" ng-click="goToSection()">Specials</a>
+        <a class="tab no-style" href="#skin" ng-click="goToSection()">Skincare</a>
+        <a class="tab no-style" href="#body" ng-click="goToSection()">Body</a>
+        <a class="tab no-style" href="#lashes" ng-click="goToSection()">Lashes</a>
+        <a class="tab no-style" href="#makeup" ng-click="goToSection()">Makeup</a>
+        <a class="tab no-style" href="#salts" ng-click="goToSection()">Bath Salts</a>
+        <a class="tab no-style" href="#packages" ng-click="goToSection()">Packages</a>
+        <hr />
+        <div class="tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
+            Contact Me
+        </div>
+        <div ng-show="selectedTab.about" id="about" class="tab-content">
+            <div class="md-detail">Veronica Arielle</div>
+            <div class="sm-detail padding-bottom">Licensed Esthetician</div>
+            <img src="resources/images/veronica.jpg?n=9" class="associate veronica margin-bottom" />
+            <div class="sm-detail underline" ng-click="openAddress()">15310 Amberly Dr. Suite 250</div>
+            <div class="sm-detail underline" ng-click="openAddress()">Tampa, FL. 33647</div>
+            <div class="xsm-detail" ng-click="openAddress()">On 2nd Floor, Suite 250</div>
+            <div class="xsm-detail padding-bottom" ng-click="openAddress()">Stop at receptionist to check-in</div>
+            <div class="sm-detail">Sessions by Appointment Only</div>
+            <div class="sm-detail">Text 863.899.4799</div>
+            <div class="sm-detail flex align-center justify-center">
+                <img src="resources/images/instagram.png" />
+                <a href="https://www.instagram.com/douseskinessentials/">douse.skin.essentials</a>
+            </div>
+            <div class="sm-detail flex align-center justify-center">
+                <img src="resources/images/facebook-icon.jpg" />
+                <a href="https://www.facebook.com/douse.skin.essentials/">douse skin essentials</a>
+            </div>
+        </div>
+        <div class="tab" ng-click="openTab('booking')">Booking</div>
+        <div ng-show="selectedTab.booking" class="tab-content" id="booking">
+            <div class="sm-detail padding-bottom">
+                Anyone under the age of 18 must have a parent or guardian present to sign consent form.</div>
+            <div class="sm-detail margin-bottom">
+                Anyone 13 years or younger must have a parent or guardian present to sign consent form and be in the
+                room during the service.
+            </div>
+            <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="button">
+                Book an Appointment
+            </a>
+        </div>
+        <div class="tab" ng-click="openTab('magazine')"> Magazine</div>
+        <div ng-show="selectedTab.magazine" class="tab-content" id="magazine">
+            <service-section service="magazine"></service-section>
+        </div>
+        <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.giftcard}" ng-click="openTab('giftcard')">
+            eGift Cards
+        </div>
+        <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
+            <div class="sm-detail">The gift that keeps on giving!</div>
+            <div class="sm-detail">Physical gift cards available in studio</div>
+            <div class="sm-detail margin-bottom">&#x2764;</div>
+            <div class="button" ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
+                eGift
+                Card</div>
+        </div>
+        <div class="tab thin-top" ng-class="{'thin-bottom': !selectedTab.bathsalt}" ng-click="openTab('bathsalt')">Bath
+            Salt Preorder
+        </div>
+        <div ng-show="selectedTab.bathsalt" class="tab-content" id="bathsalt">
+            <div class="sm-detail">Select a date & time to pick up & pay for your handmade bath salts! It's free to pick
+                up, each jar of bath salts is $10.
+                When booking pick up, add the number of bath salts you'd like to purchase. Please note: allow at least 2
+                days to make.
+            </div>
+            <div class="sm-detail margin-bottom">&#x2764;</div>
+            <div class="button"
+                ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath
+                Salt Preorder</div>
+        </div>
+    </div>
+    <div class="body-content">
+        <service-section service="homelogo" auto-scroll></service-section>
+        <div class="strip" id="specials">
+            <hr />
+            Monthly Special
+            <hr />
+        </div>
+        <service-section service="specialServices"></service-section>
+        <div class="strip" id="skin">
+            <hr />
+            Essential Skincare Services
+            <hr />
+        </div>
+        <service-section service="skinCareServices"></service-section>
+        <div class="strip" id="body">
+            <hr />
+            Essential Body Services
+            <hr />
+        </div>
+        <service-section service="bodyServices"></service-section>
+        <div class="strip" id="lashes">
+            <hr />
+            Essential Lashes
+            <hr />
+        </div>
+        <service-section service="lashServices"></service-section>
+        <div class="strip" id="makeup">
+            <hr />
+            Essential Makeup Services
+            <hr />
+        </div>
+        <service-section service="makeupServices"></service-section>
+        <div class="strip" id="salts">
+            <hr />
+            Bath Salts
+            <hr />
+        </div>
+        <service-section service="bathSalts"></service-section>
+        <div class="strip" id="packages">
+            <hr />
+            Essential Packages
+            <hr />
+        </div>
+        <service-section service="packageServices"></service-section>
+    </div>
+    <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
+        <div class="triangle-up"></div>
+    </div>
+</div>

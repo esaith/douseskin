@@ -18,12 +18,17 @@ angular.module("douse").controller("homeController", [
   "$scope",
   "$sce",
   "$document",
-  function homeController($scope, $sce, $document) {
+  "$timeout",
+  function homeController($scope, $sce, $document, $timeout) {
     $scope.isMenuOpen = false;
     $scope.showBackToTopButton = false;
 
-    $scope.closeMenu = function() {
+    $scope.goToSection = function() {
       $scope.isMenuOpen = false;
+
+      $timeout(() => {
+        window.scrollTo(0, window.body.offsetTop - 90)
+      }, 200);
     };
 
     $scope.toggleMenu = function() {
