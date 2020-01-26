@@ -3,7 +3,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="header-title bounceInDown animated ng-cloak">
+    <div class="header-title animated ng-cloak" ng-class="{'bounceInDown': showHeaderTitle}">
         <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
             <div class="stack">
                 <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
@@ -173,5 +173,10 @@
     </div>
     <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
         <div class="triangle-up"></div>
+    </div>
+    <div>
+        <div class="affiliates">Affiliates</div>
+        <img class="sponsor" src="https://cdn11.bigcommerce.com/s-7ef97/images/stencil/154x60/rosemira_logo_hex3f3a4b_pixels200v1_1562094911__94902.original.png">
+        <img class="sponsor" src="https://cdn.shopify.com/s/files/1/1721/6683/files/header_logo.png">
     </div>
 </div>

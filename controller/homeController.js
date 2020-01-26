@@ -87,8 +87,6 @@ angular.module("douse").controller("homeController", [
             /* else use Google */ else window.open("https://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
         };
 
-        
-
         $scope.homelogo = [
             {
                 src: "logo",
@@ -157,7 +155,7 @@ angular.module("douse").controller("homeController", [
                     {
                         description: [
                             "1 Hour",
-                            "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for cell turnover and best skincare effectiveness.",
+                            "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for faster cell turnover and overall best skincare effectiveness.",
                             "$59",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy | ultrasonic cleanser"
@@ -192,7 +190,7 @@ angular.module("douse").controller("homeController", [
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "cleanse | exfoliation | express massage | masque | hydration | spf | steam | warm towels | cucumber slices"
                         ],
-                        footer: ["* Must be accompanied by an adult."]
+                        footer: ["* Must be accompanied by adult for the duration of service."]
                     }
                 ]
             }
