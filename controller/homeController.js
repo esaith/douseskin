@@ -109,7 +109,7 @@ angular.module("douse").controller("homeController", [
         $scope.specialServices = [
             {
                 src: "special",
-                service: $sce.trustAsHtml("<div class='flex wrap'><div class='no-wrap'>January Specials</div>"),
+                service: "",
                 descriptions: []
             }
         ];
@@ -121,11 +121,11 @@ angular.module("douse").controller("homeController", [
                 descriptions: [
                     {
                         description: [
-                            "35 Minutes Express Facial",
+                            "Express Facial",
                             "Express facial for those on the go.",
                             "$44",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | express massage | masque | hydration | spf | steam | hot towels | LED light therapy"
+                            "double cleanse | exfoliation | masque | hydration | spf | steam | hot towels | 5 - 10 min LED light therapy"
                         ]
                     },
                     {
@@ -134,7 +134,7 @@ angular.module("douse").controller("homeController", [
                             "This facial treats all skin types to reveal a brighter & clearer complexion.",
                             "$52",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy"
+                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | 10 - 15 min LED light therapy"
                         ]
                     },
                     {
@@ -143,7 +143,7 @@ angular.module("douse").controller("homeController", [
                             "Extended facial intended for deep relaxation & of course rejuvinated skin!",
                             "$62",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | LED light therapy"
+                            "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | 15 - 20 min LED light therapy"
                         ]
                     }
                 ]
@@ -158,7 +158,7 @@ angular.module("douse").controller("homeController", [
                             "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for faster cell turnover and overall best skincare effectiveness.",
                             "$59",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | LED light therapy | ultrasonic cleanser"
+                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | 10 - 15 min LED light therapy | ultrasonic cleanser"
                         ]
                     }
                 ]
@@ -169,11 +169,11 @@ angular.module("douse").controller("homeController", [
                 descriptions: [
                     {
                         description: [
-                            "45 Minutes",
+                            "1 Hour 30 Minutes",
                             "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
                             "$69",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | LED light therapy"
+                            "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | 15 - 20 min LED light therapy"
                         ]
                     }
                 ]
@@ -188,7 +188,7 @@ angular.module("douse").controller("homeController", [
                             "A hydrating facial tailored to the little ones 12 years & younger.*",
                             "$30",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "cleanse | exfoliation | express massage | masque | hydration | spf | steam | warm towels | cucumber slices"
+                            "cleanse | exfoliation | hydrating masque | hydration | spf | steam | warm towels | cucumber slices"
                         ],
                         footer: ["* Must be accompanied by adult for the duration of service."]
                     }
@@ -417,7 +417,7 @@ angular.module("douse").controller("homeController", [
                                 "<div class='margin-bottom'>Each healthy individual lash has a lash extension adhered to it creating more defined eyes</div>"
                             ),
                             "1 Hour Fill $45",
-                            "Includes removal of grown out extensions & adding lashes to maintain a full set (every 2 - 3 weeks)"
+                            "Includes removal of grown out extensions & adding lashes to maintain a full set (every 3 - 5 weeks. When 50% of lash extensions are visible)"
                         ],
                         footer: [
                             "* Schedule a free lash patch test - ideal for 1st time clients scheduled day before full set to ensure smooth application process (20 min)."
@@ -427,7 +427,7 @@ angular.module("douse").controller("homeController", [
             },
             {
                 src: "volumelashes",
-                service: "Volume Lashes",
+                service: "3D Volume Lashes",
                 descriptions: [
                     {
                         description: [
@@ -436,7 +436,7 @@ angular.module("douse").controller("homeController", [
                                 "<div class='margin-bottom'>Each healthy individual lash has three lash extensions adhered to it creating more striking eyes</div>"
                             ),
                             "1 Hour Fill $55",
-                            "Includes removal of grown out extensions & adding lashes to maintain a full set (every 2 - 3 weeks)"
+                            "Includes removal of grown out extensions & adding lashes to maintain a full set (every 3 - 5 weeks. When 50% of lash extensions are visible)"
                         ],
                         footer: [
                             "* Schedule a free lash patch test - ideal for 1st time clients scheduled day before full set to ensure smooth application process (20 min)."
@@ -450,9 +450,45 @@ angular.module("douse").controller("homeController", [
                 descriptions: [
                     {
                         description: [
-                            "Need a clean slate or wanting to take a break from lashes.",
-                            "Removal 20 Minutes $12"
+                            $sce.trustAsHtml("<div class='margin-bottom-small'>Removal 20 - 40 Minutes $12</div>"),
+                            "Wanting to take a break from lashes or simply want to start fresh?",
+                            "Don't hesitate to get a cream based lash removal - great for those with sensitive eyes!",
+                            "Removal time depends on how many extenions are left & how recent the extensions were adhered."
                         ]
+                    }
+                ]
+            }
+        ];
+
+        $scope.lashLiftServices = [
+            {
+                src: "lash-lift",
+                service: "Lash Lifts",
+                descriptions: [
+                    {
+                        description: [
+                            "Lash Lift 1 Hour $72",
+                            $sce.trustAsHtml(
+                                "<div class='margin-bottom'>Natural lashes are curled to create longer & fuller looking lashes</div>"
+                            ),
+                            "Lash Lift & Tint 1.5 Hour $82",
+                            "Add definition & depth to your naturally curled lashes with True Black lash tint"
+                        ],
+                        footer: []
+                    }
+                ]
+            },
+            {
+                src: "lash-lift-touchup",
+                service: "Lash Tint Touch-Up",
+                descriptions: [
+                    {
+                        description: [
+                            "Lash Tint Touch-Up",
+                            "30 Mins $13",
+                            "Perfect to thicken natural lashes especially those with lighter colored lashes. Allows eyes to appear striking with just a pop of colored tint.",
+                        ],
+                        footer: []
                     }
                 ]
             }

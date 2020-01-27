@@ -4,7 +4,7 @@
     <div class="background {{section.src}}"></div>
     <div class="section-content flex align-center no-swipe swipe-{{section.page}}">
         <div class="full-screen-width">
-            <div class="section-footer flex align-center" ng-bind-html="section.service"></div>
+            <div class="section-footer flex align-center" ng-bind-html="section.service" ng-if="section.service"></div>
         </div>
         <div ng-repeat="descr in section.descriptions track by $index" class="full-screen-width">
                 <div class="background descr" ng-if="descr.src && descr.src.indexOf('.mp4') > -1 && $index + 1 === section.page">

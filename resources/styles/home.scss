@@ -16,6 +16,7 @@ body {
     font-family: "RockwellNova", sans-serif !important;
     margin: 0;
     background-color: #fafafa;
+    color: #222;
 
     &.paper-background {
         background-color: $whiteBackgroundColor;
@@ -130,6 +131,10 @@ body {
 
 .margin-bottom {
     margin-bottom: 20px !important;
+}
+
+.margin-bottom-large {
+    margin-bottom: 40px;
 }
 
 .full-screen-width {
@@ -395,6 +400,7 @@ a {
     font-weight: bold;
     margin: 20px;
     border-bottom: 2px solid #ccc;
+    color: #97cfd6;
 }
 
 .sponsor {

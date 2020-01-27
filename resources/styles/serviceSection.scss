@@ -193,7 +193,7 @@
     }
 
     &.special {
-      background-size: cover;
+      background-size: auto 110%;
       background-image: url("../images/special.jpg?n=11");
     }
 
@@ -231,6 +231,14 @@
 
     &.backmicroderm {
       background-image: url("../images/backmicroderm.jpg?n=11");
+    }
+    
+    &.lash-lift { 
+      background-image: url("../images/lash-lift.jpg?n=11");
+    }
+    
+    &.lash-lift-touchup { 
+      background-image: url("../images/lash-lift-touchup.jpg?n=11");
     }
 
     &.magazine01 {
