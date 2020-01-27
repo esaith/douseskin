@@ -144,7 +144,8 @@ angular.module("douse").controller("homeController", [
                             "$62",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | 15 - 20 min LED light therapy"
-                        ]
+                        ], 
+                        footer: ["Disclaimer: Falling into deep sleep may occur!"]
                     }
                 ]
             },
@@ -169,11 +170,11 @@ angular.module("douse").controller("homeController", [
                 descriptions: [
                     {
                         description: [
-                            "1 Hour 30 Minutes",
+                            "1.5 Hour",
                             "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
                             "$69",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | 15 - 20 min LED light therapy"
+                            "double cleanse | microdermabrasion | exfoliation | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | 15 - 20 min LED light therapy"
                         ]
                     }
                 ]
@@ -190,7 +191,7 @@ angular.module("douse").controller("homeController", [
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "cleanse | exfoliation | hydrating masque | hydration | spf | steam | warm towels | cucumber slices"
                         ],
-                        footer: ["* Must be accompanied by adult for the duration of service."]
+                        footer: ["* Must be accompanied by adult for the duration of service. Does not include LED light therapy."]
                     }
                 ]
             }
