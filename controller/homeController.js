@@ -27,7 +27,7 @@ angular.module("douse").controller("homeController", [
     function homeController($scope, $sce, $document, $timeout, $location) {
         $scope.isMenuOpen = false;
         $scope.showBackToTopButton = false;
-
+        
         $scope.goToSection = function() {
             $scope.isMenuOpen = false;
 

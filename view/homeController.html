@@ -3,7 +3,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <div class="header-title animated ng-cloak" ng-class="{'bounceInDown': showHeaderTitle}">
+    <div class="header-title animated" ng-class="{'bounceInDown': showHeaderTitle}">
         <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
             <div class="stack">
                 <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
@@ -71,7 +71,7 @@
             </svg>
         </div>
     </div>
-    <div class="body-content menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen}">
+    <div class="body-content menu animated" ng-cloak ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen && !pageLoaded}">
         <a class="tab no-style" href="#specials" ng-click="goToSection()">Specials</a>
         <a class="tab no-style" href="#skin" ng-click="goToSection()">Skincare</a>
         <a class="tab no-style" href="#body" ng-click="goToSection()">Body</a>

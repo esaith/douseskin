@@ -131,7 +131,7 @@
   .background {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     height: 100%;
     width: 100%;
     filter: grayscale(1);
@@ -236,19 +236,19 @@
     &.lash-lift { 
       background-image: url("../images/lash-lift.jpg?n=11");
     }
-    
+
     &.lash-lift-touchup { 
       background-image: url("../images/lash-lift-touchup.jpg?n=11");
     }
 
     &.magazine01 {
-      background-image: url("../images/magazine01.jpg?n=11");
+      background-image: url("../images/magazine01.png?n=11");
     }
 
     video {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 }
