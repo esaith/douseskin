@@ -481,7 +481,7 @@ angular.module("douse").controller("homeController", [
                             "Lash Lift & Tint 1.5 Hour $82",
                             "Add definition & depth to your naturally curled lashes with True Black lash tint"
                         ],
-                        footer: []
+                        footer: ["Comes with a micellar water cleaning for those with makeup on and a lash bath."]
                     }
                 ]
             },
@@ -495,7 +495,7 @@ angular.module("douse").controller("homeController", [
                             "30 Mins $13",
                             "Perfect to thicken natural lashes especially those with lighter colored lashes. Allows eyes to appear striking with just a pop of colored tint."
                         ],
-                        footer: []
+                        footer: ["Comes with a micellar water cleaning for those with makeup on and a lash bath."]
                     }
                 ]
             }
