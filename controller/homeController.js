@@ -1,5 +1,5 @@
 angular.module("douse", ["ngTouch", "ngSanitize", "ngRoute"]);
-angular.module("douse").config(function($routeProvider) {
+angular.module("douse").config(function ($routeProvider) {
     $routeProvider
         .when("/about", {
             templateUrl: "view/about.html?n=15",
@@ -27,8 +27,8 @@ angular.module("douse").controller("homeController", [
     function homeController($scope, $sce, $document, $timeout, $location) {
         $scope.isMenuOpen = false;
         $scope.showBackToTopButton = false;
-        
-        $scope.goToSection = function() {
+
+        $scope.goToSection = function () {
             $scope.isMenuOpen = false;
 
             $timeout(() => {
@@ -36,12 +36,12 @@ angular.module("douse").controller("homeController", [
             }, 500);
         };
 
-        $scope.toggleMenu = function() {
+        $scope.toggleMenu = function () {
             $scope.isMenuOpen = !$scope.isMenuOpen;
             $scope.selectedTab = {};
         };
 
-        $scope.openTab = function(tab) {
+        $scope.openTab = function (tab) {
             if (tab === "about") {
                 $location.path("about");
                 return;
@@ -58,25 +58,25 @@ angular.module("douse").controller("homeController", [
             }, 100);
         };
 
-        $scope.goToLink = function(link) {
+        $scope.goToLink = function (link) {
             window.location.href = link;
         };
 
-        $scope.toggleDescription = function(service) {
+        $scope.toggleDescription = function (service) {
             service.swiped = !service.swiped;
         };
 
-        $scope.backToTop = function() {
+        $scope.backToTop = function () {
             document.body.scrollTop = 0;
         };
 
-        $document.bind("scroll", function() {
-            $scope.$evalAsync(function() {
+        $document.bind("scroll", function () {
+            $scope.$evalAsync(function () {
                 $scope.showBackToTopButton = document.body.scrollTop > 200;
             });
         });
 
-        $scope.openAddress = function() {
+        $scope.openAddress = function () {
             if (
                 /* if we're on iOS, open in Apple Maps */
                 navigator.platform.indexOf("iPhone") != -1 ||
@@ -101,14 +101,18 @@ angular.module("douse").controller("homeController", [
                     { src: "../resources/images/img07.jpg" },
                     { src: "../resources/images/img08.jpg" },
                     { src: "../resources/images/img09.jpg" },
-                    { src: "../resources/images/viewmore.mp4" }
+                    {
+                        src: "../resources/images/viewmore.mp4",
+                        type: "video"
+                    }
                 ]
             }
         ];
 
         $scope.specialServices = [
             {
-                src: "special",
+                src: "../resources/images/feb-special.mp4",
+                type: "video",
                 service: "",
                 descriptions: []
             }
@@ -121,7 +125,7 @@ angular.module("douse").controller("homeController", [
                 descriptions: [
                     {
                         description: [
-                            "Express Facial",
+                            "35 Minute Express Facial",
                             "Express facial for those on the go.",
                             "$44",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
@@ -144,7 +148,7 @@ angular.module("douse").controller("homeController", [
                             "$62",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | 15 - 20 min LED light therapy"
-                        ], 
+                        ],
                         footer: ["Disclaimer: Falling into deep sleep may occur!"]
                     }
                 ]
@@ -191,7 +195,9 @@ angular.module("douse").controller("homeController", [
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "cleanse | exfoliation | hydrating masque | hydration | spf | steam | warm towels | cucumber slices"
                         ],
-                        footer: ["* Must be accompanied by adult for the duration of service. Does not include LED light therapy."]
+                        footer: [
+                            "* Must be accompanied by adult for the duration of service. Does not include LED light therapy."
+                        ]
                     }
                 ]
             }
@@ -487,7 +493,7 @@ angular.module("douse").controller("homeController", [
                         description: [
                             "Lash Tint Touch-Up",
                             "30 Mins $13",
-                            "Perfect to thicken natural lashes especially those with lighter colored lashes. Allows eyes to appear striking with just a pop of colored tint.",
+                            "Perfect to thicken natural lashes especially those with lighter colored lashes. Allows eyes to appear striking with just a pop of colored tint."
                         ],
                         footer: []
                     }
