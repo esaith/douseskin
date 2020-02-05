@@ -103,7 +103,7 @@
         <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
             <div class="sm-detail">The gift that keeps on giving!</div>
             <div class="sm-detail">Physical gift cards available in studio</div>
-            <div class="sm-detail">&#x2764;</div>
+            <div class="sm-detail heart">&#x2764;</div>
             <div class="button margin-bottom-small"
                 ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
                 eGift
@@ -121,12 +121,12 @@
                 When booking pick up, add the number of bath salts you'd like to purchase. Please note: allow at least 2
                 days to make.
             </div>
-            <div class="sm-detail margin-bottom">&#x2764;</div>
+            <div class="sm-detail margin-bottom heart">&#x2764;</div>
             <div class="button"
                 ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath
                 Salt Preorder</div>
         </div>
-        <a class="tab no-style" href="#affiliates" ng-click="goToSection()">Affiliates</a>
+        <a class="tab no-style" href="#affiliates" ng-click="goToSection('affiliates')">Affiliates</a>
         <div class="tab" id="about-tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
             Contact Me
         </div>
@@ -183,7 +183,8 @@
         <img class="sponsor"
             src="https://cdn11.bigcommerce.com/s-7ef97/images/stencil/154x60/rosemira_logo_hex3f3a4b_pixels200v1_1562094911__94902.original.png">
         <img class="sponsor" src="https://cdn.shopify.com/s/files/1/1721/6683/files/header_logo.png">
-        <div class="margin-bottom-large"></div>
+        <div class="main-page-bottom"></div>
+        <div class="strip"></div>
     </div>
     <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
         <div class="triangle-up"></div>

@@ -67,10 +67,10 @@ body {
     font-family: RockwellNovaBold !important;
     position: sticky;
     border-bottom: 3px solid black;
-    top: 0;   
+    top: 0;
     z-index: 10;
     background-color: $whiteBackgroundColor;
-    opacity: 0.8;    
+    opacity: 0.8;
 
     .top-title {
         font-size: 20px;
@@ -135,6 +135,10 @@ body {
 
 .margin-bottom-large {
     margin-bottom: 40px;
+}
+
+.main-page-bottom {
+    margin-bottom: 100px;
 }
 
 .full-screen-width {
@@ -405,5 +409,10 @@ a {
 
 .sponsor {
     width: 200px;
-    margin: 20px;
+    margin: 40px;
+}
+
+.heart {
+    color: transparent;
+    text-shadow: 0 0 0 black;
 }

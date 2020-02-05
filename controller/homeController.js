@@ -28,12 +28,14 @@ angular.module("douse").controller("homeController", [
         $scope.isMenuOpen = false;
         $scope.showBackToTopButton = false;
 
-        $scope.goToSection = function () {
+        $scope.goToSection = function (section) {
             $scope.isMenuOpen = false;
 
-            $timeout(() => {
-                window.scrollTo(0, document.body.scrollTop - 90);
-            }, 500);
+            if (section !== "affiliates") {
+                $timeout(() => {
+                    window.scrollTo(0, document.body.scrollTop - 90);
+                }, 500);
+            }
         };
 
         $scope.toggleMenu = function () {
