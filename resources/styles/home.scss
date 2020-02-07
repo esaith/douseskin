@@ -15,8 +15,11 @@ body {
     text-align: center !important;
     font-family: "RockwellNova", sans-serif !important;
     margin: 0;
-    background-color: #fafafa;
+    //background-color: #fafafa;
     color: #222;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #d5d5d5;
 
     &.paper-background {
         background-color: $whiteBackgroundColor;
@@ -110,14 +113,14 @@ body {
     margin-left: 10px;
 }
 
-@for $i from 1 through 100 {
+@for $i from 0 through 100 {
     .swipe-#{$i} {
-        transform: translateX(-#{$i * 100vw});
+        transform: translateX(-#{($i * 100%) - 100%});
     }
 }
 
 .swipe {
-    transform: translateX(-100vw);
+    transform: translateX(-100%);
     transition: all 0.2s linear;
 }
 
@@ -142,10 +145,10 @@ body {
 }
 
 .full-screen-width {
-    width: 100vw;
+    max-width: 1200px;
     height: 100%;
-    position: relative;
     flex: 1 0 auto;
+    min-width: 100%;
 }
 
 .padding {

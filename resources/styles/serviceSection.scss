@@ -22,6 +22,12 @@
         left: auto;
     }
 
+    .navigation {
+        max-width: 600px;
+        margin: auto;
+        position: relative;
+    }
+
     .section-footer {
         font-size: 1.3em;
         position: absolute;
@@ -124,13 +130,11 @@
         height: 100%;
         width: 100%;
         filter: grayscale(1);
+        max-width: 1200px;
+        background-color: black;
 
         #feb-special {
             background-color: black;
-        }
-
-        &.descr {
-            background-color: #efefef;
         }
 
         &.contain {
@@ -138,7 +142,9 @@
         }
 
         @media (min-width: 600px) {
-            background-size: contain;
+            background-size: cover;
+            width: 600px;
+            margin: auto;
         }
 
         &.logo {
@@ -168,7 +174,6 @@
         &.minime {
             background-image: url("../images/minime.jpg?n=11");
             background-size: 150%;
-            background-color: #d5d5d5;
             background-position: top;
 
             @media (min-width: 600px) {
@@ -239,7 +244,7 @@
         }
 
         video {
-            width: 100%;
+            max-width: 100%;
             height: 100%;
             object-fit: contain;
         }
