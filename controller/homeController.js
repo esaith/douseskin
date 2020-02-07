@@ -2,15 +2,15 @@ angular.module("douse", ["ngTouch", "ngSanitize", "ngRoute"]);
 angular.module("douse").config(function ($routeProvider) {
     $routeProvider
         .when("/about", {
-            templateUrl: "view/about.html?n=15",
+            templateUrl: "view/about.html?n=1",
             controller: "aboutController"
         })
         .when("/magazine", {
-            templateUrl: "view/magazine.html?n=15",
+            templateUrl: "view/magazine.html?n=1",
             controller: "magazineController"
         })
         .when("/", {
-            templateUrl: "view/homeController.html?n=15",
+            templateUrl: "view/homeController.html?n=1",
             controller: "homeController"
         })
         .otherwise({

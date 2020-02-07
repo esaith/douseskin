@@ -1,11 +1,11 @@
-angular.module("douse").directive("serviceSection", function() {
+angular.module("douse").directive("serviceSection", function () {
   return {
     restrict: "E",
-    templateUrl: "view/serviceSection.html?n=7",
+    templateUrl: "view/serviceSection.html?n=1",
     scope: {
       service: "="
     },
-    link: function(scope, element, attr) {
+    link: function (scope, element, attr) {
       let interval;
 
       if (scope.service) {
@@ -21,7 +21,7 @@ angular.module("douse").directive("serviceSection", function() {
         }, 3000);
       }
 
-      scope.nextPage = function(service, cancelInterval) {
+      scope.nextPage = function (service, cancelInterval) {
         if (cancelInterval) clearInterval(interval);
 
         if (!service.page && service.page !== 0) {
@@ -37,7 +37,7 @@ angular.module("douse").directive("serviceSection", function() {
         }
       };
 
-      scope.previousPage = function(service, cancelInterval) {
+      scope.previousPage = function (service, cancelInterval) {
         if (cancelInterval) clearInterval(interval);
 
         if (!service.page && service.page !== 0) {
