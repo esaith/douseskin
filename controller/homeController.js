@@ -2,15 +2,15 @@ angular.module("douse", ["ngTouch", "ngSanitize", "ngRoute"]);
 angular.module("douse").config(function ($routeProvider) {
     $routeProvider
         .when("/about", {
-            templateUrl: "view/about.html?n=1",
+            templateUrl: "view/about.html?n=2",
             controller: "aboutController"
         })
         .when("/magazine", {
-            templateUrl: "view/magazine.html?n=1",
+            templateUrl: "view/magazine.html?n=2",
             controller: "magazineController"
         })
         .when("/", {
-            templateUrl: "view/homeController.html?n=1",
+            templateUrl: "view/homeController.html?n=2",
             controller: "homeController"
         })
         .otherwise({
@@ -94,17 +94,17 @@ angular.module("douse").controller("homeController", [
                 src: "logo",
                 service: "",
                 descriptions: [
-                    { src: "../resources/images/img01.jpg" },
-                    { src: "../resources/images/img02.jpg" },
-                    { src: "../resources/images/img03.jpg" },
-                    { src: "../resources/images/img04.jpg" },
-                    { src: "../resources/images/img05.jpg" },
-                    { src: "../resources/images/img06.jpg" },
-                    { src: "../resources/images/img07.jpg" },
-                    { src: "../resources/images/img08.jpg" },
-                    { src: "../resources/images/img09.jpg" },
+                    { src: "resources/images/img01.jpg" },
+                    { src: "resources/images/img02.jpg" },
+                    { src: "resources/images/img03.jpg" },
+                    { src: "resources/images/img04.jpg" },
+                    { src: "resources/images/img05.jpg" },
+                    { src: "resources/images/img06.jpg" },
+                    { src: "resources/images/img07.jpg" },
+                    { src: "resources/images/img08.jpg" },
+                    { src: "resources/images/img09.jpg" },
                     {
-                        src: "../resources/images/viewmore.mp4",
+                        src: "resources/images/viewmore.mp4",
                         type: "video"
                     }
                 ]
@@ -113,8 +113,8 @@ angular.module("douse").controller("homeController", [
 
         $scope.specialServices = [
             {
-                src: "../resources/images/feb-special.mp4",
-                type: "video",
+                src: "special",
+                type: "",
                 service: "",
                 descriptions: []
             }
@@ -416,6 +416,17 @@ angular.module("douse").controller("homeController", [
 
         $scope.lashServices = [
             {
+                src: "complementarylashes",
+                service: "Complementary",
+                descriptions: [
+                    {
+                        description: [
+                            "Everything listed in flyer may not apply to everyone on every lash session. Additional time is given to dedicate the full duration of your service (Two hours full set. One hour fill)."
+                        ]
+                    }
+                ]
+            },
+            {
                 src: "lashes",
                 service: "Classic Lashes",
                 descriptions: [
@@ -498,6 +509,46 @@ angular.module("douse").controller("homeController", [
                             "Perfect to thicken natural lashes especially those with lighter colored lashes. Allows eyes to appear striking with just a pop of colored tint."
                         ],
                         footer: ["Comes with a micellar water cleaning for those with makeup on and a lash bath."]
+                    }
+                ]
+            }
+        ];
+
+        $scope.waxServices = [
+            {
+                src: "wax",
+                service: "Waxing",
+                descriptions: [
+                    {
+                        description: [
+                            "Brow wax $12 - 25 minutes",
+                            "Brow wax plus henna dye $22 - 35 minutes",
+                            $sce.trustAsHtml(
+                                "<div class='margin-bottom'>Brow henna dye $16 - 20 minutes</div>"
+                            ),
+                            $sce.trustAsHtml(
+                                "<div class='margin-bottom'>Shape and clean up those brows and add henna dye for definition and one less step in your makeup routine!</div>"
+                            )
+                        ],
+                        footer: ["Henna dye lasts up to 6 weeks!"]
+                    },
+                    {
+                        description: [
+                            "Upper lip wax $10 - 20 minutes",
+                            "Chin wax $10 - 20 minutes",
+                            "Side burns $12 - 20 minutes"
+                        ]
+                    },
+                    {
+                        description: [
+                            "Full face",
+                            "Brows, upper lip, chin, side burns",
+                            $sce.trustAsHtml(
+                                "<div class='margin-bottom'>$39 - 1 hour</div>"
+                            ),
+                            "Full face + brow henna dye $49 - 1 hour"
+                        ],
+                        footer: ["Henna dye lasts up to 6 weeks!"]
                     }
                 ]
             }

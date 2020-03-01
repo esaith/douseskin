@@ -78,8 +78,8 @@
         <a class="tab no-style" href="#body" ng-click="goToSection()">Body</a>
         <a class="tab no-style" href="#lashExtensions" ng-click="goToSection()">Lash Extensions</a>
         <a class="tab no-style" href="#lash-lift" ng-click="goToSection()">Lash Lift</a>
+        <a class="tab no-style" href="#wax" ng-click="goToSection()">Waxing</a>
         <a class="tab no-style" href="#makeup" ng-click="goToSection()">Makeup</a>
-        <a class="tab no-style" href="#salts" ng-click="goToSection()">Bath Salts</a>
         <div class="tab" id="booking-tab" ng-click="openTab('booking')">Booking</div>
         <div ng-show="selectedTab.booking" class="tab-content" id="booking">
             <div class="sm-detail padding-bottom">
@@ -96,21 +96,7 @@
         <div ng-show="selectedTab.magazine" class="tab-content" id="magazine">
 
         </div>
-        <div class="tab" id="giftcard-tab" ng-class="{'thin-bottom': !selectedTab.giftcard}"
-            ng-click="openTab('giftcard')">
-            eGift Cards
-        </div>
-        <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
-            <div class="sm-detail">The gift that keeps on giving!</div>
-            <div class="sm-detail">Physical gift cards available in studio</div>
-            <div class="sm-detail heart">&#x2764;</div>
-            <div class="button margin-bottom-small"
-                ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
-                eGift
-                Card</div>
-            <div class="xsm-detail">Gift Cards are not meant to hold services (monthly specials) from previous months.
-                May only be used for current promotions or any other regular services.*</div>
-        </div>
+        <a class="tab no-style" href="#salts" ng-click="goToSection()">Bath Salts</a>
         <div class="tab" id="bathsalt-tab" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
             ng-click="openTab('bathsalt')">Bath
             Salt Preorder
@@ -125,6 +111,21 @@
             <div class="button"
                 ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath
                 Salt Preorder</div>
+        </div>
+        <div class="tab" id="giftcard-tab" ng-class="{'thin-bottom': !selectedTab.giftcard}"
+            ng-click="openTab('giftcard')">
+            eGift Cards
+        </div>
+        <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
+            <div class="sm-detail">The gift that keeps on giving!</div>
+            <div class="sm-detail">Physical gift cards available in studio</div>
+            <div class="sm-detail heart">&#x2764;</div>
+            <div class="button margin-bottom-small"
+                ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
+                eGift
+                Card</div>
+            <div class="xsm-detail">Gift Cards are not meant to hold services (monthly specials) from previous months.
+                May only be used for current promotions or any other regular services.*</div>
         </div>
         <a class="tab no-style" href="#affiliates" ng-click="goToSection('affiliates')">Affiliates</a>
         <div class="tab" id="about-tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
@@ -163,6 +164,12 @@
             <hr />
         </div>
         <service-section service="lashLiftServices"></service-section>
+        <div class="strip" id="wax">
+            <hr />
+            Essential Waxing Services
+            <hr />
+        </div>
+        <service-section service="waxServices"></service-section>
         <div class="strip" id="makeup">
             <hr />
             Essential Makeup Services

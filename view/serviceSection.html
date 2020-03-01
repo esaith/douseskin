@@ -1,13 +1,8 @@
 <div class="section {{section.service}}" ng-repeat="section in service" ng-swipe-left="nextPage(section)"
     ng-swipe-right="previousPage(section)">
-    <div class="video background" ng-if="section.type === 'video'">
-        <video id="feb-special" autoplay="true" muted loop>
-            <source ng-src="{{section.src}}" type="video/mp4" />
-        </video>
-    </div>
     <div class="previous-btn" ng-click="previousPage(section, true)"></div>
     <div class="next-btn" ng-click="nextPage(section, true)"></div>
-    <div class="navigation" ng-if="section.type !== 'video'">
+    <div class="content" ng-if="section.type !== 'video'">
         <div class="background {{section.src}}" ng-class="{'contain': section.src.indexOf('magazine') > -1}"></div>
         <div class="section-footer" ng-if="section.page === 0 && section.service" ng-bind-html="section.service"></div>
     </div>
