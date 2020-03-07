@@ -131,6 +131,19 @@
         <div class="tab" id="about-tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
             Contact Me
         </div>
+        <div class="tab" id="blog-tab" ng-class="{'thin-bottom': !selectedTab.blog}" ng-click="openTab('blog')">
+            Blog
+        </div>
+        <div class="tab" id="careers-tab" ng-class="{'thin-bottom': !selectedTab.careers}"
+            ng-click="openTab('careers')">
+            Careers
+        </div>
+        <div ng-show="selectedTab.careers" id="careers" class="tab-content">
+            <div class="sm-detail">Looking to share space with licensed massage therapist. Room is equipped with massage
+                bed with cushion top, 2 steamers, dim lighting for ambiance, couch, refreshments and receptionists.
+                Email me if interested: douseskinessentials@gmail.com</div>
+            <div class="sm-detail">Include your full name and cell phone number.</div>
+        </div>
     </div>
     <div class="body-content">
         <service-section service="homelogo" auto-scroll></service-section>
@@ -140,6 +153,14 @@
             <hr />
         </div>
         <service-section service="specialServices"></service-section>
+        <div class="sign-up">
+            <div>
+                <div class="title">Essential news, promos, and events!</div>
+                <form action="https://squareup.com/outreach/WmmYkg/subscribe" method="POST" target="_blank"><input
+                        type="email" name="email_address" placeholder="E-mail"><button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
         <div class="strip" id="skin">
             <hr />
             Essential Skincare Services
@@ -196,4 +217,4 @@
     <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
         <div class="triangle-up"></div>
     </div>
-</div>
+</div

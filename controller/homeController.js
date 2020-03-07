@@ -1,23 +1,3 @@
-angular.module("douse", ["ngTouch", "ngSanitize", "ngRoute"]);
-angular.module("douse").config(function ($routeProvider) {
-    $routeProvider
-        .when("/about", {
-            templateUrl: "view/about.html?n=2",
-            controller: "aboutController"
-        })
-        .when("/magazine", {
-            templateUrl: "view/magazine.html?n=2",
-            controller: "magazineController"
-        })
-        .when("/", {
-            templateUrl: "view/homeController.html?n=2",
-            controller: "homeController"
-        })
-        .otherwise({
-            redirectTo: "/"
-        });
-});
-
 angular.module("douse").controller("homeController", [
     "$scope",
     "$sce",
@@ -44,19 +24,24 @@ angular.module("douse").controller("homeController", [
         };
 
         $scope.openTab = function (tab) {
-            if (tab === "about") {
-                $location.path("about");
-                return;
-            }
 
-            if (tab === "magazine") {
-                $location.path("magazine");
-                return;
+            switch (tab) {
+                case 'about':
+                    $location.path("about");
+                    break;
+                case 'magazine':
+                    $location.path("magazine");
+                    break;
+                case 'blog':
+                    $location.path('blog');
+                    break;
             }
 
             $scope.selectedTab[tab] = !$scope.selectedTab[tab];
             $timeout(() => {
-                document.querySelector("#" + tab + "-tab").scrollIntoView(true);
+                var scroll = document.querySelector("#" + tab + "-tab")
+                if (scroll)
+                    scroll.scrollIntoView(true);
             }, 100);
         };
 
@@ -131,7 +116,7 @@ angular.module("douse").controller("homeController", [
                             "Express facial for those on the go.",
                             "$44",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | masque | hydration | spf | steam | hot towels | 5 - 10 min LED light therapy"
+                            "double cleanse | exfoliation | masque | hydration | spf | double steam | hot towels | 5 - 10 min LED light therapy"
                         ]
                     },
                     {
@@ -140,7 +125,7 @@ angular.module("douse").controller("homeController", [
                             "This facial treats all skin types to reveal a brighter & clearer complexion.",
                             "$52",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | 10 - 15 min LED light therapy"
+                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | double steam | hot towels | 10 - 15 min LED light therapy"
                         ]
                     },
                     {
@@ -149,7 +134,7 @@ angular.module("douse").controller("homeController", [
                             "Extended facial intended for deep relaxation & of course rejuvinated skin!",
                             "$62",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | steam | hot towels | 15 - 20 min LED light therapy"
+                            "extended double cleanse | exfoliation | extractions | extended massage | masque | hydration | spf | double steam | hot towels | 15 - 20 min LED light therapy"
                         ],
                         footer: ["Disclaimer: Falling into deep sleep may occur!"]
                     }
@@ -165,7 +150,7 @@ angular.module("douse").controller("homeController", [
                             "High frequency sonic waves loosen dead skin cells. This allows for deep penetration of serums for faster cell turnover and overall best skincare effectiveness.",
                             "$59",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels | 10 - 15 min LED light therapy | ultrasonic cleanser"
+                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | double steam | hot towels | 10 - 15 min LED light therapy | ultrasonic cleanser"
                         ]
                     }
                 ]
@@ -180,7 +165,7 @@ angular.module("douse").controller("homeController", [
                             "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
                             "$69",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | microdermabrasion | exfoliation | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels | 15 - 20 min LED light therapy"
+                            "double cleanse | microdermabrasion | exfoliation | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | double steam | hot & cool towels | 15 - 20 min LED light therapy"
                         ]
                     }
                 ]
@@ -195,7 +180,7 @@ angular.module("douse").controller("homeController", [
                             "A hydrating facial tailored to the little ones 12 years & younger.*",
                             "$30",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "cleanse | exfoliation | hydrating masque | hydration | spf | steam | warm towels | cucumber slices"
+                            "cleanse | exfoliation | hydrating masque | hydration | spf | double steam | warm towels | cucumber slices"
                         ],
                         footer: [
                             "* Must be accompanied by adult for the duration of service. Does not include LED light therapy."
@@ -375,7 +360,7 @@ angular.module("douse").controller("homeController", [
                             "This facial targets those hard to reach areas revealing a smoother & more hydrated back.",
                             "$66",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | steam | hot towels"
+                            "double cleanse | exfoliation | extractions | massage | masque | hydration | spf | double steam | hot towels"
                         ]
                     }
                 ]
@@ -390,7 +375,7 @@ angular.module("douse").controller("homeController", [
                             "Physical form of exfoliation that uses a diamond crust tip and light suction that grazes against the skin.",
                             "$86",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-                            "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | steam | hot & cool towels"
+                            "double cleanse | microdermabrasion | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | double steam | hot & cool towels"
                         ]
                     }
                 ]
