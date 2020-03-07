@@ -1,7 +1,7 @@
 angular.module("douse").directive("serviceSection", function () {
   return {
     restrict: "E",
-    templateUrl: "view/serviceSection.html?n=2",
+    templateUrl: "view/serviceSection.html?n=3",
     scope: {
       service: "="
     },
