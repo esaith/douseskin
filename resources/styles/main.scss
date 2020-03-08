@@ -1,0 +1,126 @@
+$backgroundColor: #97cfd6;
+$whiteBackgroundColor: #fafafa;
+$borderColor: #333;
+
+body {
+    text-align: center !important;
+    font-family: "Roboto", sans-serif !important;
+    margin: 0;
+    color: #222;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #d5d5d5;
+
+    &.paper-background {
+        background-color: $whiteBackgroundColor;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@font-face {
+    font-family: RockwellNovaBold;
+    src: url("../fonts/RockwellNova-Bold.ttf");
+}
+
+@font-face {
+    font-family: RockwellNova;
+    src: url("../fonts/RockwellNova.ttf");
+}
+
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.align-center {
+    align-content: center;
+    align-items: center;
+}
+
+.align-bottom {
+    align-content: flex-end;
+    align-items: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.swipe {
+    transform: translateX(-100%);
+    transition: all 0.2s linear;
+}
+
+.no-swipe {
+    transition: all 0.2s linear;
+}
+.margin-bottom-small {
+    margin-bottom: 10px !important;
+}
+
+.margin-bottom {
+    margin-bottom: 20px !important;
+}
+
+.margin-bottom-large {
+    margin-bottom: 40px;
+}
+
+.main-page-bottom {
+    margin-bottom: 100px;
+}
+
+.full-screen-width {
+    max-width: 1200px;
+    height: 100%;
+    flex: 1 0 auto;
+    min-width: 100%;
+}
+
+.padding {
+    padding: 10px;
+}
+
+.padding-bottom {
+    padding-bottom: 10px;
+}
+
+.swipe-dot {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.strip {
+    padding: 10px;
+    font-size: 1.5em;
+    background-color: $backgroundColor;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.relative {
+    position: relative;
+}
+
+.auto {
+    margin: auto;
+}

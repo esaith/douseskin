@@ -7,6 +7,7 @@ angular.module("douse").controller("homeController", [
     function homeController($scope, $sce, $document, $timeout, $location) {
         $scope.isMenuOpen = false;
         $scope.showBackToTopButton = false;
+        $scope.showingHours = false;
 
         $scope.goToSection = function (section) {
             $scope.isMenuOpen = false;
@@ -18,23 +19,26 @@ angular.module("douse").controller("homeController", [
             }
         };
 
+        $scope.showHours = function () {
+            $scope.showingHours = !$scope.showingHours;
+        };
+
         $scope.toggleMenu = function () {
             $scope.isMenuOpen = !$scope.isMenuOpen;
             $scope.selectedTab = {};
         };
 
         $scope.openTab = function (tab) {
-
             switch (tab) {
                 case 'about':
                     $location.path("about");
-                    break;
+                    return;
                 case 'magazine':
                     $location.path("magazine");
-                    break;
+                    return;
                 case 'blog':
                     $location.path('blog');
-                    break;
+                    return;
             }
 
             $scope.selectedTab[tab] = !$scope.selectedTab[tab];
@@ -63,7 +67,22 @@ angular.module("douse").controller("homeController", [
             });
         });
 
-        $scope.openAddress = function () {
+        $scope.goTo = function (location) {
+            switch (location) {
+                case 'bookNow':
+                    bookNow();
+                    break;
+                case 'address':
+                    openAddress();
+                    break;
+            }
+        };
+
+        function bookNow() {
+            window.location.href = "https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl";
+        }
+
+        function openAddress() {
             if (
                 /* if we're on iOS, open in Apple Maps */
                 navigator.platform.indexOf("iPhone") != -1 ||
@@ -72,7 +91,7 @@ angular.module("douse").controller("homeController", [
             )
                 window.open("maps://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
             /* else use Google */ else window.open("https://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=");
-        };
+        }
 
         $scope.homelogo = [
             {
