@@ -1,9 +1,9 @@
-<div ng-cloak id="home" ng-class="{'paper-background': isMenuOpen}">
+<div ng-cloak id="home">
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <div class="header flex align-center justify-around animated bounceInDown">
+    <div class="header flex align-center justify-around animated slideInDown">
         <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
             <div class="stack">
                 <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
@@ -16,14 +16,14 @@
         <div ng-click="showHours()">Hours</div>
         <svg-helper svg-name='"douse"' class="douse"></svg-helper>
     </div>
-    <div class="body-content menu animated" ng-cloak
+    <div class="menu animated" ng-cloak
         ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen && !pageLoaded}">
         <a class="tab no-style" href="#specials" ng-click="goToSection()">Specials</a>
         <a class="tab no-style" href="#skin" ng-click="goToSection()">Skincare</a>
         <a class="tab no-style" href="#body" ng-click="goToSection()">Body</a>
         <a class="tab no-style" href="#lashExtensions" ng-click="goToSection()">Lash Extensions</a>
         <a class="tab no-style" href="#lash-lift" ng-click="goToSection()">Lash Lift</a>
-        <a class="tab no-style" href="#wax" ng-click="goToSection()">Waxing</a>
+        <a class="tab no-style" href="#wax" ng-click="goToSection()">Coming Soon: Waxing</a>
         <a class="tab no-style" href="#makeup" ng-click="goToSection()">Makeup</a>
         <div class="tab" id="booking-tab" ng-click="openTab('booking')">Booking</div>
         <div ng-show="selectedTab.booking" class="tab-content" id="booking">
@@ -36,10 +36,6 @@
             <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="button">
                 Book an Appointment
             </a>
-        </div>
-        <div class="tab" id="magazine-tab" ng-click="openTab('magazine')"> Magazine</div>
-        <div ng-show="selectedTab.magazine" class="tab-content" id="magazine">
-
         </div>
         <a class="tab no-style" href="#salts" ng-click="goToSection()">Bath Salts</a>
         <div class="tab" id="bathsalt-tab" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
@@ -90,64 +86,71 @@
             <div class="sm-detail">Include your full name and cell phone number.</div>
         </div>
     </div>
-    <div class="body-content">
-        <service-section service="homelogo" auto-scroll></service-section>
+    <div class="body-content" ng-class="{'stop-scroll': showingService}">
+        <service-section service-category="homelogo" class="logo"></service-section>
         <div class="strip" id="specials">
             <hr />
             Monthly Special
             <hr />
         </div>
-        <service-section service="specialServices"></service-section>
-        <div class="sign-up">
-            <div>
-                <div class="title">Essential news, promos, and events!</div>
-                <form action="https://squareup.com/outreach/WmmYkg/subscribe" method="POST" target="_blank"><input
-                        type="email" name="email_address" placeholder="E-mail"><button type="submit">Subscribe</button>
-                </form>
+        <service-section service-category="specialServices" class="logo"></service-section>
+        <div class="strip sign-up-strip">
+            <hr />
+            <div class="sign-up">
+                <div>
+                    <div class="title">Essential news, promos, and events!</div>
+                    <form action="https://squareup.com/outreach/WmmYkg/subscribe" method="POST" target="_blank"><input
+                            type="email" name="email_address" placeholder="E-mail"><button
+                            type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
+            <hr />
         </div>
         <div class="strip" id="skin">
             <hr />
             Essential Skincare Services
             <hr />
         </div>
-        <service-section service="skinCareServices"></service-section>
+        <service-section service-category="skinCareServices">
+        </service-section>
         <div class="strip" id="body">
             <hr />
             Essential Body Services
             <hr />
         </div>
-        <service-section service="bodyServices"></service-section>
+        <service-section service-category="bodyServices"></service-section>
         <div class="strip" id="lashExtensions">
             <hr />
             Essential Lash Extensions
             <hr />
         </div>
-        <service-section service="lashServices"></service-section>
+        <service-section service-category="lashServices"></service-section>
         <div class="strip" id="lash-lift">
             <hr />
             Essential Lash Lift
             <hr />
         </div>
-        <service-section service="lashLiftServices"></service-section>
+        <service-section service-category="lashLiftServices"></service-section>
         <div class="strip" id="wax">
             <hr />
+            <div class="coming-soon">Coming Soon</div>
             Essential Waxing Services
             <hr />
         </div>
-        <service-section service="waxServices"></service-section>
+        <service-section service-category="waxServices"></service-section>
         <div class="strip" id="makeup">
             <hr />
             Essential Makeup Services
             <hr />
         </div>
-        <service-section service="makeupServices"></service-section>
+        <service-section service-category="makeupServices"></service-section>
         <div class="strip" id="salts">
             <hr />
             Bath Salts
             <hr />
         </div>
-        <service-section service="bathSalts"></service-section>
+        <service-section service-category="bathSalts"></service-section>
         <div class="strip" id="affiliates">
             <hr />
             Essential Affiliates
@@ -159,6 +162,8 @@
         <div class="main-page-bottom"></div>
         <div class="strip"></div>
     </div>
+    <full-service service="selectedService" class="animated"
+        ng-class="{'slideInRight': selectedService, 'slideOutRight': !selectedService}"></full-service>
     <div class="modal-background" ng-class="{'showing': showingHours}"></div>
     <div class="modal" ng-class="{'showing': showingHours}" ng-click="showHours()">
         <div class="hours">

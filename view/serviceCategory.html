@@ -1,0 +1,8 @@
+<div class="service-category flex">
+    <div class="section {{service.title}}" ng-repeat="service in serviceCategory track by $index"
+        ng-class="{'single': serviceCategory.length === 1}" ng-click="selectService(service)">
+        <div class="background {{service.title}}"
+            ng-attr-style="background-image: url('resources/images/{{service.src}}'"></div>
+        <div class="title" ng-if="service.title">{{service.title}}</div>
+    </div>
+</div>

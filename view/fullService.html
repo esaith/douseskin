@@ -1,0 +1,19 @@
+<div id="full-service">
+    <svg-helper svg-name='"arrow"' class="close" ng-click="close()"></svg-helper>
+    <div id="type-background" class="background"
+        ng-attr-style="background-image: url('resources/images/{{service.src}}'"></div>
+    <div class="full-content">
+        <div class="title">{{service.title}}</div>
+        <div class="main-description" ng-repeat="description in service.mainDescription track by $index">{{description}}
+        </div>
+        <div class="flex align-center justify-around type-list">
+            <div ng-repeat="type in service.types" ng-if="service.types.length > 1" class="type"
+                ng-class="{'selected': selectedTypeIndex === $index}" ng-click="selectType($index)">{{type.title}}</div>
+        </div>
+        <div class="type-content animated" ng-repeat="type in service.types" ng-class="{'fadeIn': type.title === service.types[selectedTypeIndex].title || service.types.length === 1,
+            'selected': type.title === service.types[selectedTypeIndex].title || service.types.length === 1 }">
+            <div ng-repeat="description in type.description" ng-bind-html="description"></div>
+            <div class="type-footer" ng-if="type.footer">{{type.footer[0]}}</div>
+        </div>
+    </div>
+</div>

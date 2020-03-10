@@ -2,20 +2,19 @@
     text-align: left;
     font-family: Roboto;
     position: relative;
+    padding-top: 30px;
 
     .close {
+        padding: 3px;
         position: absolute;
         top: 5px;
-        right: 5px;
-        font-weight: bold;
-        padding: 2px 6px;
-        font-size: 14px;
-        z-index: 10;
-        color: #51c565;
-        border-radius: 50%;
-        border: 1px solid #51c565;
-        cursor: pointer;
-        box-sizing: border-box;
+        left: 5px;
+        z-index: 100;
+
+        svg {
+            width: 25px;
+            height: 25px;
+        }
     }
 
     .entry {
