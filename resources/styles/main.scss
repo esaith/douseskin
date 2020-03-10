@@ -37,6 +37,14 @@ body {
     src: url("../fonts/RockwellNova.ttf");
 }
 
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.stop-scroll {
+    overflow: hidden;
+}
+
 .flex {
     display: flex;
 }

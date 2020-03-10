@@ -77,10 +77,13 @@ angular.module("douse").controller("homeController", [
 
         $scope.$on('selected-service', function (event, service) {
             $scope.selectedService = service;
+            $scope.showService = true;
+            document.body.classList.add('stop-scroll');
         });
 
         $scope.$on('close-service', function () {
-            $scope.selectedService = null;
+            $scope.showService = false;
+            document.body.classList.remove('stop-scroll');
         });
 
         function bookNow() {
@@ -211,6 +214,28 @@ angular.module("douse").controller("homeController", [
                             "$69",
                             $sce.trustAsHtml("<div class='padding'>Includes</div>"),
                             "double cleanse | microdermabrasion | exfoliation | extractions | hydrating masque | toner | Vitamin C serum | moisturizer | spf | double steam | hot & cool towels | 15 - 20 min LED light therapy"
+                        ]
+                    }
+                ]
+            },
+            {
+                src: "dermaplaning.jpg",
+                title: "Dermaplaning",
+                mainDescription: [
+                    "Dermaplaning uses a medical grade scalpel to scrape the surface of the skin. It is a form of exfoliation and will greatly help lighten hyperpigmentation as well as diminish fine lines. By grazing the surface of the skin with a scalpel, vellus hair is removed, also known as peach fuzz! With skin that is free from dead skin and vellus hair, skincare application can penetrate deeper into the skin. The majority of products used will actually be able to be used, instead of getting trapped at the surface. This means your money of quality products is being put to good use!",
+
+                    "Eventhough this is a low risk treatment some side effects can include some redness and even some whiteheads. It is important not to touch your face after the procedure.",
+
+                    "This is a perfect treatment for anyone looking for exfoliation, good use of product absorption, baby smooth skin and even for those attenting an event and having perfect makeup application! On the other hand, anyone with open lesions, inflamed acne, uncontrolled diabetes, on Accutane (or past 6 months) or retinol for the past week cannot have this procedure."
+                ],
+                types: [
+                    {
+                        title: "1 Hr",
+                        description: [
+                            "1 Hour",
+                            "$69",
+                            $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+                            "double cleanse | povidone-iodine | hydrating masque | calming toner | Vitamin C serum | hydrating moisturizer | spf"
                         ]
                     }
                 ]

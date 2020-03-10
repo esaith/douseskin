@@ -86,7 +86,7 @@
             <div class="sm-detail">Include your full name and cell phone number.</div>
         </div>
     </div>
-    <div class="body-content" ng-class="{'stop-scroll': showingService}">
+    <div class="body-content">
         <service-section service-category="homelogo" class="logo"></service-section>
         <div class="strip" id="specials">
             <hr />
@@ -163,7 +163,7 @@
         <div class="strip"></div>
     </div>
     <full-service service="selectedService" class="animated"
-        ng-class="{'slideInRight': selectedService, 'slideOutRight': !selectedService}"></full-service>
+        ng-class="{'slideInRight': showService, 'slideOutRight': !showService}"></full-service>
     <div class="modal-background" ng-class="{'showing': showingHours}"></div>
     <div class="modal" ng-class="{'showing': showingHours}" ng-click="showHours()">
         <div class="hours">

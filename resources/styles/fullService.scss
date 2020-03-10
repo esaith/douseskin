@@ -59,7 +59,7 @@
         }
 
         .type-list {
-            padding: 20px 0;
+            padding: 20px 0 15px;
         }
 
         .type {
@@ -77,11 +77,11 @@
             transition: opacity 0.1s ease-out;
             height: 0;
             overflow: hidden;
-            padding: 10px;
             box-sizing: border-box;
             font-size: 15px;
 
             &.selected {
+                padding: 10px;
                 transition: opacity 0.3s ease-in;
                 opacity: 1;
                 height: initial;
