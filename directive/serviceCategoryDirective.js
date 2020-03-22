@@ -7,14 +7,17 @@
       replace: true,
       templateUrl: "view/serviceCategory.html?n=5",
       scope: {
-        serviceCategory: "="
+        serviceCategory: "=",
+        ignoreSelection: "=?"
       },
       link: function(scope, element, attr) {
         scope.selectService = function(serviceIndex, serviceCategory) {
-          scope.$emit("selected-service", {
-            serviceIndex: serviceIndex,
-            serviceCategory: serviceCategory
-          });
+          if (!scope.ignoreSelection) {
+            scope.$emit("selected-service", {
+              serviceIndex: serviceIndex,
+              serviceCategory: serviceCategory
+            });
+          }
         };
       }
     };
