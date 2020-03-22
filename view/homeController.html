@@ -169,8 +169,13 @@
         <div class="main-page-bottom"></div>
         <div class="strip"></div>
     </div>
-    <full-service service="selectedService" class="animated"
-        ng-class="{'slideInRight': showService, 'slideOutRight': !showService}"></full-service>
+    <div class="full-service-suite animated" 
+    ng-class="{'slideInRight': showService, 'slideOutRight': !showService}">     
+    <svg-helper svg-name='"close"' class="close" ng-click="close()"></svg-helper>
+    <div class="full-service-suite-container flex align-center" ng-attr-style="transform: translateX({{-serviceIndex * 100}}%)">
+    <full-service service="service" ng-repeat="service in selectedCategory"></full-service>
+        </div>
+    </div>
     <div class="modal-background" ng-class="{'showing': showingHours}"></div>
     <div class="modal" ng-class="{'showing': showingHours}" ng-click="showHours()">
         <div class="hours">

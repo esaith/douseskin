@@ -12,6 +12,29 @@
       link: function(scope, element, attr) {
         scope.selectedTypeIndex = 0;
 
+        var startX,
+          startY,
+          startTime,
+          threshold = 50,
+          allowedTime = 1000;
+
+        element.bind("touchstart", function(event) {
+          startX = event.changedTouches[0].pageX;
+          startY = event.changedTouches[0].pageY;
+          startTime = new Date().getTime();
+        });
+
+        element.bind("touchend", function(event) {
+          var elapsedTime = new Date().getTime() - startTime;
+          distance = event.changedTouches[0].pageX - startX;
+          var swipedRight = elapsedTime <= allowedTime && distance >= threshold;
+
+          var swipedLeft = elapsedTime <= allowedTime && -distance >= threshold;
+
+          if (swipedRight) scope.$emit("slide-fullservice-right");
+          if (swipedLeft) scope.$emit("slide-fullservice-left");
+        });
+
         scope.selectType = function(index) {
           scope.selectedTypeIndex = index;
         };
@@ -27,7 +50,7 @@
           function() {
             scope.selectedTypeIndex = 0;
 
-            var fullService = document.querySelector("#full-service");
+            var fullService = document.querySelector(".full-service-content");
             var parallax = document.querySelectorAll("#type-background"),
               speed = 0.4;
             updateScroll(fullService, parallax, speed);

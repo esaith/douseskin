@@ -10,8 +10,11 @@
         serviceCategory: "="
       },
       link: function(scope, element, attr) {
-        scope.selectService = function(service) {
-          scope.$emit("selected-service", service);
+        scope.selectService = function(serviceIndex, serviceCategory) {
+          scope.$emit("selected-service", {
+            serviceIndex: serviceIndex,
+            serviceCategory: serviceCategory
+          });
         };
       }
     };

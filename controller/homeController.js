@@ -74,11 +74,34 @@ angular.module("douse").controller("homeController", [
       }
     };
 
-    $scope.$on("selected-service", function(event, service) {
-      $scope.selectedService = service;
+    $scope.$on("selected-service", function(event, selection) {
+      $scope.serviceIndex = selection.serviceIndex;
+      $scope.selectedCategory = selection.serviceCategory;
       $scope.showService = true;
       document.body.classList.add("stop-scroll");
     });
+
+    $scope.$on("slide-fullservice-left", function() {
+      $scope.$evalAsync(function() {
+        if ($scope.selectedCategory.length > $scope.serviceIndex + 1)
+          ++$scope.serviceIndex;
+      });
+    });
+
+    $scope.$on("slide-fullservice-right", function() {
+      $scope.$evalAsync(function() {
+        if ($scope.serviceIndex > 0) {
+          --$scope.serviceIndex;
+        } else {
+          $scope.close();
+        }
+      });
+    });
+
+    $scope.close = function() {
+      $scope.showService = false;
+      document.body.classList.remove("stop-scroll");
+    };
 
     $scope.$on("close-service", function() {
       $scope.showService = false;
