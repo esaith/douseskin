@@ -164,6 +164,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "facial2.jpg",
         title: "Custom Facials",
+        fullserviceCssClass: "backgroundYHigh",
         mainDescription: [
           "Designed to keep your skin in mind but also allow your mind & body to relax! Deeply cleanse your pores & ridding of dead skin to reveal a brighter & clearer complexion. Whether you have acneic, oily, dry, sensitive or mature skin, we have you covered! All custom facials use organic skincare for a more pure experience.",
           "All custom facials include hot towels, double steamer to target both sides of your face and LED light therapy."
@@ -233,14 +234,9 @@ angular.module("douse").controller("homeController", [
               ),
               $sce.trustAsHtml("<div class='description-padding'>$54</div>"),
               $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "oil based cleanser | brightening cleanser | exfoliation | extractions | light facial massage | hydrating masque | 20 mins LED light therapy | hydrating toner | vitamin c serum | hydrating moisturizer | sunscreen | lip treatment",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Contains: organic olive oil, French lavender, canteloupe melon, tumeric, licorice root, tamrind seed extract, vitamin B-12, vitamin E, decyl glucoside (plant-derived, biodegradable, and gentle surfactant), bamboo, sodium bicarbonate, organic avocado oil, organic whole milk yogurt, aloe vera, peach puree, vitamin C, acai fruit, tripeptide 5, sea kelp bioferment, alpha-lipoic acid, coenzyme Q10, beta fructan (protects skin barrier), barley grass juice, dandelion leaf juice, kale juice, spirulina, Icelandic kelp, hyaluronic acid, sunflower seed, pumpkin seed, green tea, rice bran, micronized zinc, tocotrienols, raw honey, agave nectar, castor oil, comfrey, calendula.</div>"
-              )
+              "oil based cleanser | brightening cleanser | exfoliation | extractions | light facial massage | hydrating masque | 20 mins LED light therapy | hydrating toner | vitamin c serum | hydrating moisturizer | sunscreen | lip treatment"
             ],
-            footer: [
-              "*Not in order of quantity, but rather key ingredients from products used throughout service."
-            ]
+            footer: []
           },
           {
             title: "Resurfacing",
@@ -257,14 +253,9 @@ angular.module("douse").controller("homeController", [
               ),
               $sce.trustAsHtml("<div class='description-padding'>$54</div>"),
               $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "oil based cleanser | resurfacing cleanser | exfoliation | extractions | light facial massage | nourishing masque |20 mins LED light therapy | revitalizing toner | vitamin c serum | hydrating moisturizer | sunscreen | lip treatment",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Contains: organic olive oil, French lavender, blueberries, acai, lactic acid, malic acid, citric acid, organic avocado oil, rice amino acids, aloe vera, manuka honey, shea butter, calendula, cucumber, barley grass, spirulina, chlorella, chlorophyll, alpha-lipoic acid, coenzyme Q10, beta fructan (protects skin barrier), dandelion leaf juice, kale juice, Icelandic kelp, hyaluronic acid, vitamin E, sea kelp bioferment, sunflower seed, pumpkin seed, green tea, rice bran, micronized zinc, vitamin C, tocotrienols, raw honey, agave nectar, castor oil, comfrey./div>"
-              )
+              "oil based cleanser | resurfacing cleanser | exfoliation | extractions | light facial massage | nourishing masque |20 mins LED light therapy | revitalizing toner | vitamin c serum | hydrating moisturizer | sunscreen | lip treatment"
             ],
-            footer: [
-              "*Not in order of quantity, but rather key ingredients from products used throughout service."
-            ]
+            footer: []
           },
           {
             title: "Purifying",
@@ -281,14 +272,9 @@ angular.module("douse").controller("homeController", [
               ),
               $sce.trustAsHtml("<div class='description-padding'>$54</div>"),
               $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "oil based cleanser | detoxifying cleanser | exfoliation | extractions | light facial massage | purifying masque | 20 mins LED light therapy | revitalizing toner | vitamin c serum | clarifying moisturizer | sunscreen | lip treatment",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Contains: organic olive oil, French lavender, barley grass juice, oat grass juice, kale juice, dandelion leaf juice, chlorella, grapefruit, sage, 2% salicylic acid, vitamin E, decyl glucoside (plant-derived, biodegradable, and gentle surfactant), blueberries, acai, lactic acid, malic acid, citric acid, organic avocado oil, calendula, rose hip, evening primrose, glacial mineral mud, bentonite clay, aloe vera, cucumber, barley grass, kelp, spirulina, chlorophyll, alpha-lipoic acid, coenzyme Q10, beta fructan (protects skin barrier), carrot seed, watercress, green tea, ionic minerals of: silica, sulphur, magnesium & copper, sunflower seed, pumpkin seed, green tea, rice bran, micronized zinc, vitamin C, tocotrienols, raw honey, agave nectar, castor oil, comfrey./div>"
-              )
+              "oil based cleanser | detoxifying cleanser | exfoliation | extractions | light facial massage | purifying masque | 20 mins LED light therapy | revitalizing toner | vitamin c serum | clarifying moisturizer | sunscreen | lip treatment"
             ],
-            footer: [
-              "*Not in order of quantity, but rather key ingredients from products used throughout service."
-            ]
+            footer: []
           }
         ]
       },
@@ -322,6 +308,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "facial.jpg",
         title: "Ultrasonic Facial Treatment",
+        fullserviceCssClass: "backgroundYHigh",
         mainDescription: [
           "High frequency sonic waves loosen dead skin cells which allows for deep penetration of organic skincare products. It can be used to remove dead skin & sebum while exfoliating. It may also be used to get the most out of your skincare products by pushing essential skincare ingredients beneath the surface of the skin.",
           "This treatment is noninvasive but when used has a high pitch noise, which is normal. Anyone with congested pores, excessive amount of oil, blackheads, whiteheads, flaky skin, dull skin tone or uneven skin tone would benefit from an ultrasonic facial treatment. It can even be used to firm and lift!",
@@ -409,6 +396,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "makeup.jpg",
         title: "Natural Full Face Makeover",
+        fullserviceCssClass: "backgroundYMid",
         mainDescription: [
           "This is a great makeover for anyone looking to get slightly dressed up, normally never wears makeup and even for a first date. A natural makeover is meant to enhance your beauty in a delicate way. We will start off by prepping the skin with a moisturizer then a primer to targeted areas - depending on your skin type. We advance to correcting slight imperfections and concealing them to get that even skin tone. Afterwards, we  add foundation to make sure you're flawless all day! Adding definition to the eyes and brows create a more captivating appeal. By adding a little color to the cheeks with some blush and bronzer we give life to the flawless canvas."
         ],
@@ -500,11 +488,7 @@ angular.module("douse").controller("homeController", [
               $sce.trustAsHtml("<div class='padding'>Includes</div>"),
               "oil based cleanser | resurfacing cleanser | exfoliation | extractions | light back facial massage | target masking | revitalizing toner | hydrating moisturizer",
 
-              "*Does not include LED Light Therapy",
-
-              "Contains: organic olive oil, french lavender, blueberries, acai, lactic acid, malic acid, citric acid, organic avocado oil, rice amino acids, aloe vera, manuka honey, shea butter, calendula, cucumber, barley grass, spirulina, chlorella, chlorophyll, alpha-lipoic acid, coenzyme Q10, beta fructan (protects skin barrier), barley grass juice, dandelion leaf juice, kale juice, Icelandic kelp, hyaluronic acid, vitamin E, sea kelp bioferment.",
-
-              "*Not in order of quantity, but rather a list of key ingredients from known products used throughout service."
+              "*Does not include LED Light Therapy"
             ]
           }
         ]
@@ -512,6 +496,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "backmicroderm.jpg",
         title: "Back Microdermabrasion Treatment",
+        fullserviceCssClass: "backgroundYHigh",
         mainDescription: [
           "The best of two worlds, combining a back facial with a microdermabrasion! This treatment is great to exfoliate your back. Anyone with dry skin, hyperpigmentation or scars would be a perfect candidate. Just like a microdermabrasion on the face, the back will benefit from all the richness of the skincare as well as the treatment performed. Discoloration, wrinkles & dry skin will greatly diminish with continuous treatment.",
 
@@ -560,6 +545,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "complementarylashes.jpg",
         title: "Complementary",
+        fullserviceCssClass: "backgroundYHigh",
         types: [
           {
             description: [
@@ -601,6 +587,7 @@ angular.module("douse").controller("homeController", [
       {
         src: "lashes.jpg",
         title: "Classic Lashes",
+        fullserviceCssClass: "backgroundYHigh",
         mainDescription: [
           "Instantly get those defined lashes that brighten up your eyes! With versatile lashes it is easy to go from natural to strikingly dramatic. Perfect for everyday & for special occasions!  Choose from a smitten cat-eye creating an elongated eye, great for those who already have beautiful large eyes or enjoy a winged look. Don't have such large eyes? Want to create an effortlessly larger gaze? A charming doe-eyed look creates eyes that are more awake with longer lashes in the center.",
 
@@ -718,6 +705,7 @@ angular.module("douse").controller("homeController", [
         src: "lash-lift.jpg",
         title: "Lash Lifts",
         css: "lash-lifts",
+        fullserviceCssClass: "backgroundYHigh",
         mainDescription: [
           "Love your natural lashes but wish they could look curled & lifted? Introducing the Lash Lift! This noninvasive service allows your natural lashes to appear curled, lifted & longer!",
 
