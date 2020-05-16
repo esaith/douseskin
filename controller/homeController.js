@@ -163,60 +163,7 @@ angular.module("douse").controller("homeController", [
     $scope.skinCareServices = [
       {
         src: "facial2.jpg",
-        title: "Custom Facials",
-        fullserviceCssClass: "backgroundYHigh",
-        mainDescription: [
-          "Designed to keep your skin in mind but also allow your mind & body to relax! Deeply cleanse your pores & ridding of dead skin to reveal a brighter & clearer complexion. Whether you have acneic, oily, dry, sensitive or mature skin, we have you covered! All custom facials use organic skincare for a more pure experience.",
-          "All custom facials include hot towels, double steamer to target both sides of your face and LED light therapy."
-        ],
-        types: [
-          {
-            title: "35 Min",
-            description: [
-              "35 Minute Express Facial",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Express facial for those on the go.</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$44</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "double cleanse | exfoliation | masque | hydration | spf | double steam | hot towels | 5 - 10 min LED light therapy"
-            ]
-          },
-          {
-            title: "1 Hour",
-            description: [
-              "1 Hour Custom Facial",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Ideal amount of time to be pampered!.</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$52</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "double cleanse | exfoliation | extractions | light facial massage | masque | hydration | spf | double steam | hot towels | 10 - 15 min LED light therapy"
-            ]
-          },
-          {
-            title: "1.5 Hr",
-            description: [
-              "1.5 Hour Extended Facial",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>IExtended facial intended for deep relaxation.</div>"
-              ),
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Great for all skin types.</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$62</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "oil based cleanser | brightening cleanser | exfoliation | extractions | light facial massage | hydrating masque | 20 mins LED light therapy | hydrating toner | vitamin c serum | hydrating moisturizer | sunscreen | lip treatment"
-            ],
-            footer: [
-              "Contains: organic olive oil, french lavender, canteloupe melon, tumeric, licorice root, tamrind seed extract, vitamin B-12, vitamin E, decyl glucoside (plant-derived, biodegradable, and gentle surfactant), bamboo, sodium bicarbonate, organic avocado oil, organic whole milk yogurt, aloe vera, peach puree, vitamin C, acai fruit, tripeptide 5, sea kelp bioferment, alpha-lipoic acid, coenzyme Q10, beta fructan (protects skin barrier), barley grass juice, dandelion leaf juice, kale juice, spirulina, Icelandic kelp, hyaluronic acid, sunflower seed, pumpkin seed, green tea, rice bran, micronized zinc, tocotrienols, raw honey, agave nectar, castor oil, comfrey, calendula."
-            ]
-          }
-        ]
-      },
-      {
-        src: "img06.jpg",
-        title: "Specialty Facials",
+        title: "Facials",
         mainDescription: ["Select from one of these curated facials!"],
         types: [
           {
@@ -279,6 +226,30 @@ angular.module("douse").controller("homeController", [
         ]
       },
       {
+        src: "facial.jpg",
+        title: "Add Ons",
+        mainDescription: ["Select from below to add to any facial service!"],
+        types: [
+          {
+            title: "Add Ons",
+            description: [
+              "Microdermabrasion",
+              $sce.trustAsHtml(
+                "<div class='description-padding'>15 Minute</div>"
+              ),
+              $sce.trustAsHtml(
+                "<div class='description-padding'>A noninvasive treatment used as a physical exfoliation to remove dead skin. A light to moderate suction is used along with a diamond crusted tip to physically exfoliating & removing dead skin. The feeling of having a microdermabrasion performed does not hurt, rather the feeling is as if a cat were licking you. The benefits of this treatment is not only to reveal more radiant skin but to help reduce the appearance of damage caused by the sun. Hyperpigmentation (dark spots) and wrinkles greatly diminish over continuous treatment. The more treatments received, a more coarse diamond tip may be used - while keeping the client's comfort in mind. Clients with open sores or pustules (pimples) are not recommended this service as it can cause discomfort."
+              ),
+              $sce.trustAsHtml(
+                "<div class='description-padding'>Great for all skin types.</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$15</div>")
+            ],
+            footer: []
+          }
+        ]
+      },
+      {
         src: "minime.jpg",
         title: "Mini Me Facial",
         mainDescription: [
@@ -298,171 +269,6 @@ angular.module("douse").controller("homeController", [
             ],
             footer: [
               "* Must be accompanied by adult for the duration of service. Does not include LED light therapy."
-            ]
-          }
-        ]
-      }
-    ];
-
-    $scope.skinCareTreatmentServices = [
-      {
-        src: "facial.jpg",
-        title: "Ultrasonic Facial Treatment",
-        fullserviceCssClass: "backgroundYHigh",
-        mainDescription: [
-          "High frequency sonic waves loosen dead skin cells which allows for deep penetration of organic skincare products. It can be used to remove dead skin & sebum while exfoliating. It may also be used to get the most out of your skincare products by pushing essential skincare ingredients beneath the surface of the skin.",
-          "This treatment is noninvasive but when used has a high pitch noise, which is normal. Anyone with congested pores, excessive amount of oil, blackheads, whiteheads, flaky skin, dull skin tone or uneven skin tone would benefit from an ultrasonic facial treatment. It can even be used to firm and lift!",
-          "Treatment covers the entire neck and face. Additional $12 to cover chest area as well (+ 15 mins).",
-          "Those who would not be good candidates are pregnant women, those with severe heart disease, metal implants, a pacemaker and medically prescribed exfoliants."
-        ],
-        types: [
-          {
-            title: "1 Hour",
-            description: [
-              "1 Hour",
-              $sce.trustAsHtml(
-                "<div class='padding'>Upgrade your custom facial (face & neck)</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$59</div>"),
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Includes</div>"
-              ),
-              "double cleanse | exfoliation | extractions | light facial massage | masque | hydration | spf | double steam | hot towels | 10 - 15 min LED light therapy | ultrasonic cleanser"
-            ]
-          },
-          {
-            title: "1 Hour 15 Minutes",
-            description: [
-              "1 Hour 15 Minutes",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Upgrade your custom facial (face, neck & chest)</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$71</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "double cleanse | exfoliation | extractions | light facial massage | masque | hydration | spf | double steam | hot towels | 15 min LED light therapy | ultrasonic cleanser"
-            ]
-          }
-        ]
-      },
-      {
-        src: "microderm.jpg",
-        title: "Microdermabrasion",
-        mainDescription: [
-          "A noninvasive treatment used as a physical exfoliation to remove dead skin. A light to moderate suction is used along with a diamond crusted tip to physically exfoliating & removing dead skin. The feeling of having a microdermabrasion performed does not hurt, rather the feeling is as if a cat were licking you. The benefits of this treatment is not only to reveal more radiant skin but to help reduce the appearance of damage caused by the sun. Hyperpigmentation (dark spots) and wrinkles greatly diminish over continuous treatment. The more treatments received, a more coarse diamond tip may be used - while keeping the client's comfort in mind. Clients with open sores or pustules (pimples) are not recommended this service as it can cause discomfort."
-        ],
-        types: [
-          {
-            title: "1 Hour 15 Minutes",
-            description: [
-              "1 Hour 15 Minutes",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Upgrade your facial (face).</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$69</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "double cleanse | microdermabrasion | exfoliation | extractions | hydrating masque | hydration | spf | double steam | hot & cool towels | 15 - 20 min LED light therapy"
-            ]
-          }
-        ]
-      },
-      {
-        src: "dermaplaning.jpg",
-        title: "Dermaplaning",
-        mainDescription: [
-          "Dermaplaning uses a medical grade scalpel to scrape the surface of the skin. It is a form of exfoliation and will greatly help lighten hyperpigmentation as well as diminish fine lines. By grazing the surface of the skin with a scalpel, vellus hair is removed, also known as peach fuzz! With skin that is free from dead skin and vellus hair, skincare application can penetrate deeper into the skin. The majority of products used will actually be able to be used, instead of getting trapped at the surface. This means your money of quality products is being put to good use!",
-
-          "Eventhough this is a low risk treatment some side effects can include some redness and even some whiteheads. It is important not to touch your face after the procedure.",
-
-          "This is a perfect treatment for anyone looking for exfoliation, good use of product absorption, baby smooth skin and even for those attenting an event and having perfect makeup application! On the other hand, anyone with open lesions, inflamed acne, uncontrolled diabetes, on Accutane (or past 6 months) or retinol for the past week cannot have this procedure."
-        ],
-        types: [
-          {
-            title: "1 Hour 15 Mins",
-            description: [
-              "1 Hour 15 Minutes",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Get that baby smooth face!</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$69</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "double cleanse | povidone-iodine | hydrating masque | calming toner | Vitamin C serum | hydrating moisturizer | spf | LED Light Therapy"
-            ]
-          }
-        ]
-      }
-    ];
-
-    $scope.makeupServices = [
-      {
-        src: "makeup.jpg",
-        title: "Natural Full Face Makeover",
-        fullserviceCssClass: "backgroundYMid",
-        mainDescription: [
-          "This is a great makeover for anyone looking to get slightly dressed up, normally never wears makeup and even for a first date. A natural makeover is meant to enhance your beauty in a delicate way. We will start off by prepping the skin with a moisturizer then a primer to targeted areas - depending on your skin type. We advance to correcting slight imperfections and concealing them to get that even skin tone. Afterwards, we  add foundation to make sure you're flawless all day! Adding definition to the eyes and brows create a more captivating appeal. By adding a little color to the cheeks with some blush and bronzer we give life to the flawless canvas."
-        ],
-        types: [
-          {
-            title: "1 Hr",
-            description: [
-              "1 Hour ",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Enhance your natural beauty with this makeover!</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$48</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "correct & conceal | foundation | brows | soft natural eye | blush & bronze | lip"
-            ],
-            footer: [
-              "*For makeover at different location additional costs may apply."
-            ]
-          }
-        ]
-      },
-      {
-        src: "eventful.jpg",
-        title: "Glam Full Face Makeover",
-        mainDescription: [
-          "Are you headed to an event such as prom, graduation, some type of shower, wedding or just want to be pampered? Then this makeover is for you! This makeover is meant for you to stand out in the crowd. I always prep the skin with a moisturizer and primer suited to your skin's needs. Any slight imperfections will be corrected and concealed to mute out discoloration. I mix your foundation to your shade and set the face with powder. We create a defined brow and a smokey or halo eye with a soft lip to balance the intensity. Let's not forget about sculpting those cheek bones with some contour and a pinch of color. And to finish the look, falsies!"
-        ],
-        types: [
-          {
-            title: "1.5 Hour",
-            description: [
-              "1.5 Hour",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>Soft glam makeover perfect for any event!</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$58</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "correct & conceal | foundation | brows | smokey eye | contour & sculpting | blush & bronze | falsies | lip"
-            ],
-            footer: [
-              "*For makeover at different location additional costs may apply."
-            ]
-          }
-        ]
-      },
-      {
-        src: "bride.jpg",
-        title: "Bridal Makeover (Trial & Final)",
-        mainDescription: [
-          "Firstly, congratulations on getting engaged! My bridal makeover consists of two separate sessions, the trial run and the wedding day. We know you fall in love with your look.  We will create a picture perfect look that will look timeless. It is essential to prep the skin in order to radiate in every lighting. To get a flawless camera ready look, we correct and conceal especially under the eyes - from long nights of planning. By creating a smoother canvas, foundation applies effortlessly. Natural eyes are a timeless look, we can always glam up the eyes with some falsies. The addition of brows creates structure for the eyes captured in every photo. Contour, bronzer, blush, highlight & lips complete the look."
-        ],
-        types: [
-          {
-            title: "1.5 Hr",
-            description: [
-              "1.5 Hour",
-              $sce.trustAsHtml(
-                "<div class='description-padding'>A perfect makeover for every bride on her special day, includes both trial & final looks each 1.5 hours long for a total of $89.</div>"
-              ),
-              $sce.trustAsHtml("<div class='description-padding'>$89</div>"),
-              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
-              "correct & conceal | foundation | brows | soft glam eye | contour & sculpting | blush & bronze | falsies | lip",
-              "(x2)"
-            ],
-            footer: [
-              "*For makeover at different location additional costs may apply."
             ]
           }
         ]
@@ -521,20 +327,67 @@ angular.module("douse").controller("homeController", [
       }
     ];
 
-    $scope.bathSalts = [
+    $scope.skinCareTreatmentServices = [
       {
-        src: "salts.jpg",
-        title: "Bath Salts",
-        css: "bathsalts-services",
+        src: "facial.jpg",
+        title: "Ultrasonic Facial Treatment",
+        fullserviceCssClass: "backgroundYHigh",
+        mainDescription: [
+          "High frequency sonic waves loosen dead skin cells which allows for deep penetration of organic skincare products. It can be used to remove dead skin & sebum while exfoliating. It may also be used to get the most out of your skincare products by pushing essential skincare ingredients beneath the surface of the skin.",
+          "This treatment is noninvasive but when used has a high pitch noise, which is normal. Anyone with congested pores, excessive amount of oil, blackheads, whiteheads, flaky skin, dull skin tone or uneven skin tone would benefit from an ultrasonic facial treatment. It can even be used to firm and lift!",
+          "Treatment covers the entire neck and face. Additional $12 to cover chest area as well (+ 15 mins).",
+          "Those who would not be good candidates are pregnant women, those with severe heart disease, metal implants, a pacemaker and medically prescribed exfoliants."
+        ],
         types: [
           {
+            title: "1 Hour",
             description: [
-              "Lemon Rosemary",
-              "Real dehydrated lemon slices with real stalks of rosemary.",
-              "Infused with essential oils, lemon black tea & alstroemeria petals.",
+              "1 Hour",
               $sce.trustAsHtml(
-                "<div class='description-padding'>$10 each</div>"
-              )
+                "<div class='padding'>Upgrade your custom facial (face & neck)</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$59</div>"),
+              $sce.trustAsHtml(
+                "<div class='description-padding'>Includes</div>"
+              ),
+              "double cleanse | exfoliation | extractions | light facial massage | masque | hydration | spf | double steam | hot towels | 10 - 15 min LED light therapy | ultrasonic cleanser"
+            ]
+          },
+          {
+            title: "1 Hour 15 Minutes",
+            description: [
+              "1 Hour 15 Minutes",
+              $sce.trustAsHtml(
+                "<div class='description-padding'>Upgrade your custom facial (face, neck & chest)</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$71</div>"),
+              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+              "double cleanse | exfoliation | extractions | light facial massage | masque | hydration | spf | double steam | hot towels | 15 min LED light therapy | ultrasonic cleanser"
+            ]
+          }
+        ]
+      },
+      {
+        src: "dermaplaning.jpg",
+        title: "Dermaplaning",
+        mainDescription: [
+          "Dermaplaning uses a medical grade scalpel to scrape the surface of the skin. It is a form of exfoliation and will greatly help lighten hyperpigmentation as well as diminish fine lines. By grazing the surface of the skin with a scalpel, vellus hair is removed, also known as peach fuzz! With skin that is free from dead skin and vellus hair, skincare application can penetrate deeper into the skin. The majority of products used will actually be able to be used, instead of getting trapped at the surface. This means your money of quality products is being put to good use!",
+
+          "Eventhough this is a low risk treatment some side effects can include some redness and even some whiteheads. It is important not to touch your face after the procedure.",
+
+          "This is a perfect treatment for anyone looking for exfoliation, good use of product absorption, baby smooth skin and even for those attenting an event and having perfect makeup application! On the other hand, anyone with open lesions, inflamed acne, uncontrolled diabetes, on Accutane (or past 6 months) or retinol for the past week cannot have this procedure."
+        ],
+        types: [
+          {
+            title: "1 Hour 15 Mins",
+            description: [
+              "1 Hour 15 Minutes",
+              $sce.trustAsHtml(
+                "<div class='description-padding'>Get that baby smooth face!</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$69</div>"),
+              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+              "double cleanse | povidone-iodine | hydrating masque | calming toner | Vitamin C serum | hydrating moisturizer | spf | LED Light Therapy"
             ]
           }
         ]
@@ -825,6 +678,83 @@ angular.module("douse").controller("homeController", [
               "Full face + brow henna dye $49 - 1 hour"
             ],
             footer: ["Henna dye lasts up to 6 weeks!"]
+          }
+        ]
+      }
+    ];
+
+    $scope.makeupServices = [
+      {
+        src: "makeup.jpg",
+        title: "Natural Full Face Makeover",
+        fullserviceCssClass: "backgroundYMid",
+        mainDescription: [
+          "This is a great makeover for anyone looking to get slightly dressed up, normally never wears makeup and even for a first date. A natural makeover is meant to enhance your beauty in a delicate way. We will start off by prepping the skin with a moisturizer then a primer to targeted areas - depending on your skin type. We advance to correcting slight imperfections and concealing them to get that even skin tone. Afterwards, we  add foundation to make sure you're flawless all day! Adding definition to the eyes and brows create a more captivating appeal. By adding a little color to the cheeks with some blush and bronzer we give life to the flawless canvas."
+        ],
+        types: [
+          {
+            title: "1 Hr",
+            description: [
+              "1 Hour ",
+              $sce.trustAsHtml(
+                "<div class='description-padding'>Enhance your natural beauty with this makeover!</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$48</div>"),
+              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+              "correct & conceal | foundation | brows | soft natural eye | blush & bronze | lip"
+            ],
+            footer: [
+              "*For makeover at different location additional costs may apply."
+            ]
+          }
+        ]
+      },
+      {
+        src: "eventful.jpg",
+        title: "Glam Full Face Makeover",
+        mainDescription: [
+          "Are you headed to an event such as prom, graduation, some type of shower, wedding or just want to be pampered? Then this makeover is for you! This makeover is meant for you to stand out in the crowd. I always prep the skin with a moisturizer and primer suited to your skin's needs. Any slight imperfections will be corrected and concealed to mute out discoloration. I mix your foundation to your shade and set the face with powder. We create a defined brow and a smokey or halo eye with a soft lip to balance the intensity. Let's not forget about sculpting those cheek bones with some contour and a pinch of color. And to finish the look, falsies!"
+        ],
+        types: [
+          {
+            title: "1.5 Hour",
+            description: [
+              "1.5 Hour",
+              $sce.trustAsHtml(
+                "<div class='description-padding'>Soft glam makeover perfect for any event!</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$58</div>"),
+              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+              "correct & conceal | foundation | brows | smokey eye | contour & sculpting | blush & bronze | falsies | lip"
+            ],
+            footer: [
+              "*For makeover at different location additional costs may apply."
+            ]
+          }
+        ]
+      },
+      {
+        src: "bride.jpg",
+        title: "Bridal Makeover (Trial & Final)",
+        mainDescription: [
+          "Firstly, congratulations on getting engaged! My bridal makeover consists of two separate sessions, the trial run and the wedding day. We know you fall in love with your look.  We will create a picture perfect look that will look timeless. It is essential to prep the skin in order to radiate in every lighting. To get a flawless camera ready look, we correct and conceal especially under the eyes - from long nights of planning. By creating a smoother canvas, foundation applies effortlessly. Natural eyes are a timeless look, we can always glam up the eyes with some falsies. The addition of brows creates structure for the eyes captured in every photo. Contour, bronzer, blush, highlight & lips complete the look."
+        ],
+        types: [
+          {
+            title: "1.5 Hr",
+            description: [
+              "1.5 Hour",
+              $sce.trustAsHtml(
+                "<div class='description-padding'>A perfect makeover for every bride on her special day, includes both trial & final looks each 1.5 hours long for a total of $89.</div>"
+              ),
+              $sce.trustAsHtml("<div class='description-padding'>$89</div>"),
+              $sce.trustAsHtml("<div class='padding'>Includes</div>"),
+              "correct & conceal | foundation | brows | soft glam eye | contour & sculpting | blush & bronze | falsies | lip",
+              "(x2)"
+            ],
+            footer: [
+              "*For makeover at different location additional costs may apply."
+            ]
           }
         ]
       }

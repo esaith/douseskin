@@ -38,22 +38,6 @@
                 Book an Appointment
             </a>
         </div>
-        <a class="tab no-style" href="#salts" ng-click="goToSection()">Bath Salts</a>
-        <div class="tab" id="bathsalt-tab" ng-class="{'thin-bottom': !selectedTab.bathsalt}"
-            ng-click="openTab('bathsalt')">Bath
-            Salt Preorder
-        </div>
-        <div ng-show="selectedTab.bathsalt" class="tab-content" id="bathsalt">
-            <div class="sm-detail">Select a date & time to pick up & pay for your handmade bath salts! It's free to pick
-                up, each jar of lemon rosemary bath salts is $10.
-                When booking pick up, add the number of bath salts you'd like to purchase. Please note: allow at least 2
-                days to make.
-            </div>
-            <div class="sm-detail margin-bottom heart">&#x2764;</div>
-            <div class="button"
-                ng-click="goToLink('https://squareup.com/appointments/buyer/widget/d8isenkmg0g6cl/Q4W3RC4A64DCN')">Bath
-                Salt Preorder</div>
-        </div>
         <div class="tab" id="giftcard-tab" ng-class="{'thin-bottom': !selectedTab.giftcard}"
             ng-click="openTab('giftcard')">
             eGift Cards
@@ -69,7 +53,6 @@
             <div class="xsm-detail">Gift Cards are not meant to hold services (monthly specials) from previous months.
                 May only be used for current promotions or any other regular services.*</div>
         </div>
-        <a class="tab no-style" href="#affiliates" ng-click="goToSection('affiliates')">Affiliates</a>
         <div class="tab" id="about-tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
             Contact Me
         </div>
@@ -156,20 +139,6 @@
             <hr />
         </div>
         <service-section service-category="makeupServices"></service-section>
-        <div class="strip" id="salts">
-            <hr />
-            Bath Salts
-            <hr />
-        </div>
-        <service-section service-category="bathSalts"></service-section>
-        <div class="strip" id="affiliates">
-            <hr />
-            Essential Affiliates
-            <hr />
-        </div>
-        <img class="sponsor"
-            src="https://cdn11.bigcommerce.com/s-7ef97/images/stencil/154x60/rosemira_logo_hex3f3a4b_pixels200v1_1562094911__94902.original.png">
-        <img class="sponsor" src="https://cdn.shopify.com/s/files/1/1721/6683/files/header_logo.png">
         <div class="main-page-bottom"></div>
         <div class="strip"></div>
     </div>
