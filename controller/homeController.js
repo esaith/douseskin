@@ -503,9 +503,7 @@ angular.module("douse").controller("homeController", [
         title: "Volume",
         fullserviceCssClass: "backgroundYHigh",
         mainDescription: [
-          "Instantly get those defined lashes that brighten up your eyes! With versatile lashes it is easy to go from natural to strikingly dramatic. Perfect for everyday & for special occasions!  Choose from a smitten cat-eye creating an elongated eye, great for those who already have beautiful large eyes or enjoy a winged look. Don't have such large eyes? Want to create an effortlessly larger gaze? A charming doe-eyed look creates eyes that are more awake with longer lashes in the center.",
-
-          "Perfect for anyone who has never tried lash extensions before or enjoys looking effortlessly natural! Each healthy natural lash has an extension adhered to it. Each look is customized to everyone's eye shape and desire.",
+          "Want a look that's a little fuller than just classics (1:!), add some volume lashes. These volume lashes are 3 extensions adhered to 1 natural lash. Adding these to classic lashes creates a hybrid look keeps that natural look with just a hint of flare creating body to the extensions. ",
         ],
         types: [
           {
