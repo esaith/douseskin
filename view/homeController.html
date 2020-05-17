@@ -22,6 +22,10 @@
         <a class="tab no-style" href="#facials" ng-click="goToSection()">Spa Services</a>
         <a class="tab no-style" href="#facial-treatment" ng-click="goToSection()">Treatments</a>
         <a class="tab no-style" href="#lashExtensions" ng-click="goToSection()">Lash Extensions</a>
+        <div class="tab" id="lashcalendar-tab" ng-click="openTab('lashcalendar')">Lash Calendar</div>
+        <div ng-show="selectedTab.lashcalendar" class="tab-content" id="lashcalendar">
+           <img src="resources/images/LashReferenceCalendar.png" class="lashcalendar" />
+        </div>
         <a class="tab no-style" href="#lash-lift" ng-click="goToSection()">Lash Lifts</a>
         <a class="tab no-style" href="#wax" ng-click="goToSection()">Coming Soon: Waxing</a>
         <a class="tab no-style" href="#makeup" ng-click="goToSection()">Makeup</a>
