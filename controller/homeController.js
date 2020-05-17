@@ -164,7 +164,9 @@ angular.module("douse").controller("homeController", [
       {
         src: "facial2.jpg",
         title: "Facials",
-        mainDescription: ["Select from one of these curated facials!"],
+        mainDescription: [
+          "Pamper yourself in a spa like setting while using organic skincare to nurture the skin. Select from one of these curated facials!",
+        ],
         types: [
           {
             title: "Brightening",
