@@ -1,70 +1,64 @@
 <html ng-app="douse">
-  <head>
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js"
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-PHH6JX8");
-    </script>
-    <script
-      async
-      src="https://googletagmanager.com/gtag/js?id=UA-146585285-1"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-146585285-1");
-    </script>
-    <!-- End Google Tag Manager -->
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <title>Douse Skin Essentials</title>
-    <link rel="stylesheet" href="resources/styles/home.css?n=5" />
-    <link rel="stylesheet" href="resources/styles/about.css?n=5" />
-    <link rel="stylesheet" href="resources/styles/serviceCategory.css?n=5" />
-    <link rel="stylesheet" href="resources/styles/blog.css?n=5" />
-    <link rel="stylesheet" href="resources/styles/main.css?n=5" />
-    <link rel="stylesheet" href="resources/styles/fullService.css" />
-    <link rel="stylesheet" href="resources/styles/animate.css?n=5" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
-    <script src="controller/router.js?n=5"></script>
-    <script src="controller/homeController.js?n=5"></script>
-    <script src="controller/aboutController.js?n=5"></script>
-    <script src="controller/blogController.js"></script>
-    <script src="directive/serviceCategoryDirective.js"></script>
-    <script src="directive/fullServiceDirective.js"></script>
-    <script src="directive/svgHelperDirective.js"></script>
-    <link rel="shortcut icon" href="resources/images/icon.jpg" />
-    <link href="resources/fonts/5thgradecursive-2.ttf" rel="stylesheet" />
-  </head>
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        "gtm.start": new Date().getTime(),
+        event: "gtm.js"
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != "dataLayer" ? "&l=" + l : "";
+      j.async = true;
+      j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, "script", "dataLayer", "GTM-PHH6JX8");
+  </script>
+  <script async src="https://googletagmanager.com/gtag/js?id=UA-146585285-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  <body>
-    <div ng-view></div>
-  </body>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "UA-146585285-1");
+  </script>
+  <!-- End Google Tag Manager -->
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Douse Skin Essentials</title>
+  <link rel="stylesheet" href="resources/styles/home.css?n=5" />
+  <link rel="stylesheet" href="resources/styles/about.css?n=5" />
+  <link rel="stylesheet" href="resources/styles/serviceCategory.css?n=5" />
+  <link rel="stylesheet" href="resources/styles/blog.css?n=5" />
+  <link rel="stylesheet" href="resources/styles/main.css?n=5" />
+  <link rel="stylesheet" href="resources/styles/fullService.css" />
+  <link rel="stylesheet" href="resources/styles/animate.css?n=5" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-touch.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.7.8/angular-sanitize.js"></script>
+  <script src="controller/router.js?n=5"></script>
+  <script src="services/services.js"></script>
+  <script src="controller/homeController.js?n=5"></script>
+  <script src="controller/aboutController.js?n=5"></script>
+  <script src="controller/blogController.js"></script>
+  <script src="directive/serviceCategoryDirective.js"></script>
+  <script src="directive/fullServiceDirective.js"></script>
+  <script src="directive/svgHelperDirective.js"></script>
+  <link rel="shortcut icon" href="resources/images/icon.jpg" />
+  <link href="resources/fonts/5thgradecursive-2.ttf" rel="stylesheet" />
+</head>
+
+<body>
+  <div ng-view></div>
+</body>
+
 </html>

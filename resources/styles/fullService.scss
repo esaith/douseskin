@@ -1,108 +1,108 @@
 #full-service {
-  min-width: 100vw;
+    min-width: 100vw;
 
-  .full-service-content {
-    overflow: auto; // scroll-behavior
-    max-height: 100vh;
-    position: relative;
-    z-index: 1;
-  }
-
-  .backgroundYHigh {
-    background-position: center 65% !important;
-  }
-
-  .backgroundYMid {
-    background-position: center 50% !important;
-  }
-
-  .background {
-    height: 300px;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: grayscale(1);
-  }
-
-  .full-content {
-    color: #f1f1f1;
-    background-color: #222;
-    box-shadow: 0px -20px 28px 11px #222;
-    z-index: 2;
-    position: relative;
-    box-sizing: border-box;
-    padding: 15px;
-
-    .title {
-      position: relative;
-      top: -10px;
-      font-size: 23px;
-      text-align: left;
-      left: 5px;
+    .full-service-content {
+        overflow: auto; // scroll-behavior
+        max-height: 100vh;
+        position: relative;
+        z-index: 1;
     }
 
-    .main-description {
-      text-align: left;
-      padding: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
+    .backgroundYHigh {
+        background-position: center 65% !important;
     }
 
-    .type-list {
-      padding: 20px 0 15px;
+    .backgroundYMid {
+        background-position: center 50% !important;
     }
 
-    .type {
-      padding-bottom: 5px;
-      border-bottom: 2px solid transparent;
-      cursor: pointer;
-
-      &.selected {
-        transition: all 0.2s ease-in;
-        border-bottom: 2px solid #e27b7b;
-      }
+    .background {
+        height: 300px;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: grayscale(1);
     }
 
-    .type-content {
-      opacity: 0;
-      transition: opacity 0.1s ease-out;
-      height: 0;
-      overflow: hidden;
-      box-sizing: border-box;
-      font-size: 15px;
+    .full-content {
+        color: #f1f1f1;
+        background-color: #222;
+        box-shadow: 0px -20px 28px 11px #222;
+        z-index: 2;
+        position: relative;
+        box-sizing: border-box;
+        padding: 15px;
 
-      &.selected {
-        padding: 10px;
-        transition: opacity 0.3s ease-in;
-        opacity: 1;
-        height: initial;
-        overflow: unset;
-      }
+        .title {
+            position: relative;
+            top: -10px;
+            font-size: 23px;
+            text-align: left;
+            left: 5px;
+        }
 
-      .excess-padding {
-        padding-top: 50px;
-        padding-bottom: 30px;
-      }
+        .main-description {
+            text-align: left;
+            padding: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
 
-      .description-padding {
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
+        .type-list {
+            padding: 20px 0 15px;
+        }
 
-      .extra-padding {
-        padding-top: 30px;
-        padding-bottom: 10px;
-      }
+        .type {
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
 
-      .mini-padding {
-        padding: 2px; // padding-top: 2px; padding-left: 2px; padding-right: 2px; padding-bottom: 2px;
-      }
+            &.selected {
+                transition: all 0.2s ease-in;
+                border-bottom: 2px solid #e27b7b;
+            }
+        }
 
-      .type-footer {
-        padding-top: 40px;
-        font-size: 12px;
-      }
+        .type-content {
+            opacity: 0;
+            transition: opacity 0.1s ease-out;
+            height: 0;
+            overflow: hidden;
+            box-sizing: border-box;
+            font-size: 15px;
+
+            &.selected {
+                padding: 10px;
+                transition: opacity 0.3s ease-in;
+                opacity: 1;
+                height: initial;
+                overflow: unset;
+            }
+
+            .excess-padding {
+                padding-top: 50px;
+                padding-bottom: 30px;
+            }
+
+            .description-padding {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .extra-padding {
+                padding-top: 30px;
+                padding-bottom: 10px;
+            }
+
+            .mini-padding {
+                padding: 2px; // padding-top: 2px; padding-left: 2px; padding-right: 2px; padding-bottom: 2px;
+            }
+
+            .type-footer {
+                padding-top: 40px;
+                font-size: 12px;
+            }
+        }
     }
-  }
 }

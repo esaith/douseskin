@@ -18,17 +18,14 @@
     </div>
     <div class="menu animated" ng-cloak
         ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen && !pageLoaded}">
-        <!-- <a class="tab no-style" href="#specials" ng-click="goToSection()">Specials</a> -->
-        <a class="tab no-style" href="#facials" ng-click="goToSection()">Spa Services</a>
-        <a class="tab no-style" href="#facial-treatment" ng-click="goToSection()">Treatments</a>
-        <a class="tab no-style" href="#lashExtensions" ng-click="goToSection()">Lash Extensions</a>
+
+        <a ng-if="business" class="tab no-style" href="#{{category.id}}" target="_self" ng-click="goToSection()"
+            ng-repeat="category in business.categories">{{category.ShortName}}</a>
+
         <div class="tab" id="lashcalendar-tab" ng-click="openTab('lashcalendar')">Lash Calendar</div>
         <div ng-show="selectedTab.lashcalendar" class="tab-content" id="lashcalendar">
-           <img src="resources/images/LashReferenceCalendar.png" class="lashcalendar" />
+            <img src="resources/images/LashReferenceCalendar.png" class="lashcalendar" />
         </div>
-        <a class="tab no-style" href="#lash-lift" ng-click="goToSection()">Lash Lifts</a>
-        <a class="tab no-style" href="#wax" ng-click="goToSection()">Coming Soon: Waxing</a>
-        <a class="tab no-style" href="#makeup" ng-click="goToSection()">Makeup</a>
         <div class="tab" id="booking-tab" ng-click="openTab('booking')">Booking</div>
         <div ng-show="selectedTab.booking" class="tab-content" id="booking">
             <div class="sm-detail padding-bottom">
@@ -75,15 +72,10 @@
     </div>
     <div class="body-content">
         <div class="pandemic-message">
-            Due to COVID-19 pandemic, Douse Skin Essentials is temporarily closed. Contact me for future services.          
+            Due to COVID-19 pandemic, Douse Skin Essentials is temporarily closed. Contact me for future services.
         </div>
-        <service-section ignore-selection="true" service-category="homelogo" class="logo"></service-section>
-        <!-- <div class="strip" id="specials">
-            <hr />
-            Monthly Special
-            <hr />
-        </div>
-        <service-section ignore-selection="true" service-category="specialServices" class="logo"></service-section> -->
+        <service-section ng-if="business" ignore-selection="true" service-category="business.homeLogo" class="logo">
+        </service-section>
         <div class="strip sign-up-strip">
             <hr />
             <div class="sign-up">
@@ -97,63 +89,30 @@
             </div>
             <hr />
         </div>
-        <div class="strip" id="facials">
-            <hr />
-            Essential Spa Services
-            <hr />
+        <div ng-if="business">
+            <div ng-repeat="category in business.categories">
+                <div class="strip" id="{{category.id}}">
+                    <hr />
+                    {{category.CategoryName}}
+                    <hr />
+                </div>
+                <service-section service-category="category.Services"></service-section>
+            </div>
         </div>
-        <service-section service-category="skinCareServices">
-        </service-section>
-        <div class="strip" id="facial-treatment">
-            <hr />
-            Essential Skin Treatments
-            <hr />
-        </div>
-        <service-section service-category="skinCareTreatmentServices">
-        </service-section>
-        <div class="strip" id="lashExtensions">
-            <hr />
-            Essential Lash Extensions
-            <hr />
-        </div>
-        <service-section service-category="lashServices"></service-section>
-        <div class="strip" id="lash-lift">
-            <hr />
-            Essential Lash Lifts
-            <hr />
-        </div>
-        <service-section service-category="lashLiftServices"></service-section>
-        <div class="strip" id="wax">
-            <hr />
-            <div class="coming-soon">Coming Soon</div>
-            Essential Waxing Services
-            <hr />
-        </div>
-        <service-section service-category="waxServices"></service-section>
-        <div class="strip" id="makeup">
-            <hr />
-            Essential Makeup Services
-            <hr />
-        </div>
-        <service-section service-category="makeupServices"></service-section>
         <div class="main-page-bottom"></div>
         <div class="strip"></div>
     </div>
-    <div class="full-service-suite animated" 
-    ng-class="{'slideInRight': showService, 'slideOutRight': !showService}">     
-    <svg-helper svg-name='"close"' class="close" ng-click="close()"></svg-helper>
-    <div class="full-service-suite-container flex align-center" ng-attr-style="transform: translateX({{-serviceIndex * 100}}%)">
-    <full-service service="service" ng-repeat="service in selectedCategory"></full-service>
+    <div class="full-service-suite animated" ng-class="{'slideInRight': showService, 'slideOutRight': !showService}">
+        <svg-helper svg-name='"close"' class="close" ng-click="close()"></svg-helper>
+        <div class="full-service-suite-container flex align-center"
+            ng-attr-style="transform: translateX({{-serviceIndex * 100}}%)">
+            <full-service service="service" ng-repeat="service in selectedCategory"></full-service>
         </div>
     </div>
     <div class="modal-background" ng-class="{'showing': showingHours}"></div>
-    <div class="modal" ng-class="{'showing': showingHours}" ng-click="showHours()">
+    <div class="modal" ng-class="{'showing': showingHours}" ng-if="business" ng-click="showHours()">
         <div class="hours">
-            <div>8am - 9pm. Monday thru Saturday</div>
-            <div>10am - 8pm. Sunday</div>
-            <div>By Appointment only</div>
-            <div>Same day appointment available if scheduled 3 hours in advance.</div>
-            <div>Please message me for any special requests.</div>
+            <div ng-repeat='hours in business.hours'>{{hours}}</div>
         </div>
     </div>
     <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
