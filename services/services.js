@@ -31,7 +31,8 @@
             bookNow: "https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl",
             logoSvg: '', // todo,
             categories: getCategories($sce),
-            modalSections: getModalSections()
+            modalSections: getModalSections(),
+            blog: getBlog()
         };
 
         return business;
@@ -841,5 +842,22 @@
         return sections;
     }
 
+    function getBlog() {
+        var blog = [];
+
+        blog.push({
+            date: 'March 7, 2020',
+            title: 'How I ended up blogging as an esthetician',
+            subtitle: 'The beginning of a long journey',
+            content: [
+                'Hello, my name is Veronica, I go by Veronica Arielle! I have been a licensed esthetician since 2017 and have since dabbled in makeup, skincare, facials, lashes… etc. I have had my own personal gains and loses in the industry and in 2019 I decided to branch out on my own, Douse Skin Essentials, LLC !! I have currently had my business for a little over six months. I have obtained wholesaler membership status with several companies, I offer retail, I offer an ever-growing amount of services, I continually take classes to better myself and still, one of the biggest struggles is gaining exposure. I now feel as though I have reached a sweet spot and feel satisfied with not only the way my studio appears but with the substantial amount of services, products (retail) and customer-oriented education I provide. With these aspects of my business starting to flourish, my exposureis crying for help. Therefore, I decided to start my own blog!',
+                'My purpose in this blog is to share my experiences as an esthetician and making it in this industry. I currently have involved myself in skincare, lashes, waxing, makeup and will continue to grow within each avenue as well as take on other paths! Being a multidimensional individual keeps you up on your toes trying to keep up with new trends, skills and education! Hopefully if you’re in a similar situation my personal experiences and thoughts can enlighten your journey!'
+            ],
+            closingRemark: 'xoxo',
+            signature: 'Veronica Arielle'
+        });
+
+        return blog;
+    }
 
 })();

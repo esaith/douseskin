@@ -1,5 +1,5 @@
 $backgroundColor: #97cfd6;
-$whiteBackgroundColor: #fafafa;
+$whiteBackgroundColor: #fbfbfb;
 $borderColor: #333;
 
 #home {
@@ -37,15 +37,19 @@ $borderColor: #333;
 
     .pandemic-message {
         padding: 10px;
+
+        .blue {
+            color: blue;
+        }
     }
 
     .service-category.logo .section,
     .service-category.special .section {
-        background-color: #fafafa;
+        background-color: $whiteBackgroundColor;
 
         .background {
             background-size: contain;
-            background-color: #fafafa;
+            background-color: $whiteBackgroundColor;
         }
     }
 
@@ -381,21 +385,6 @@ $borderColor: #333;
         background-color: #f1f1f1;
         transform: translateX(100%);
         overflow: hidden;
-
-        .close {
-            padding: 3px;
-            position: fixed;
-            top: 5px;
-            right: 5px;
-            z-index: 3;
-            svg {
-                width: 25px;
-                height: 25px;
-                path {
-                    fill: #e27b7b;
-                }
-            }
-        }
 
         .full-service-suite-container {
             transition: all 0.4s linear;

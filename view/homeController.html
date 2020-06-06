@@ -53,7 +53,8 @@
     </div>
     <div class="body-content">
         <div class="pandemic-message">
-            Due to COVID-19 pandemic, Douse Skin Essentials is temporarily closed. Contact me for future services.
+            Due to COVID-19 pandemic, Douse Skin Essentials is temporarily closed. <span ng-click="openTab('about')"
+                class="blue"> Contact me </span>for future services.
         </div>
         <service-section ng-if="business" ignore-selection="true" service-category="business.homeLogo" class="logo">
         </service-section>
@@ -78,7 +79,6 @@
             </div>
             <service-section service-category="category.Services"></service-section>
         </div>
-        <div class="main-page-bottom"></div>
         <div class="strip"></div>
     </div>
     <div class="full-service-suite animated" ng-class="{'slideInRight': showService, 'slideOutRight': !showService}">

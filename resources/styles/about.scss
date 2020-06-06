@@ -1,4 +1,6 @@
 .about {
+    position: relative;
+
     @font-face {
         font-family: RockwellNovaBold;
         src: url("../fonts/RockwellNova-Bold.ttf");
@@ -7,6 +9,10 @@
     @font-face {
         font-family: RockwellNova;
         src: url("../fonts/RockwellNova.ttf");
+    }
+
+    @media (min-width: 724px) {
+        max-width: 1200px;
     }
 
     padding: 10px;
@@ -22,22 +28,6 @@
         height: 25px;
         width: 25px;
         filter: grayscale(1);
-    }
-
-    .close {
-        font-family: sans-serif;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        font-weight: bold;
-        padding: 2px 6px;
-        font-size: 14px;
-        z-index: 10;
-        color: #51c565;
-        border-radius: 50%;
-        border: 1px solid #51c565;
-        cursor: pointer;
-        box-sizing: border-box;
     }
 
     #facebook {

@@ -4,19 +4,6 @@
     position: relative;
     padding-top: 30px;
 
-    .close {
-        padding: 3px;
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        z-index: 100;
-
-        svg {
-            width: 25px;
-            height: 25px;
-        }
-    }
-
     .entry {
         padding: 0 20px;
         box-sizing: border-box;
