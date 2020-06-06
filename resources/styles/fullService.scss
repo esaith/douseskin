@@ -1,9 +1,13 @@
 #full-service {
     min-width: 100vw;
+    min-height: 100vh;
+    overflow: auto;
+    background-color: #222;
 
     .full-service-content {
         overflow: auto; // scroll-behavior
         max-height: 100vh;
+        min-height: 100vh;
         position: relative;
         z-index: 1;
     }
@@ -103,6 +107,12 @@
                 padding-top: 40px;
                 font-size: 12px;
             }
+        }
+    }
+
+    @media screen and (min-width: 782px) {
+        .background {
+            min-height: 500px;
         }
     }
 }

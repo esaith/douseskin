@@ -5,7 +5,7 @@
     $scope.isMenuOpen = false;
     $scope.showBackToTopButton = false;
     $scope.showingHours = false;
-    $scope.business = null;
+    $scope.business = {};
 
     services.getServices().then(function (response) {
       $scope.$evalAsync(function () {
@@ -107,24 +107,24 @@
     });
 
     function bookNow() {
-      window.location.href =
-        "https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl";
+      if ($scope.business && $scope.business.bookNow) {
+        window.location.href = $scope.business.bookNow;
+      }
     }
 
     function openAddress() {
       if (
         /* if we're on iOS, open in Apple Maps */
-        navigator.platform.indexOf("iPhone") != -1 ||
-        navigator.platform.indexOf("iPad") != -1 ||
-        navigator.platform.indexOf("iPod") != -1
-      )
-        window.open(
-          "maps://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll="
-        );
-      /* else use Google */ else
-        window.open(
-          "https://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll="
-        );
+        (navigator.platform.indexOf("iPhone") != -1 ||
+          navigator.platform.indexOf("iPad") != -1 ||
+          navigator.platform.indexOf("iPod") != -1)
+        && $scope.business.iosMap
+      ) {
+        window.open($scope.business.iosMap);
+      } else if ($scope.business.googleMap) {
+        /* else use Google */
+        window.open($scope.business.googleMap);
+      }
     }
   }
 })();

@@ -25,8 +25,14 @@ function allServices($sce) {
             src: "logo.jpg",
             title: "",
             types: [],
-        }]
+        }],
+        iosMap: "maps://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=",
+        googleMap: "https://maps.google.com/maps?daddr=28.0910691,-82.4046954&amp;ll=",
+        bookNow: "https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl",
+        logoSvg: '', // todo,
+        modalSections: []
     };
+
     var categories = [];
 
     categories.push(
@@ -734,5 +740,15 @@ function allServices($sce) {
     );
 
     business.categories = categories;
+
+    var modalSections = [];
+    modalSections.push({
+        id: 'lashcalendar',
+        title: 'Lash Calendar',
+        imgSrc: 'resources/images/LashReferenceCalendar.png'
+    });
+
+    business.modalSections = modalSections;
+
     return business;
 }
