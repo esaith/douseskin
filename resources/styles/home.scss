@@ -65,10 +65,12 @@ $borderColor: #333;
 
         opacity: 0;
         transition: all 0.19s ease-out;
+        pointer-events: none;
 
         &.showing {
             opacity: 0.5;
             transition: all 0.21s ease-in;
+            pointer-events: unset;
         }
     }
 
