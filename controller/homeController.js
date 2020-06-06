@@ -1,10 +1,13 @@
 (function () {
-  angular.module("douse").controller("homeController", ["$scope", "$sce", "$document", "$timeout", "$location", "services", homeControllerFn]);
+  angular.module("douse").controller("homeController", ["$scope", "$document", "$timeout", "$location", "services", homeControllerFn]);
 
-  function homeControllerFn($scope, $sce, $document, $timeout, $location, services) {
+  function homeControllerFn($scope, $document, $timeout, $location, services) {
     $scope.isMenuOpen = false;
     $scope.showBackToTopButton = false;
+    $scope.showingModal = false;
     $scope.showingHours = false;
+    $scope.showingFullscreenImage = false;
+    $scope.fullscreenImageSrc = '';
     $scope.business = {};
 
     services.getServices().then(function (response) {
@@ -21,9 +24,33 @@
       }, 500);
     };
 
-    $scope.showHours = function () {
-      $scope.showingHours = !$scope.showingHours;
-    };
+    $scope.toggleModal = function (type) {
+      switch (type) {
+        case 'hours':
+          $scope.showingHours = !$scope.showingHours;
+          $scope.showingModal = $scope.showingHours;
+          $scope.showingFullscreenImage = false;
+          break;
+        case 'fullscreenImage':
+          $scope.showingFullscreenImage = !$scope.showingFullscreenImage;
+          $scope.showingModal = $scope.showingFullscreenImage;
+          $scope.showingHours = false;
+          break;
+        default:
+          $scope.showingFullscreenImage = false;
+          $scope.showingModal = false;
+          $scope.showingHours = false;
+      }
+    }
+
+    $scope.openFullscreenImage = function (section) {
+      $scope.fullscreenImageSrc = section.imgSrc;
+      $scope.toggleModal('fullscreenImage');
+    }
+
+    $scope.imageFn = function (event) {
+      event.stopPropagation();
+    }
 
     $scope.toggleMenu = function () {
       $scope.isMenuOpen = !$scope.isMenuOpen;

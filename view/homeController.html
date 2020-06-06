@@ -14,73 +14,40 @@
         <div class="link" ng-click="goTo('bookNow')" ng-if="business.bookNow">Book</div>
         <div class="link" ng-click="goTo('address')" ng-if="(business.googleMap || business.iosMap)">Map
         </div>
-        <div class="link" ng-click="showHours()" ng-if="business.hours">Hours</div>
+        <div class="link" ng-click="toggleModal('hours')" ng-if="business.hours">Hours</div>
         <svg-helper svg-name='"douse"' class="douse"></svg-helper>
     </div>
-    <div class="menu-container" ng-class="{'open': isMenuOpen}">
-        <div class="menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen && !pageLoaded}">
-            <a ng-if="business" class="tab no-style" href="#{{category.id}}" target="_self" ng-click="goToSection()"
-                ng-repeat="category in business.categories">{{category.ShortName}}</a>
-
-
-            <div ng-repeat="section in business.modalSections">
-                <div class="tab" id="{{section.id}}-tab" ng-click="openTab(section.id)">{{section.title}}</div>
-                <div ng-show="selectedTab.lashcalendar" class="tab-content" id="lashcalendar">
-                    <img src="resources/images/LashReferenceCalendar.png" class="lashcalendar" />
-                </div>
-            </div>
-
-
-            <div class="tab" id="lashcalendar-tab" ng-click="openTab('lashcalendar')">Lash Calendar</div>
-            <div ng-show="selectedTab.lashcalendar" class="tab-content" id="lashcalendar">
-                <img src="resources/images/LashReferenceCalendar.png" class="lashcalendar" />
-            </div>
-
-
-            <div class="tab" id="booking-tab" ng-click="openTab('booking')">Booking</div>
-            <div ng-show="selectedTab.booking" class="tab-content" id="booking">
-                <div class="sm-detail padding-bottom">
-                    Anyone under the age of 18 must have a parent or guardian present to sign consent form.</div>
-                <div class="sm-detail margin-bottom">
-                    Anyone 13 years or younger must have a parent or guardian present to sign consent form and be in the
-                    room during the service.
-                </div>
-                <a href="https://square.site/book/Q4W3RC4A64DCN/douse-skin-essentials-tampa-fl" class="button">
-                    Book an Appointment
+    <div class="menu-container" ng-class="{'open': isMenuOpen, 'showingModal': showingModal }">
+        <div class="menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen && !pageLoaded }">
+            <div ng-repeat="section in business.modalSections" id="{{section.id}}-tab">
+                <!-- go to section -->
+                <a ng-if="section.id" class="tab no-style" href="#{{section.id}}" target="_self"
+                    ng-click="goToSection()">
+                    {{section.title}}
                 </a>
-            </div>
-            <div class="tab" id="giftcard-tab" ng-class="{'thin-bottom': !selectedTab.giftcard}"
-                ng-click="openTab('giftcard')">
-                eGift Cards
-            </div>
-            <div ng-show="selectedTab.giftcard" id="giftcard" class="tab-content">
-                <div class="sm-detail">The gift that keeps on giving!</div>
-                <div class="sm-detail">Physical gift cards available in studio</div>
-                <div class="sm-detail heart">&#x2764;</div>
-                <div class="button margin-bottom-small"
-                    ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">Purchase
-                    eGift
-                    Card</div>
-                <div class="xsm-detail">Gift Cards are not meant to hold services (monthly specials) from previous
-                    months.
-                    May only be used for current promotions or any other regular services.*</div>
-            </div>
-            <div class="tab" id="about-tab" ng-class="{'thin-bottom': !selectedTab.about}" ng-click="openTab('about')">
-                Contact Me
-            </div>
-            <div class="tab" id="blog-tab" ng-class="{'thin-bottom': !selectedTab.blog}" ng-click="openTab('blog')">
-                Blog
-            </div>
-            <div class="tab" id="careers-tab" ng-class="{'thin-bottom': !selectedTab.careers}"
-                ng-click="openTab('careers')">
-                Careers
-            </div>
-            <div ng-show="selectedTab.careers" id="careers" class="tab-content">
-                <div class="sm-detail">Looking to share space with licensed massage therapist. Room is equipped with
-                    massage
-                    bed with cushion top, 2 steamers, dim lighting for ambiance, couch, refreshments and receptionists.
-                    Email me if interested: douseskinessentials@gmail.com</div>
-                <div class="sm-detail">Include your full name and cell phone number.</div>
+
+                <!-- simple fullscreen image -->
+                <div class="tab" ng-click="openFullscreenImage(section)" ng-if="section.imgSrc">
+                    {{section.title}}
+                </div>
+
+                <!-- description and maybe a weblink -->
+                <div ng-if="section.descriptions">
+                    <div class="tab" ng-click="openTab(section.title)">{{section.title}}</div>
+                    <div ng-show="selectedTab[section.title]" class="tab-content">
+                        <div ng-repeat="description in section.descriptions" class="sm-detail margin-bottom">
+                            {{description}}
+                        </div>
+                        <div class="button margin-bottom-small" ng-click="goToLink(section.buttonLink)"
+                            ng-if="section.buttonLink">
+                            {{section.buttonLabel}}
+                        </div>
+                        <div ng-repeat="footer in section.footer" class='xsm-detail'>{{footer}}</div>
+                    </div>
+                </div>
+
+                <!-- go directly to page within website -->
+                <div ng-if="section.page" ng-click="openTab(section.page)" class="tab">{{section.title}}</div>
             </div>
         </div>
     </div>
@@ -121,11 +88,14 @@
             <full-service service="service" ng-repeat="service in selectedCategory"></full-service>
         </div>
     </div>
-    <div class="modal-background" ng-class="{'showing': showingHours}"></div>
-    <div class="modal" ng-class="{'showing': showingHours}" ng-if="business.hours" ng-click="showHours()">
+    <div class="modal-background" ng-class="{'showing': showingModal}" ng-click="toggleModal()"></div>
+    <div class="modal" ng-class="{'showing': showingHours}" ng-if="business.hours" ng-click="toggleModal('hours')">
         <div class="hours">
             <div ng-repeat='hours in business.hours'>{{hours}}</div>
         </div>
+    </div>
+    <div class="fullscreen-image" ng-class="{'showing': showingFullscreenImage}" ng-click="imageFn($event)">
+        <img ng-src="{{fullscreenImageSrc}}" class="fullscreen-image" />
     </div>
     <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
         <div class="triangle-up"></div>
