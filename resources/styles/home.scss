@@ -40,6 +40,7 @@ $borderColor: #333;
 
         .blue {
             color: blue;
+            cursor: pointer;
         }
     }
 
@@ -137,7 +138,7 @@ $borderColor: #333;
         }
 
         .line {
-            border-bottom: 4px solid black;
+            border-bottom: 5px solid black;
             width: 100%;
             transition: all 0.3s ease-in;
 
@@ -195,7 +196,7 @@ $borderColor: #333;
         background-color: $whiteBackgroundColor;
         background-repeat: no-repeat;
         background-size: cover;
-        width: 80%;
+        width: 100%;
         transform: translate(-100%);
         overflow: auto;
 

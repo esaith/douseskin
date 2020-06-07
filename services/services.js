@@ -10,8 +10,6 @@
         }
     }]);
 
-
-
     function allServices($sce) {
         var business = {
             hours: [
@@ -32,7 +30,8 @@
             logoSvg: '', // todo,
             categories: getCategories($sce),
             modalSections: getModalSections(),
-            blog: getBlog()
+            blog: getBlog(),
+            contact: getContact()
         };
 
         return business;
@@ -858,6 +857,27 @@
         });
 
         return blog;
+    }
+
+    function getContact() {
+        var contact = {
+            employeeImg: 'resources/images/veronica.jpg',
+            address: [
+                '15310 Amberly Dr. Suite 250',
+                'Tampa, FL. 33647',
+            ],
+            notes: ['Sessions by Appointment Only'],
+            phone: '863.899.4799',
+            instagramLink: 'https://www.instagram.com/douseskinessentials/',
+            instagramTitle: 'douse skin essentials',
+            facebookLink: 'https://www.facebook.com/douse.skin.essentials/',
+            facebookTitle: 'douse skin essentials'
+        };
+
+
+
+
+        return contact;
     }
 
 })();
