@@ -1,14 +1,110 @@
 (function () {
     angular.module('douse').factory('services', ['$http', '$sce', function ($http, $sce) {
+        var api = 'https://localhost:44365'
 
         function getServices() {
-            return Promise.resolve(allServices($sce));
+            return $http.get(api + '/api/business/3/full').then(
+                (response) => {
+                    var data = response.data;
+
+                    var business = {
+                        hours: data.Hours,
+                        homeLogo: [{
+                            src: "logo.jpg",
+                            title: "",
+                            types: [],
+                        }],
+                        iosMap: data.IosMap,
+                        googleMap: data.GoogleMap,
+                        bookNow: data.BookNow,
+                        logoSvg: '', // todo,
+                        categories: formatCategories(data.ServiceCategory),
+                        modalSections: [],
+                        blog: data.Blog
+                    };
+
+                    business.modalSections = createModalSections(business);
+
+                    return business;
+                },
+                (error) => {
+                    console.log('Error getting business data from the api');
+                }
+            )
         }
 
         return {
             getServices: getServices
         }
     }]);
+
+    function formatCategories(serviceCategories) {
+        let result = [];
+
+        for (const serviceCategory of serviceCategories) {
+            const category = {
+                CategoryName: serviceCategory.Name,
+                ShortName: serviceCategory.ShortName,
+                id: serviceCategory.Name.replace(/\s+/g, '').toLowerCase().trim(),
+                Services: []
+            }
+
+            for (const service of serviceCategory.Services) {
+                const newService = {
+                    ImageUrl: service.ImageUrl,
+                    Title: service.Title,
+                    Description: service.Description,
+                    types: []
+                };
+
+                for (const option of service.ServiceOptions) {
+                    const newOption = {
+                        title: option.Title,
+                        description: option.Description,
+                        footer: option.Footer
+                    };
+
+                    newService.types.push(newOption);
+                }
+
+                category.Services.push(newService);
+            }
+
+            result.push(category);
+        }
+
+        return result;
+    }
+
+    function createModalSections(business) {
+        const result = [];
+
+        business.categories.forEach((category, index) => {
+            result.push({
+                title: category.ShortName,
+                id: category.id,
+                sortOrder: index
+            });
+        });
+
+        if (business.Address) {
+            result.push({
+                title: 'Contact me',
+                page: 'about',
+                sortOrder: result.length
+            });
+        }
+
+        if (business.blog.length > 0) {
+            result.push({
+                title: 'Blog',
+                page: 'blog',
+                sortOrder: result.length
+            });
+        }
+
+        return result;
+    }
 
     function allServices($sce) {
         var business = {
@@ -857,27 +953,6 @@
         });
 
         return blog;
-    }
-
-    function getContact() {
-        var contact = {
-            employeeImg: 'resources/images/veronica.jpg',
-            address: [
-                '15310 Amberly Dr. Suite 250',
-                'Tampa, FL. 33647',
-            ],
-            notes: ['Sessions by Appointment Only'],
-            phone: '863.899.4799',
-            instagramLink: 'https://www.instagram.com/douseskinessentials/',
-            instagramTitle: 'douse skin essentials',
-            facebookLink: 'https://www.facebook.com/douse.skin.essentials/',
-            facebookTitle: 'douse skin essentials'
-        };
-
-
-
-
-        return contact;
     }
 
 })();

@@ -18,7 +18,7 @@
         <svg-helper svg-name='"douse"' class="douse"></svg-helper>
     </div>
     <div class="menu-container" ng-class="{'open': isMenuOpen, 'showingModal': showingModal }">
-        <div class="menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen && !pageLoaded }">
+        <div class="menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen }">
             <div ng-repeat="section in business.modalSections" id="{{section.id}}-tab">
                 <!-- go to section -->
                 <a ng-if="section.id" class="tab no-style" href="#{{section.id}}" target="_self"
@@ -91,7 +91,7 @@
     <div class="modal-background" ng-class="{'showing': showingModal}" ng-click="toggleModal()"></div>
     <div class="modal" ng-class="{'showing': showingHours}" ng-if="business.hours" ng-click="toggleModal('hours')">
         <div class="hours">
-            <div ng-repeat='hours in business.hours'>{{hours}}</div>
+            <div ng-bind-html='business.hours'></div>
         </div>
     </div>
     <div class="fullscreen-image" ng-class="{'showing': showingFullscreenImage}" ng-click="imageFn($event)">
