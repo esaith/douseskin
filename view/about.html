@@ -1,6 +1,9 @@
-<div class="about" ng-if="business && business.contact">
+<div class="about">
+  <div class='loading flex align-center justify-center' ng-if='loading'>
+    <img src="resources/images/loading.gif" />
+  </div>
   <svg-helper svg-name='"close"' class="close" ng-click="close()"></svg-helper>
-  <img ng-src="{{business.contact.employeeImg}}" class="associate veronica margin-bottom" />
+  <div ng-attr-style="background-image: url('{{vm.EmployeeImg}}'" class="associate veronica margin-bottom"></div>
   <div class="sm-detail underline" ng-click="openAddress()" ng-repeat="address in vm.address">
     {{address}}
   </div>

@@ -9,12 +9,18 @@
     $scope.showingFullscreenImage = false;
     $scope.fullscreenImageSrc = '';
     $scope.business = {};
+    $scope.homeLogoService = {};
+    $scope.loading = false;
 
-    services.getServices().then(function (response) {
-      $scope.$evalAsync(function () {
-        $scope.business = response;
-      })
-    });
+    function init() {
+      $scope.loading = true;
+      services.getServices().then(function (response) {
+        $scope.$evalAsync(function () {
+          $scope.business = response;
+          $scope.loading = false;
+        })
+      });
+    }
 
     $scope.goToSection = function (section) {
       $scope.isMenuOpen = false;
@@ -153,5 +159,7 @@
         window.open($scope.business.googleMap);
       }
     }
+
+    init();
   }
 })();

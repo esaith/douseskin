@@ -1,4 +1,7 @@
 <div ng-cloak id="home">
+    <div class='loading flex align-center justify-center' ng-if='loading'>
+        <img src="resources/images/loading.gif" />
+    </div>
     <noscript>
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
@@ -52,10 +55,7 @@
         </div>
     </div>
     <div class="body-content">
-        <div class="pandemic-message">
-            Due to COVID-19 pandemic, Douse Skin Essentials is temporarily closed. <span ng-click="openTab('about')"
-                class="blue"> Contact me </span>for future services.
-        </div>
+        <div class="pandemic-message" ng-bind-html="business.Notification"></div>
         <service-section ng-if="business" ignore-selection="true" service-category="business.homeLogo" class="logo">
         </service-section>
         <div class="strip sign-up-strip">

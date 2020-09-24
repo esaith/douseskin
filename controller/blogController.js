@@ -6,9 +6,12 @@
             $location.path("/");
         };
 
+        $scope.loading = true;
+
         services.getServices().then(function (response) {
             $scope.$evalAsync(function () {
                 $scope.business = response;
+                $scope.loading = false;
             });
         });
     }

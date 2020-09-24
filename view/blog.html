@@ -1,17 +1,14 @@
 <div id="blog">
+    <div class='loading flex align-center justify-center' ng-if='loading'>
+        <img src="resources/images/loading.gif" />
+    </div>
     <svg-helper svg-name='"close"' class="close" ng-click="close()"></svg-helper>
     <div class="entry" ng-repeat="entry in business.blog">
-        <div class='date'>{{entry.date}}</div>
-        <div class='title'>{{entry.title}}</div>
-        <div class='subtitle'>{{entry.subtitle}}</div>
-        <div class='paragraph' ng-repeat="content in entry.content">
-            {{content}}
-        </div>
-        <div class='closing'>
-            {{entry.closingRemark}}
-            <div class='signature'>
-                {{entry.signature}}
-            </div>
+        <div class='date'>{{entry.Date}}</div>
+        <div class='title'>{{entry.Title}}</div>
+        <div class='subtitle'>{{entry.Subtitle}}</div>
+        <div class='paragraph'>
+            {{entry.Content}}
         </div>
     </div>
 </div>
