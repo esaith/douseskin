@@ -68,25 +68,29 @@
             }
 
             for (const service of serviceCategory.Services) {
-                const newService = {
-                    ImageUrl: service.ImageUrl,
-                    Title: service.Title,
-                    Description: service.Description,
-                    Id: service.Id,
-                    types: []
-                };
-
-                for (const option of service.ServiceOptions) {
-                    const newOption = {
-                        title: option.Title,
-                        description: option.Description,
-                        footer: option.Footer
+                if (service.IsActive) {
+                    const newService = {
+                        ImageUrl: service.ImageUrl,
+                        Title: service.Title,
+                        Description: service.Description,
+                        Id: service.Id,
+                        types: []
                     };
 
-                    newService.types.push(newOption);
-                }
+                    for (const option of service.ServiceOptions) {
+                        if (option.IsActive) {
+                            const newOption = {
+                                title: option.Title,
+                                description: option.Description,
+                                footer: option.Footer
+                            };
 
-                category.Services.push(newService);
+                            newService.types.push(newOption);
+                        }
+                    }
+
+                    category.Services.push(newService);
+                }
             }
 
             result.push(category);
