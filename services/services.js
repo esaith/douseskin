@@ -1,7 +1,8 @@
 (function () {
     angular.module('douse').factory('services', ['$http', '$sce', function ($http, $sce) {
         // var api = 'http://douseapi.azurewebsites.net/'
-        var api = 'https://192.168.1.4:83'
+        // var api = 'https://192.168.1.4:83'
+        var api = 'https://localhost:44365/'
 
         var business = null;
 
@@ -71,6 +72,7 @@
                     ImageUrl: service.ImageUrl,
                     Title: service.Title,
                     Description: service.Description,
+                    Id: service.Id,
                     types: []
                 };
 

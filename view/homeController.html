@@ -6,86 +6,53 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PHH6JX8" height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
     </noscript>
-    <div class="header flex align-center justify-around animated slideInDown">
-        <div class="menu-button" ng-class="{'margin-top': isMenuOpen}" ng-click="toggleMenu()">
-            <div class="stack">
-                <div class="line" ng-class="{'back-slash': isMenuOpen}"></div>
-                <div class="line" ng-class="{'forward-slash': isMenuOpen}"></div>
-                <div class="line" ng-class="{'hidden': isMenuOpen}"></div>
+    <div class="header">
+        <div class='title'>
+            <div class="top">Douse Skin</div>
+            <div class="bottom">Essentials</div>
+        </div>
+        <div class="flex align-center justify-around animated slideInDown">
+            <div class="flex wrap links">
+                <div class="link" ng-click="goTo('bookNow')" ng-if="business.bookNow">Book</div>
+                <div class="link" ng-click="goTo('address')" ng-if="(business.googleMap || business.iosMap)">Map
+                </div>
+                <div class="link" ng-click="toggleModal('hours')" ng-if="business.hours">Hours</div>
+                <div class="link" ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">
+                    eGift Card</div>
+                <div class="link" ng-click="goTo('about')">
+                    Contact Me</div>
             </div>
         </div>
-        <div class="link" ng-click="goTo('bookNow')" ng-if="business.bookNow">Book</div>
-        <div class="link" ng-click="goTo('address')" ng-if="(business.googleMap || business.iosMap)">Map
-        </div>
-        <div class="link" ng-click="toggleModal('hours')" ng-if="business.hours">Hours</div>
-        <svg-helper svg-name='"douse"' class="douse"></svg-helper>
-    </div>
-    <div class="menu-container" ng-class="{'open': isMenuOpen, 'showingModal': showingModal }">
-        <div class="menu animated" ng-class="{'slideInLeft': isMenuOpen, 'slideOutLeft': !isMenuOpen }">
-            <div ng-repeat="section in business.modalSections" id="{{section.id}}-tab">
-                <!-- go to section -->
-                <a ng-if="section.id" class="tab no-style" href="#{{section.id}}" target="_self"
-                    ng-click="goToSection()">
-                    {{section.title}}
-                </a>
-
-                <!-- simple fullscreen image -->
-                <div class="tab" ng-click="openFullscreenImage(section)" ng-if="section.imgSrc">
-                    {{section.title}}
-                </div>
-
-                <!-- description and maybe a weblink -->
-                <div ng-if="section.descriptions">
-                    <div class="tab" ng-click="openTab(section.title)">{{section.title}}</div>
-                    <div ng-show="selectedTab[section.title]" class="tab-content">
-                        <div ng-repeat="description in section.descriptions" class="sm-detail margin-bottom">
-                            {{description}}
-                        </div>
-                        <div class="button margin-bottom-small" ng-click="goToLink(section.buttonLink)"
-                            ng-if="section.buttonLink">
-                            {{section.buttonLabel}}
-                        </div>
-                        <div ng-repeat="footer in section.footer" class='xsm-detail'>{{footer}}</div>
-                    </div>
-                </div>
-
-                <!-- go directly to page within website -->
-                <div ng-if="section.page" ng-click="openTab(section.page)" class="tab">{{section.title}}</div>
-            </div>
-        </div>
+        <div class="notification" ng-bind-html="business.Notification"></div>
     </div>
     <div class="body-content">
-        <div class="pandemic-message" ng-bind-html="business.Notification"></div>
         <service-section ng-if="business" ignore-selection="true" service-category="business.homeLogo" class="logo">
         </service-section>
-        <div class="strip sign-up-strip">
-            <hr />
-            <div class="sign-up">
-                <div>
-                    <div class="title">Essential news, promos, and events!</div>
-                    <form action="https://squareup.com/outreach/WmmYkg/subscribe" method="POST" target="_blank"><input
-                            type="email" name="email_address" placeholder="E-mail"><button
-                            type="submit">Subscribe</button>
-                    </form>
+        <div class="container-fluid">
+            <div class='row'>
+                <div ng-repeat="category in business.categories" class='col-md-6 col-sm-12 category-row animated'
+                    ng-click='selectCategory(category)' ng-class="{'zoomOut': selectedCategory }">
+                    <div class="top-category-title">{{category.CategoryName}}</div>
+                    <div class="category" ng-attr-style="background-image: url('{{category.Services[0].ImageUrl}}'">
+                    </div>
                 </div>
             </div>
-            <hr />
         </div>
-        <div ng-repeat="category in business.categories">
-            <div class="strip" id="{{category.id}}">
-                <hr />
-                {{category.CategoryName}}
-                <hr />
+        <div class="services">
+            <div class="close" ng-click='closeCategory()'>
+                X
             </div>
-            <service-section service-category="category.Services"></service-section>
-        </div>
-        <div class="strip"></div>
-    </div>
-    <div class="full-service-suite animated" ng-class="{'slideInRight': showService, 'slideOutRight': !showService}">
-        <svg-helper svg-name='"close"' class="close" ng-click="close()"></svg-helper>
-        <div class="full-service-suite-container flex align-center"
-            ng-attr-style="transform: translateX({{-serviceIndex * 100}}%)">
-            <full-service service="service" ng-repeat="service in selectedCategory"></full-service>
+            <div ng-repeat="service in selectedCategory.Services" ng-click="toggleService(service)">
+                <div class="service">
+                    <div class="service-name">{{service.Title}}</div>
+                </div>
+                <div class='options' ng-class="{'selected': service.Id === selectedService.Id}">
+                    <div class="option" ng-repeat="option in selectedService.types">
+                        <div>{{option.title}} <div ng-bind-html="option.description"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="modal-background" ng-class="{'showing': showingModal}" ng-click="toggleModal()"></div>
@@ -94,9 +61,7 @@
             <div ng-bind-html='business.hours'></div>
         </div>
     </div>
-    <div class="fullscreen-image" ng-class="{'showing': showingFullscreenImage}" ng-click="imageFn($event)">
-        <img ng-src="{{fullscreenImageSrc}}" class="fullscreen-image" />
-    </div>
+
     <div class="toTop" ng-show="showBackToTopButton" ng-click="backToTop()">
         <div class="triangle-up"></div>
     </div>

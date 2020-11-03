@@ -11,6 +11,8 @@
     $scope.business = {};
     $scope.homeLogoService = {};
     $scope.loading = false;
+    $scope.selectedCategory = null;
+    $scope.selectedService = null;
 
     function init() {
       $scope.loading = true;
@@ -48,6 +50,22 @@
           $scope.showingHours = false;
       }
     }
+
+    $scope.selectCategory = function (category) {
+      $scope.selectedCategory = category;
+    }
+
+    $scope.closeCategory = function () {
+      $scope.selectedCategory = null;
+    }
+
+    $scope.toggleService = function (service) {
+      if ($scope.selectedService && $scope.selectedService.Id === service.Id) {
+        $scope.selectedService = null;
+      } else {
+        $scope.selectedService = service;
+      }
+    };
 
     $scope.openFullscreenImage = function (section) {
       $scope.fullscreenImageSrc = section.imgSrc;

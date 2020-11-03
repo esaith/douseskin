@@ -11,10 +11,10 @@ body {
     font-family: "Roboto", sans-serif !important;
     margin: 0;
     color: #222;
-    max-width: 1200px;
     margin: auto;
     background-color: #fbfbfb;
     height: 100%;
+    overflow-x: hidden;
 
     &.paper-background {
         background-color: $whiteBackgroundColor;
