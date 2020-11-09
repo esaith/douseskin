@@ -8,15 +8,28 @@ $maxBodyWidth: 1400px;
 
     .header {
         position: relative;
-        padding-bottom: 15px;
+        margin-bottom: 15px;
+        padding-bottom: 3px;
         background-color: black;
         color: #f1f1f1;
 
-        .title {
-            position: absolute;
-            top: 50%;
-            left: 30px;
-            transform: translate(0, -50%);
+        .title-mobile {
+            font-size: 25px;
+            padding-top: 10px;
+
+            @media (min-width: 1000px) {
+                display: none;
+            }
+        }
+
+        .title-desktop {
+            margin-left: 50px;
+            top: 28px;
+            position: relative;
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
 
             .top {
                 font-size: 25px;
@@ -34,6 +47,7 @@ $maxBodyWidth: 1400px;
             flex: 1;
             max-width: $maxBodyWidth;
             margin: 0 auto;
+            user-select: none;
 
             @media (min-width: 724px) {
                 font-size: 14px;
@@ -52,7 +66,7 @@ $maxBodyWidth: 1400px;
         }
 
         .notification {
-            padding-top: 10px;
+            padding: 10px 5px;
         }
     }
 
@@ -72,7 +86,7 @@ $maxBodyWidth: 1400px;
             .category-row {
                 position: relative;
                 padding: 0 10px;
-                margin-top: 20px;
+                margin: 20px 0;
                 box-sizing: border-box;
                 transition: all 0.75s ease-out, position 1s linear 1s;
 
@@ -127,9 +141,13 @@ $maxBodyWidth: 1400px;
                 top: -15px;
                 right: 10vw;
                 font-weight: bold;
-                font-family: cursive;
                 cursor: pointer;
                 user-select: none;
+
+                @media (max-width: 500px) {
+                    top: -45px;
+                    right: 15px;
+                }
             }
 
             .service {
@@ -184,6 +202,11 @@ $maxBodyWidth: 1400px;
     .service-category.logo .section,
     .service-category.special .section {
         height: 60vh;
+
+        @media (max-width: 1400px) {
+            height: 40vh;
+            width: 100%;
+        }
 
         .background {
             background-size: cover;
@@ -250,6 +273,22 @@ $maxBodyWidth: 1400px;
 
         @media (min-width: 724px) {
             max-width: 1200px;
+        }
+
+        img {
+            height: 25px;
+            width: 25px;
+            filter: grayscale(1);
+        }
+
+        #facebook {
+            height: 20px;
+            width: 22px;
+            border: 1px solid #222;
+            padding: 2px;
+            border-radius: 5px;
+            fill: #222;
+            margin-left: 4px;
         }
     }
 

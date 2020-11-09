@@ -6,13 +6,21 @@
     $scope.showBackToTopButton = false;
     $scope.showingModal = false;
     $scope.showingHours = false;
-    $scope.showingFullscreenImage = false;
+    $scope.showingContactMe = false;
     $scope.fullscreenImageSrc = '';
     $scope.business = {};
     $scope.homeLogoService = {};
     $scope.loading = false;
     $scope.selectedCategory = null;
     $scope.selectedService = null;
+    $scope.vm = {
+      address: [],
+      phone: '',
+      instagram: '',
+      instagramTitle: '',
+      facebook: '',
+      facebookTitle: ''
+    };
 
     function init() {
       $scope.loading = true;
@@ -20,8 +28,26 @@
         $scope.$evalAsync(function () {
           $scope.business = response;
           $scope.loading = false;
+          getAddress(response);
         })
       });
+    }
+
+    function getAddress(response) {
+      if (response.Address) {
+        $scope.vm.address.push(response.Address);
+      }
+
+      if (response.City && response.State && response.Zip) {
+        $scope.vm.address.push(response.City + ", " + response.State + " " + response.Zip);
+      }
+
+      $scope.vm.phone = response.Phone;
+      $scope.vm.instagram = response.instagram;
+      $scope.vm.instagramTitle = response.instagramTitle;
+      $scope.vm.facebook = response.facebook;
+      $scope.vm.facebookTitle = response.facebookTitle;
+      $scope.vm.EmployeeImg = response.EmployeeImg;
     }
 
     $scope.goToSection = function (section) {
@@ -37,18 +63,20 @@
         case 'hours':
           $scope.showingHours = !$scope.showingHours;
           $scope.showingModal = $scope.showingHours;
-          $scope.showingFullscreenImage = false;
           break;
-        case 'fullscreenImage':
-          $scope.showingFullscreenImage = !$scope.showingFullscreenImage;
-          $scope.showingModal = $scope.showingFullscreenImage;
-          $scope.showingHours = false;
+        case 'contact':
+          $scope.showingContactMe = !$scope.showingContactMe;
+          $scope.showingModal = $scope.showingContactMe;
           break;
         default:
-          $scope.showingFullscreenImage = false;
           $scope.showingModal = false;
           $scope.showingHours = false;
+          $scope.showingContactMe = false;
       }
+    }
+
+    $scope.noEventModalClick = function (event) {
+      event.stopPropagation();
     }
 
     $scope.selectCategory = function (category) {
@@ -65,37 +93,6 @@
       } else {
         $scope.selectedService = service;
       }
-    };
-
-    $scope.openFullscreenImage = function (section) {
-      $scope.fullscreenImageSrc = section.imgSrc;
-      $scope.toggleModal('fullscreenImage');
-    }
-
-    $scope.imageFn = function (event) {
-      event.stopPropagation();
-    }
-
-    $scope.toggleMenu = function () {
-      $scope.isMenuOpen = !$scope.isMenuOpen;
-      $scope.selectedTab = {};
-    };
-
-    $scope.openTab = function (tab) {
-      switch (tab) {
-        case "about":
-          $location.path("about");
-          return;
-        case "blog":
-          $location.path("blog");
-          return;
-      }
-
-      $scope.selectedTab[tab] = !$scope.selectedTab[tab];
-      $timeout(() => {
-        var scroll = document.querySelector("#" + tab + "-tab");
-        if (scroll) scroll.scrollIntoView(true);
-      }, 100);
     };
 
     $scope.goToLink = function (link) {
@@ -120,6 +117,8 @@
         case "address":
           openAddress();
           break;
+        case "about":
+          $location.path("about");
       }
     };
 

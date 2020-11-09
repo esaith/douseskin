@@ -1,5 +1,9 @@
+$maxBodyWidth: 1400px;
+
 .about {
     position: relative;
+    max-width: $maxBodyWidth;
+    margin: 0 auto;
 
     @font-face {
         font-family: RockwellNovaBold;

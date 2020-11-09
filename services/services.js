@@ -1,60 +1,91 @@
 (function () {
-    angular.module('douse').factory('services', ['$http', '$sce', function ($http, $sce) {
-        // var api = 'http://douseapi.azurewebsites.net/'
+    angular.module('douse').factory('services', ['$http', function ($http) {
+        var api = 'https://douseapi.azurewebsites.net'
         // var api = 'https://192.168.1.4:83'
-        var api = 'https://localhost:44365/'
+        // var api = 'https://localhost:44365'
 
         var business = null;
 
         function getServices() {
-            if (business) return Promise.resolve(business);
+            return new Promise((resolve, reject) => {
+                if (business) resolve(business);
 
-            return $http.get(api + '/api/business/3/full').then(
-                (response) => {
-                    var data = response.data;
+                business = getFromLocalStorage();
+                if (business)
+                    resolve(business);
 
-                    business = {
-                        hours: data.Hours,
-                        homeLogo: [{
-                            ImageUrl: data.HomeLogo,
-                            title: "",
-                            types: [],
-                        }],
-                        iosMap: data.IosMap,
-                        googleMap: data.GoogleMap,
-                        bookNow: data.BookNow,
-                        logoSvg: '', // todo,
-                        categories: formatCategories(data.ServiceCategory),
-                        modalSections: [],
-                        blog: data.Blog,
-                        instagram: data.Instagram,
-                        instagramTitle: data.InstagramTitle,
-                        facebook: data.Facebook,
-                        facebookTitle: data.FacebookTitle,
-                        Notification: data.Notification,
-                        EmployeeImg: data.EmployeeImg,
-                        Address: data.Address,
-                        City: data.City,
-                        State: data.State,
-                        Zip: data.Zip,
-                        Phone: data.Phone,
-                        blog: data.Blog
-                    };
+                return $http.get(api + '/api/business/3/full').then(
+                    (response) => {
+                        var data = response.data;
 
-                    business.modalSections = createModalSections(business);
+                        business = {
+                            hours: data.Hours,
+                            homeLogo: [{
+                                ImageUrl: data.HomeLogo,
+                                title: "",
+                                types: [],
+                            }],
+                            iosMap: data.IosMap,
+                            googleMap: data.GoogleMap,
+                            bookNow: data.BookNow,
+                            logoSvg: '', // todo,
+                            categories: formatCategories(data.ServiceCategory),
+                            modalSections: [],
+                            blog: data.Blog,
+                            instagram: data.Instagram,
+                            instagramTitle: data.InstagramTitle,
+                            facebook: data.Facebook,
+                            facebookTitle: data.FacebookTitle,
+                            Notification: data.Notification,
+                            EmployeeImg: data.EmployeeImg,
+                            Address: data.Address,
+                            City: data.City,
+                            State: data.State,
+                            Zip: data.Zip,
+                            Phone: data.Phone,
+                            blog: data.Blog
+                        };
 
-                    return business;
-                },
-                (error) => {
-                    console.log('Error getting business data from the api');
-                }
-            )
+                        business.modalSections = createModalSections(business);
+                        saveToLocalStorage(business);
+
+                        resolve(business);
+                    },
+                    (error) => {
+                        console.log('Error getting business data from the api');
+                        reject();
+                    }
+                )
+            });
         }
 
         return {
             getServices: getServices
         }
     }]);
+
+    function saveToLocalStorage(business) {
+        var local = {
+            date: new Date(),
+            business: business
+        };
+
+        localStorage.setItem('business', JSON.stringify(local));
+    }
+
+    function getFromLocalStorage() {
+        if (localStorage.getItem('business') && window.location.href.indexOf('clear=true') === -1) {
+            var savedBusiness = JSON.parse(localStorage.getItem('business'));
+            var date = new Date();
+            var secondsDiff = (savedBusiness.date - new Date()) / 1000;
+            var day = 60 * 60;
+            var limitHasBeenHit = secondsDiff > day;
+
+            return limitHasBeenHit ? null : savedBusiness.business;
+        }
+
+        return null;
+    }
 
     function formatCategories(serviceCategories) {
         let result = [];

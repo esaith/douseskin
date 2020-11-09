@@ -7,11 +7,14 @@
             style="display:none;visibility:hidden"></iframe>
     </noscript>
     <div class="header">
-        <div class='title'>
-            <div class="top">Douse Skin</div>
-            <div class="bottom">Essentials</div>
+        <div class='title-mobile'>
+            <div class="top">Douse Skin Essentials</div>
         </div>
         <div class="flex align-center justify-around animated slideInDown">
+            <div class='title-desktop'>
+                <div class="top">Douse Skin</div>
+                <div class="bottom">Essentials</div>
+            </div>
             <div class="flex wrap links">
                 <div class="link" ng-click="goTo('bookNow')" ng-if="business.bookNow">Book</div>
                 <div class="link" ng-click="goTo('address')" ng-if="(business.googleMap || business.iosMap)">Map
@@ -19,7 +22,7 @@
                 <div class="link" ng-click="toggleModal('hours')" ng-if="business.hours">Hours</div>
                 <div class="link" ng-click="goToLink('https://squareup.com/gift/8EHFVZAQP5A6S/order')">
                     eGift Card</div>
-                <div class="link" ng-click="goTo('about')">
+                <div class="link" ng-click="toggleModal('contact')">
                     Contact Me</div>
             </div>
         </div>
@@ -38,12 +41,12 @@
                 </div>
             </div>
         </div>
-        <div class="services">
+        <div class="services" ng-if="selectedCategory">
             <div class="close" ng-click='closeCategory()'>
-                X
+                <svg-helper svg-name="'close'"></svg-helper>
             </div>
-            <div ng-repeat="service in selectedCategory.Services" ng-click="toggleService(service)">
-                <div class="service">
+            <div ng-repeat="service in selectedCategory.Services">
+                <div class="service" ng-click="toggleService(service)">
                     <div class="service-name">{{service.Title}}</div>
                 </div>
                 <div class='options' ng-class="{'selected': service.Id === selectedService.Id}">
@@ -56,9 +59,35 @@
         </div>
     </div>
     <div class="modal-background" ng-class="{'showing': showingModal}" ng-click="toggleModal()"></div>
-    <div class="modal" ng-class="{'showing': showingHours}" ng-if="business.hours" ng-click="toggleModal('hours')">
-        <div class="hours">
+    <div class="modal" ng-class="{'showing': showingHours}" ng-if="business.hours" ng-click="toggleModal()">
+        <div class="hours" ng-click="noEventModalClick()">
             <div ng-bind-html='business.hours'></div>
+        </div>
+    </div>
+    <div class="modal" ng-class="{'showing': showingContactMe}" ng-click="toggleModal()">
+        <div class="hours" ng-click="noEventModalClick($event)">
+            <div ng-click="goTo('address')">
+                <div class="sm-detail underline" ng-repeat="address in vm.address">
+                    {{address}}
+                </div>
+            </div>
+            <div class="sm-detail">{{vm.phone}}</div>
+            <div class="sm-detail flex align-center justify-center" ng-if="vm.instagram">
+                <img src="resources/images/instagram.png" />
+                <a href="{{vm.instagram}}">{{vm.instagramTitle}}</a>
+            </div>
+            <div class="sm-detail flex align-center justify-center" ng-if="vm.facebook">
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <svg version="1.1" id="facebook" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 310 310"
+                    style="enable-background:new 0 0 310 310;" xml:space="preserve">
+                    <g id="fb">
+                        <path id="bg_"
+                            d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064 c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996 V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545 C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703 c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z" />
+                    </g>
+                </svg>
+                <a href="{{vm.facebook}}">{{vm.facebookTitle}}</a>
+            </div>
         </div>
     </div>
 

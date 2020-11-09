@@ -1,15 +1,15 @@
-(function() {
+(function () {
   angular.module("douse").directive("fullService", ["$window", fullServiceFn]);
 
   function fullServiceFn($window) {
     return {
       restrict: "E",
       replace: true,
-      templateUrl: "view/fullService.html?n=5",
+      templateUrl: "view/fullService.html?n=1",
       scope: {
         service: "="
       },
-      link: function(scope, element, attr) {
+      link: function (scope, element, attr) {
         scope.selectedTypeIndex = 0;
 
         var startX,
@@ -18,13 +18,13 @@
           threshold = 50,
           allowedTime = 1000;
 
-        element.bind("touchstart", function(event) {
+        element.bind("touchstart", function (event) {
           startX = event.changedTouches[0].pageX;
           startY = event.changedTouches[0].pageY;
           startTime = new Date().getTime();
         });
 
-        element.bind("touchend", function(event) {
+        element.bind("touchend", function (event) {
           var elapsedTime = new Date().getTime() - startTime;
           distance = event.changedTouches[0].pageX - startX;
           var swipedRight = elapsedTime <= allowedTime && distance >= threshold;
@@ -35,19 +35,19 @@
           if (swipedLeft) scope.$emit("slide-fullservice-left");
         });
 
-        scope.selectType = function(index) {
+        scope.selectType = function (index) {
           scope.selectedTypeIndex = index;
         };
 
-        scope.close = function() {
+        scope.close = function () {
           scope.$emit("close-service");
         };
 
         scope.$watch(
-          function() {
+          function () {
             return scope.service;
           },
-          function() {
+          function () {
             scope.selectedTypeIndex = 0;
 
             var fullService = document.querySelector(".full-service-content");
@@ -55,14 +55,14 @@
               speed = 0.4;
             updateScroll(fullService, parallax, speed);
 
-            fullService.onscroll = function() {
+            fullService.onscroll = function () {
               updateScroll(fullService, parallax, speed);
             };
           }
         );
 
         function updateScroll(fullService, parallax, speed) {
-          [].slice.call(parallax).forEach(function(el, i) {
+          [].slice.call(parallax).forEach(function (el, i) {
             var windowYOffset = fullService.scrollTop,
               elBackgrounPos = "center " + windowYOffset * speed + "px";
 
