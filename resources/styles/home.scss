@@ -13,31 +13,12 @@ $maxBodyWidth: 1400px;
         background-color: black;
         color: #f1f1f1;
 
-        .title-mobile {
+        .title {
             font-size: 25px;
             padding-top: 10px;
 
             @media (min-width: 1000px) {
-                display: none;
-            }
-        }
-
-        .title-desktop {
-            margin-left: 50px;
-            top: 28px;
-            position: relative;
-
-            @media (max-width: 1000px) {
-                display: none;
-            }
-
-            .top {
-                font-size: 25px;
-                line-height: 0.5;
-            }
-
-            .bottom {
-                font-size: 26px;
+                font-size: 30px;
             }
         }
 
@@ -45,7 +26,7 @@ $maxBodyWidth: 1400px;
             flex-wrap: wrap;
             justify-content: space-evenly;
             flex: 1;
-            max-width: $maxBodyWidth;
+            max-width: 700px;
             margin: 0 auto;
             user-select: none;
 
@@ -194,6 +175,10 @@ $maxBodyWidth: 1400px;
                     left: auto;
                     opacity: 1;
                     z-index: 0;
+                }
+
+                .option {
+                    margin-bottom: 20px;
                 }
             }
         }

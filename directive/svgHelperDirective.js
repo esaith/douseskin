@@ -1,7 +1,7 @@
 angular.module("douse").directive("svgHelper", function () {
   return {
     restrict: "E",
-    templateUrl: "view/svghelper.html?n=1",
+    templateUrl: "view/svghelper.html?n=2",
     scope: {
       svgName: "="
     },

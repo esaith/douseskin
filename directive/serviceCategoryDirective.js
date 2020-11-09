@@ -5,7 +5,7 @@
     return {
       restrict: "E",
       replace: true,
-      templateUrl: "view/serviceCategory.html?n=1",
+      templateUrl: "view/serviceCategory.html?n=2",
       scope: {
         serviceCategory: "=",
         ignoreSelection: "=?"
