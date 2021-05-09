@@ -94,7 +94,9 @@
             const category = {
                 CategoryName: serviceCategory.Name,
                 ShortName: serviceCategory.ShortName,
+                SortOrder: serviceCategory.SortOrder,
                 id: serviceCategory.Name.replace(/\s+/g, '').toLowerCase().trim(),
+                ImageUrl: serviceCategory.ImageUrl,
                 Services: []
             }
 
@@ -105,6 +107,7 @@
                         Title: service.Title,
                         Description: service.Description,
                         Id: service.Id,
+                        SortOrder: service.SortOrder,
                         types: []
                     };
 
@@ -113,21 +116,33 @@
                             const newOption = {
                                 title: option.Title,
                                 description: option.Description,
-                                footer: option.Footer
+                                footer: option.Footer,
+                                SortOrder: option.SortOrder
                             };
 
                             newService.types.push(newOption);
                         }
                     }
 
+                    newService.types.sort(sortByOrder);
                     category.Services.push(newService);
                 }
+
+                category.Services.sort(sortByOrder);
             }
 
             result.push(category);
         }
 
+        result.sort(sortByOrder);
+
         return result;
+    }
+
+    function sortByOrder(a, b) {
+        if (!a.SortOrder && !b.SortOrder)
+            return a;
+        return parseInt(a.SortOrder.toString(), 10) - parseInt(b.SortOrder.toString(), 10);
     }
 
     function createModalSections(business) {
