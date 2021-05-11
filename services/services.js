@@ -91,7 +91,7 @@
         let result = [];
 
         for (const serviceCategory of serviceCategories) {
-            if (serviceCategories.IsActive) {
+            if (serviceCategory.IsActive) {
                 const category = {
                     CategoryName: serviceCategory.Name,
                     ShortName: serviceCategory.ShortName,
