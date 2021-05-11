@@ -91,47 +91,49 @@
         let result = [];
 
         for (const serviceCategory of serviceCategories) {
-            const category = {
-                CategoryName: serviceCategory.Name,
-                ShortName: serviceCategory.ShortName,
-                SortOrder: serviceCategory.SortOrder,
-                id: serviceCategory.Name.replace(/\s+/g, '').toLowerCase().trim(),
-                ImageUrl: serviceCategory.ImageUrl,
-                Services: []
-            }
-
-            for (const service of serviceCategory.Services) {
-                if (service.IsActive) {
-                    const newService = {
-                        ImageUrl: service.ImageUrl,
-                        Title: service.Title,
-                        Description: service.Description,
-                        Id: service.Id,
-                        SortOrder: service.SortOrder,
-                        types: []
-                    };
-
-                    for (const option of service.ServiceOptions) {
-                        if (option.IsActive) {
-                            const newOption = {
-                                title: option.Title,
-                                description: option.Description,
-                                footer: option.Footer,
-                                SortOrder: option.SortOrder
-                            };
-
-                            newService.types.push(newOption);
-                        }
-                    }
-
-                    newService.types.sort(sortByOrder);
-                    category.Services.push(newService);
+            if (serviceCategories.IsActive) {
+                const category = {
+                    CategoryName: serviceCategory.Name,
+                    ShortName: serviceCategory.ShortName,
+                    SortOrder: serviceCategory.SortOrder,
+                    id: serviceCategory.Name.replace(/\s+/g, '').toLowerCase().trim(),
+                    ImageUrl: serviceCategory.ImageUrl,
+                    Services: []
                 }
 
-                category.Services.sort(sortByOrder);
-            }
+                for (const service of serviceCategory.Services) {
+                    if (service.IsActive) {
+                        const newService = {
+                            ImageUrl: service.ImageUrl,
+                            Title: service.Title,
+                            Description: service.Description,
+                            Id: service.Id,
+                            SortOrder: service.SortOrder,
+                            types: []
+                        };
 
-            result.push(category);
+                        for (const option of service.ServiceOptions) {
+                            if (option.IsActive) {
+                                const newOption = {
+                                    title: option.Title,
+                                    description: option.Description,
+                                    footer: option.Footer,
+                                    SortOrder: option.SortOrder
+                                };
+
+                                newService.types.push(newOption);
+                            }
+                        }
+
+                        newService.types.sort(sortByOrder);
+                        category.Services.push(newService);
+                    }
+
+                    category.Services.sort(sortByOrder);
+                }
+
+                result.push(category);
+            }
         }
 
         result.sort(sortByOrder);
