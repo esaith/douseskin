@@ -118,7 +118,8 @@
                                     title: option.Title,
                                     description: option.Description,
                                     footer: option.Footer,
-                                    SortOrder: option.SortOrder
+                                    SortOrder: option.SortOrder,
+                                    ImageUrl: option.ImageUrl
                                 };
 
                                 newService.types.push(newOption);
