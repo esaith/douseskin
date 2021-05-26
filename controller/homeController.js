@@ -92,6 +92,12 @@
         $scope.selectedService = null;
       } else {
         $scope.selectedService = service;
+        var serviceElement = document.querySelector('#service-' + service.Id);
+        if (serviceElement)
+          $timeout(function () {
+            serviceElement.scrollIntoView();
+            window.scrollTo(0, window.scrollY - 40);
+          }, 50);
       }
     };
 

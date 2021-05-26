@@ -1,5 +1,5 @@
 $backgroundColor: #97cfd6;
-$whiteBackgroundColor: #fbfbfb;
+$whiteBackgroundColor: #fff;
 $borderColor: #333;
 $maxBodyWidth: 1400px;
 
@@ -94,38 +94,41 @@ $maxBodyWidth: 1400px;
                         z-index: 1;
                     }
                 }
-
-                .top-category-title {
-                    font-weight: bold;
-                    user-select: none;
-                    color: #b72f46;
-                    text-shadow: 2px 1px 0px #222;
-                    white-space: wrap;
-                    text-align: center;
-                    width: 100%;
-                    font-size: 25px;
-                    opacity: 1;
-                    transition: all 0.3s ease-out;
-                    padding-bottom: 20px;
-                }
             }
+        }
+
+        .top-category-title {
+            font-weight: bold;
+            user-select: none;
+            color: #525252;
+            text-shadow: 2px 1px 0px #222;
+            white-space: wrap;
+            text-align: center;
+            width: 100%;
+            font-size: 25px;
+            opacity: 1;
+            transition: all 0.3s ease-out;
+            padding-bottom: 20px;
         }
 
         .services {
             position: relative;
-            padding: 50px;
+            padding: 20px 50px 50px;
             margin: auto;
             max-width: 800px;
 
             .close {
-                font-size: 30px;
-                color: red;
+                color: #525252;
                 position: absolute;
-                top: 0px;
-                right: 10vw;
+                top: 10px;
+                left: 4vw;
                 font-weight: bold;
                 cursor: pointer;
                 user-select: none;
+
+                .close-title {
+                    margin: 0 4px;
+                }
 
                 @media (max-width: 500px) {
                     top: -45px;
@@ -136,20 +139,20 @@ $maxBodyWidth: 1400px;
             .service {
                 padding: 10px;
                 margin: 20px auto;
-                background-color: #a4d7d9;
+                background-color: #525252;
                 max-width: 300px;
                 border-radius: 5px;
                 box-shadow: 1px 1px 4px 0px black;
                 font-size: 18px;
                 user-select: none;
                 cursor: pointer;
+                color: white;
 
                 .service-name {
                     transition: all 0.2s linear;
                 }
 
                 &:hover {
-                    color: white;
                     box-shadow: 3px 3px 4px 0px black;
 
                     .service-name {
@@ -171,11 +174,12 @@ $maxBodyWidth: 1400px;
                 z-index: -1;
 
                 .service-image {
-                    width: 100%;
+                    width: 300px;
                     height: 300px;
                     background-size: contain;
                     background-repeat: no-repeat;
                     background-position: center center;
+                    margin: auto;
                 }
 
                 &.selected {
@@ -189,6 +193,10 @@ $maxBodyWidth: 1400px;
 
                 .option {
                     margin-bottom: 20px;
+
+                    .option-title {
+                        font-weight: bold;
+                    }
                 }
             }
         }

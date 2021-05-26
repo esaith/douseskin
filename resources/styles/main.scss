@@ -1,5 +1,5 @@
 $backgroundColor: #97cfd6;
-$whiteBackgroundColor: #fafafa;
+$whiteBackgroundColor: #fff;
 $borderColor: #333;
 
 html {
@@ -12,7 +12,7 @@ body {
     margin: 0;
     color: #222;
     margin: auto;
-    background-color: #fbfbfb;
+    background-color: #fff;
     height: 100%;
     overflow-x: hidden;
 
@@ -207,7 +207,7 @@ a {
         width: 25px;
         height: 25px;
         path {
-            fill: #e27b7b;
+            fill: #525252;
         }
     }
 }

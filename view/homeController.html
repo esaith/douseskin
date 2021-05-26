@@ -37,18 +37,20 @@
             </div>
         </div>
         <div class="services" ng-if="selectedCategory">
-            <div class="close" ng-click='closeCategory()'>
-                <svg-helper svg-name="'close'"></svg-helper>
+            <div class="close flex align-center" ng-click='closeCategory()'>
+                <svg-helper svg-name="'arrow'"></svg-helper>
+                <div class='close-title'>Back</div>
             </div>
+            <div class="top-category-title">{{selectedCategory.CategoryName}}</div>
             <div ng-repeat="service in selectedCategory.Services">
                 <div class="service" ng-click="toggleService(service)">
-                    <div class="service-name">{{service.Title}}</div>
+                    <div class="service-name" id="service-{{service.Id}}">{{service.Title}}</div>
                 </div>
                 <div class='options' ng-class="{'selected': service.Id === selectedService.Id}">
                     <div class="service-image" ng-if='selectedService.ImageUrl' ng-attr-style="background-image: url('{{selectedService.ImageUrl}}')"></div>
                     <div class="option" ng-repeat="option in selectedService.types">
                         <div>
-                            <div>{{option.title}}</div>
+                            <div class='option-title'>{{option.title}}</div>
                             <div class="service-image" ng-if='option.ImageUrl' ng-attr-style="background-image: url('{{option.ImageUrl}}')"></div>
                             <div ng-bind-html="option.description"></div>
                         </div>
