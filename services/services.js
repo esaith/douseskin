@@ -89,6 +89,7 @@
 
     function formatCategories(serviceCategories) {
         let result = [];
+        var azure = 'https://cs205b35694fe47x4660xa12.blob.core.windows.net/productdata/douseimages/'
 
         for (const serviceCategory of serviceCategories) {
             if (serviceCategory.IsActive) {
@@ -97,14 +98,14 @@
                     ShortName: serviceCategory.ShortName,
                     SortOrder: serviceCategory.SortOrder,
                     id: serviceCategory.Name.replace(/\s+/g, '').toLowerCase().trim(),
-                    ImageUrl: serviceCategory.ImageUrl,
+                    ImageUrl: azure + '/' + serviceCategory.ImageUrl,
                     Services: []
                 }
 
                 for (const service of serviceCategory.Services) {
                     if (service.IsActive) {
                         const newService = {
-                            ImageUrl: service.ImageUrl,
+                            ImageUrl: azure + '/' + service.ImageUrl,
                             Title: service.Title,
                             Description: service.Description,
                             Id: service.Id,
@@ -119,7 +120,7 @@
                                     description: option.Description,
                                     footer: option.Footer,
                                     SortOrder: option.SortOrder,
-                                    ImageUrl: option.ImageUrl
+                                    ImageUrl: azure + '/' + option.ImageUrl
                                 };
 
                                 newService.types.push(newOption);
