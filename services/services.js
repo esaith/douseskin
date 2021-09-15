@@ -3,6 +3,7 @@
         var api = 'https://douseapi.azurewebsites.net'
         // var api = 'https://192.168.1.4:83'
         // var api = 'https://localhost:44365'
+        var azure = 'https://cs205b35694fe47x4660xa12.blob.core.windows.net/productdata/douseimages/'
 
         var business = null;
 
@@ -21,7 +22,7 @@
                         business = {
                             hours: data.Hours,
                             homeLogo: [{
-                                ImageUrl: data.HomeLogo,
+                                ImageUrl: data.HomeLogo ? azure + data.HomeLogo : '',
                                 title: "",
                                 types: [],
                             }],
@@ -37,7 +38,7 @@
                             facebook: data.Facebook,
                             facebookTitle: data.FacebookTitle,
                             Notification: data.Notification,
-                            EmployeeImg: data.EmployeeImg,
+                            EmployeeImg: data.EmployeeImg ? azure + data.EmployeeImg : '',
                             Address: data.Address,
                             City: data.City,
                             State: data.State,
@@ -98,14 +99,14 @@
                     ShortName: serviceCategory.ShortName,
                     SortOrder: serviceCategory.SortOrder,
                     id: serviceCategory.Name.replace(/\s+/g, '').toLowerCase().trim(),
-                    ImageUrl: azure + '/' + serviceCategory.ImageUrl,
+                    ImageUrl: serviceCategory.ImageUrl ? azure + serviceCategory.ImageUrl : '',
                     Services: []
                 }
 
                 for (const service of serviceCategory.Services) {
                     if (service.IsActive) {
                         const newService = {
-                            ImageUrl: azure + '/' + service.ImageUrl,
+                            ImageUrl: service.ImageUrl ? azure + service.ImageUrl : '',
                             Title: service.Title,
                             Description: service.Description,
                             Id: service.Id,
@@ -120,7 +121,7 @@
                                     description: option.Description,
                                     footer: option.Footer,
                                     SortOrder: option.SortOrder,
-                                    ImageUrl: azure + '/' + option.ImageUrl
+                                    ImageUrl: option.ImageUrl ? azure + option.ImageUrl : ''
                                 };
 
                                 newService.types.push(newOption);
